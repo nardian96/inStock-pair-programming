@@ -1,3 +1,5 @@
+import React from 'react';
+import './styles/main.css';
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
@@ -13,6 +15,7 @@ export default class App extends Component {
   };
 
   componentDidMount() {}
+
 
   render() {
     return (

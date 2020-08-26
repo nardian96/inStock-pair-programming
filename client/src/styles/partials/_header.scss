@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  flex: grid;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 152.71px;
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__logo-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__text {
+    max-width: 10.25rem;
+    max-height: 1.25rem;
+  }
+
+  &__container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1.575rem;
+    height: 1.75rem;
+  }
+  &__warehouses {
+    width: 10.25rem;
+    height: 1.25rem;
+  }
+  &__inventory {
+    min-width: 10.25rem;
+    min-height: 1.25rem;
+  }
+}
