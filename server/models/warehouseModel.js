@@ -23,7 +23,7 @@ function Warehouse(
   this.city = city;
   this.country = country;
   this.contactName = contactName;
-  this.contactPosistion = contactPosistion;
+  this.contactPosition = contactPosition;
   this.contactPhone = contactPhone;
   this.contactEmail = contactEmail;
   this.inventory = [];

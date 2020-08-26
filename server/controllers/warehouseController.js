@@ -11,9 +11,9 @@ function warehouseList (req, res) {
                 address: warehouseItem.address, 
                 city: warehouseItem.city, 
                 country: warehouseItem.country,
-                // contactName: warehouseItem.contact.name,
-                // contactPhone: warehouseItem.contact.phone,
-                // contactEmail: warehouseItem.contact.email,
+                contactName: warehouseItem.contact.name,
+                contactPhone: warehouseItem.contact.phone,
+                contactEmail: warehouseItem.contact.email,
             }
         })
     res.json(warehouseList);    

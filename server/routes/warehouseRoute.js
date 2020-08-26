@@ -3,8 +3,8 @@ const router = express.Router();
 const warehouseController = require("../controllers/warehouseController"); // import controller
 
 // warehouse routes
-router.get("/", warehouseController.warehouseList); //Function to be done
-router.get("/warehouse", warehouseController.warehouseList);
+// router.get("/", warehouseController.warehouseList); //Function to be done
+router.get("/", warehouseController.warehouseList);
 // router.get("/:warehouseId", warehouseController.getWarehouseByID); //Function to be done
 
 // export routes

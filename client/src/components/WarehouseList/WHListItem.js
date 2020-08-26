@@ -3,7 +3,7 @@ import deleteIcon from '../../assets/Icons/delete_outline-24px.svg'
 import editIcon from '../../assets/Icons/edit-24px.svg'
 // import { Link } from 'react-router-dom'
 
-function WHListItem() {
+function WHListItem(props) {
     return (
         <>
         <li>
@@ -13,7 +13,7 @@ function WHListItem() {
             </div>
             <div>
                 <h4>CONTACT NAME</h4>
-                <p>{props.warehouseItem.contact.name}</p>
+                <p>{props.warehouseItem.contactName}</p>
             </div>
             <div>
                 <h4>ADDRESS</h4>
@@ -25,14 +25,12 @@ function WHListItem() {
             </div>
             <div>
                 <h4>CONTACT INFORMATION</h4>
-                <p>
-                    {props.warehouseItem.contact.phone}
-                    {props.warehouseItem.contact.email}
-                </p>
+                <p>{props.warehouseItem.contactPhone}</p>
+                <p>{props.warehouseItem.contactEmail}</p>
             </div>
             <div>
-                <div>{deleteIcon}</div>
-                <div>{editIcon}</div>
+                <img src={deleteIcon} />
+                <img src={editIcon} />
             </div>
         </li>
         </>
