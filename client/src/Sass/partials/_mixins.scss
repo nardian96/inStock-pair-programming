@@ -1,0 +1,119 @@
+// media query mixin
+// Desktop media query
+@mixin desktop {
+  @media screen and (min-width: $width__desktop-min) {
+    @content;
+  }
+}
+// tablet media query
+@mixin tablet {
+  @media screen and (min-width: $width__tablet-min) {
+    @content;
+  }
+}
+
+// font mixins
+// font selector
+@mixin font-selector($font, $line-height) {
+  font-size: $font;
+  line-height: $line-height;
+}
+
+// Mobile H1 Page Header
+@mixin font-mobile__h1 {
+  @include font-selector(
+    $font-mobile__h1-font-size,
+    $font-mobile__h1-line-height
+  );
+}
+
+// Mobile H2 Subheader
+@mixin font-mobile__h2 {
+  @include font-selector(
+    $font-mobile__h2-font-size,
+    $font-mobile__h2-line-height
+  );
+}
+
+// Mobile H3 Links, Labels & Buttons
+@mixin font-mobile__h3 {
+  @include font-selector(
+    $font-mobile__h3-font-size,
+    $font-mobile__h3-line-height
+  );
+}
+
+// Mobile H4 Table Header
+@mixin font-mobile__h4 {
+  @include font-selector(
+    $font-mobile__h4-font-size,
+    $font-mobile__h4-line-height
+  );
+}
+
+// Mobile P1 Body Large
+@mixin font-mobile__p1 {
+  @include font-selector(
+    $font-mobile__p1-font-size,
+    $font-mobile__p1-line-height
+  );
+}
+
+// Mobile P2 Body Medium -- Mobile Base
+@mixin font-mobile__p2 {
+  @include font-selector(
+    $font-mobile__p2-font-size,
+    $font-mobile__p2-line-height
+  );
+}
+
+// Mobile P3 Body Small
+@mixin font-mobile__p3 {
+  @include font-selector(
+    $font-mobile__p3-font-size,
+    $font-mobile__p3-line-height
+  );
+}
+// Desktop and tablet Fonts mixins
+// H1 Page Header
+@mixin font__h1 {
+  @include font-selector($font__h1-font-size, $font__h1-line-height);
+}
+
+// H2 Subheader
+@mixin font__h2 {
+  @include font-selector($font__h2-font-size, $font__h2-line-height);
+}
+
+// H3 Labels, Links & Buttons
+@mixin font__h3 {
+  @include font-selector($font__h3-font-size, $font__h3-line-height);
+}
+
+// Table Header
+@mixin font__h4 {
+  @include font-selector($font__h4-font-size, $font__h4-line-height);
+}
+
+// P1 Body Large
+@mixin font__p1 {
+  @include font-selector($font__p1-font-size, $font__p1-line-height);
+}
+
+// P2 Body Medium -- Desktop and Tablet Base
+@mixin font__p2 {
+  @include font-selector($font__p2-font-size, $font__p2-line-height);
+}
+
+// P3 Body Small
+@mixin font__p3 {
+  @include font-selector($font__p3-font-size, $font__p3-line-height);
+}
+
+// display flex
+@mixin display-flex($direction, $justification, $alignment) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justification;
+  align-items: $alignment;
+}
