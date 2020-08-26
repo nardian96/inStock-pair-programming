@@ -9,19 +9,26 @@ function WHListItem() {
         <li>
             <div>
                 <h4>WAREHOUSE</h4>
-                <h3></h3>
+                <h3>{props.warehouseItem.name}</h3>
             </div>
             <div>
                 <h4>CONTACT NAME</h4>
-                <p></p>
+                <p>{props.warehouseItem.contact.name}</p>
             </div>
             <div>
                 <h4>ADDRESS</h4>
-                <p></p>
+                <p>
+                    {props.warehouseItem.address}
+                    {props.warehouseItem.city}
+                    {props.warehouseItem.country}
+                </p>
             </div>
             <div>
                 <h4>CONTACT INFORMATION</h4>
-                <p></p>
+                <p>
+                    {props.warehouseItem.contact.phone}
+                    {props.warehouseItem.contact.email}
+                </p>
             </div>
             <div>
                 <div>{deleteIcon}</div>

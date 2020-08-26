@@ -1,10 +1,13 @@
 import React from 'react'
 import WHListItem from './WHListItem'
 
-function WHListContainer() {
+function WHListContainer(props) {
     return (
         <ul>
-            <WHListItem />
+            {props.warehouses
+            .map((warehouse) => (
+                <WHListItem key={warehouse.id} warehouseItem={warehouse}/>
+            ))}  
         </ul>
     )
 }
