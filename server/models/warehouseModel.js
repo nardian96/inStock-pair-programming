@@ -5,25 +5,12 @@ const { v4: uuidv4 } = require("uuid");
 // json data to read and write
 const warehouseFile = path.join(__dirname, "../data/warehouseInventory.json");
 
-// Video Object Constructor
-function Warehouse(
-  name,
-  streetAddress,
-  city,
-  country,
-  contactName,
-  contactPosistion,
-  contactPhone,
-  contactEmail
-) {
+// Warehouse Object Constructor
+function Warehouse(name, address, city, country, contact) {
   this.id = uuidv4();
   this.name = name;
-  this.streetAddress = streetAddress;
+  this.streetAddress = address;
   this.city = city;
   this.country = country;
-  this.contactName = contactName;
-  this.contactPosistion = contactPosistion;
-  this.contactPhone = contactPhone;
-  this.contactEmail = contactEmail;
-  this.inventory = [];
+  this.contact = contact;
 }
