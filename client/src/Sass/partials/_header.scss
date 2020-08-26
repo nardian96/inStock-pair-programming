@@ -5,15 +5,15 @@
   justify-content: center;
   height: 152.71px;
 
-  @include tablet {
-    display: flex;
-    flex-wrap: wrap;
-  }
+  // @include tablet {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  // }
 
-  @include mobile {
-    display: flex;
-    flex-wrap: wrap;
-  }
+  // @include mobile {
+  //   display: flex;
+  //   flex-wrap: wrap;
+  // }
 
   &__logo-container {
     flex: 1;

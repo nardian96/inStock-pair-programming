@@ -1,28 +1,33 @@
-body {
-  background: #fafafa;
+@font-face {
+  font-family: "titilliumWeb";
+  src: url("../assets/fonts/Titillium_Web/TitilliumWeb-SemiBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
-.container {
-  max-width: 67.5rem;
-  margin: 0 auto;
+@font-face {
+  font-family: "titilliumWeb";
+  src: url("../assets/fonts/Titillium_Web/TitilliumWeb-SemiBoldItalic.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
-.flex-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+@font-face {
+  font-family: "titilliumWeb";
+  src: url("../assets/fonts/Titillium_Web/TitilliumWeb-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
-.body-width {
-  margin: 0 auto;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border: 1px dashed grey;
+@font-face {
+  font-family: "titilliumWeb";
+  src: url("../assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 .header {
@@ -37,6 +42,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 152.71px;
 }
 
 .header__logo-container {
@@ -77,12 +83,4 @@ body {
   min-width: 10.25rem;
   min-height: 1.25rem;
 }
-
-body {
-  background: #fafafa;
-}
-
-img {
-  max-width: 100%;
-}
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=Apps.css.map */
