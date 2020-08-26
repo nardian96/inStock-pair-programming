@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require("uuid");
 // json data to read and write
 const inventoriesFile = path.join(__dirname, "../data/inventories.json");
 
-// Video Object Constructor
+// Inventory Object Constructor
 function Inventory(
   warehouseId,
   warehouseName,
