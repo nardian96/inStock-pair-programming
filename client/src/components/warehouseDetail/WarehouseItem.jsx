@@ -1,13 +1,20 @@
 import React from "react";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
+import chevron from "../../assets/Icons/chevron_right-24px.svg";
+import { Link } from "react-router-dom";
 
 function WarehouseItem(props) {
   return (
     <div className="warehouse-item">
       <div className="warehouse-item__left">
         <h4 className="warehouse-item__label">INVENORY ITEM</h4>
-        <p className="warehouse-item__name">{props.item.itemName}</p>
+        <Link to="" className="warehouse-item__link">
+          <p className="warehouse-item__name">
+            {props.item.itemName}
+            <img src={chevron} alt="" />
+          </p>
+        </Link>
         <h4 className="warehouse-item__label">CATEGORY</h4>
         <p className="warehouse-item__category">{props.item.category}</p>
       </div>

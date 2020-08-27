@@ -437,9 +437,21 @@
   }
 }
 
+.warehouse-item__name {
+  position: relative;
+}
+
+.warehouse-item__name img {
+  position: absolute;
+  top: 2px;
+}
+
 @media screen and (min-width: 767px) {
-  .warehouse-item__name {
+  .warehouse-item__link {
     width: 55.33%;
+    text-decoration: none;
+    color: #2e66e6;
+    font-weight: bold;
   }
 }
 
@@ -481,6 +493,7 @@
   height: 24px;
   border-radius: 20px;
   text-align: center;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 767px) {

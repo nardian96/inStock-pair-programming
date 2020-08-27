@@ -22,9 +22,18 @@
     }
   }
   &__name {
+    position: relative;
+    img {
+      position: absolute;
+      top: 2px;
+    }
+  }
+  &__link {
     @include tablet {
       width: 55.33%;
-      // flex-grow: 1;
+      text-decoration: none;
+      color: $color-primary__instock-indigo;
+      font-weight: bold;
     }
   }
   &__category {
@@ -45,6 +54,7 @@
     height: 24px;
     border-radius: 20px;
     text-align: center;
+    font-weight: bold;
     &-container {
       @include tablet {
         width: 58.71%;

@@ -4,11 +4,11 @@ import "./Sass/Apps.css";
 import WarehouseDetails from "./components/warehouseDetail/";
 
 export default class App extends Component {
-  state = {
-    inventory: [],
-    products: [],
-    warehouse: [],
-  };
+  // state = {
+  //   inventory: [],
+  //   products: [],
+  //   warehouse: [],
+  // };
 
   state = {
     inventory: [
