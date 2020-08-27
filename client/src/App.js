@@ -1,7 +1,12 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import InventoryList from './components/InventoryList';
-import './Sass/Apps.css';
+import React, { Component } from "react";
+import axios from "axios";
+import InventoryList from "./components/InventoryList";
+import "./Sass/Apps.css";
+import "./styles/main.css";
+import { Switch, Route, Link } from "react-router-dom";
+import "./Sass/App.css";
+import WarehouseDetails from "./components/WarehouseDetail";
+import WarehouseInfo from "./components/WarehouseInfo";
 
 const axiosURL = `http://localhost:5000/inventories`;
 
@@ -30,16 +35,42 @@ class App extends Component {
   }
 
   componentWillUnmount() {
-    console.log('Component did unmount');
+    console.log("Component did unmount");
   }
 
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <InventoryList InventoryList={this.state.inventoryObj} />
       </div>
     );
   }
 }
 
-export default App;
+export default class App extends Component {
+  state = {
+    inventory: [],
+    products: [],
+    warehouse: [],
+  };
+
+  componentDidMount() {}
+
+  render() {
+    return (
+      <div className="instock">
+        <Switch>
+          <Route
+            path="/warehouse/:id"
+            render={() => (
+              <WarehouseDetails
+                warehouseItems={this.state.inventory}
+                WarehouseInfo={this.state.warehouse}
+              />
+            )}
+          />
+        </Switch>
+      </div>
+    );
+  }
+}
