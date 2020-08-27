@@ -19,45 +19,51 @@ class App extends Component {
     }
 
     displayWarehouseList = () => {
-        return(axios.get(warehouseApi)
-        .then((response) => {
-            console.log('Hello')
-            this.setState({
-                warehouse: response.data
-            })
-        })
-    )}
+        return axios.get(warehouseApi).then((response) => {
+        this.setState({
+            warehouse: response.data,
+        });
+        });
+    };
 
     componentDidMount() {
-        this.displayWarehouseList()
+        this.displayWarehouseList();
+    }
     }
 
-
     render() {
-        const { warehouse } = this.state
-        
-        return (
+        if (!this.props.match) {
+        return <p></p>;
+        }
+
+        if (
+        this.props.match.path === `/Warehouse`
+        // ${this.props.match.params.id}
+        ) {
+        const warehouseId = "2922c286-16cd-4d43-ab98-c79f698aeab0";
+        // const warehouseId = this.props.match.params.id;
+        console.log(this.props.match);
+        const warehouse = this.state.warehouse.filter(
+            (place) => place.id === warehouseId
+        );
+        const warehouseInventory = this.state.inventory.filter(
+            (place) => place.warehouseID === warehouseId
+        );
+    }
+
+    return (
         <div className="instock">
             <Switch>
                 <Route
                     path="/warehouse"
                     render={() => (
                         <Warehouse warehouses={warehouse}/>
-                    )}
-                />
-                {/* <Route
-                    path="/warehouse/:id"
-                    render={() => (
-                    <WarehouseDetails
-                        warehouseItems={this.state.inventory}
-                        WarehouseInfo={this.state.warehouse}
-                    />
-                    )}
-                /> */}
+                    )}/>
             </Switch>
-          </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default App
+
+ 
