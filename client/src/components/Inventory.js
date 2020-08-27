@@ -2,21 +2,22 @@ import React from "react";
 import deleteIcon from "../assets/icons/delete_outline-24px.svg";
 import editIcon from "../assets/icons/edit-24px.svg";
 import rightIcon from "../assets/icons/chevron_right-24px.svg";
+import sortIcon from "../assets/icons/sort-24px.svg";
 
 export default function Inventory(props) {
   return (
-    <>
-      <div className="table-header">
+    <div className="inventory">
+      <div className="page-header">
         <h1>Inventory</h1>
         <input
-          className="table-header-search"
+          className="page-header-search"
           type="text"
           placeholder="Search"
         />
-        <button className="table-header-button"> + Add New Item</button>
+        <button className="page-header-button"> + Add New Item</button>
       </div>
       <hr />
-      <div className="table__container">
+      <div className="table">
         {props.inventories.map((inventory, index) => {
           return (
             <div key={index} className="table__item">
@@ -65,10 +66,11 @@ export default function Inventory(props) {
                   alt="edit"
                 />
               </div>
+              <hr />
             </div>
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
