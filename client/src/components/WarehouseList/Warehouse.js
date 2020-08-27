@@ -4,7 +4,7 @@ import WHListContainer from './WHListContainer'
 
 function Warehouse(props) {
     return (
-        <section>
+        <section className="warehouse__list">
             <WHListHeader />
             <WHListContainer warehouses={props.warehouses} />
         </section>
