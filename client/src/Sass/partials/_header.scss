@@ -1,44 +1,40 @@
 .header {
   display: flex;
-  flex: grid;
-  flex-wrap: wrap;
-  justify-content: center;
-  height: 152.71px;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  height: 195px;
+  background-color: #232940;
 
-  // @include tablet {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  // }
-
-  // @include mobile {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  // }
-
-  &__logo-container {
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  &__text {
-    max-width: 10.25rem;
-    max-height: 1.25rem;
-  }
+  @include font-selector(
+    $font-mobile__p2-font-size,
+    $font-mobile__p2-line-height
+  );
 
   &__container {
-    flex: 1;
     display: flex;
-    flex-wrap: wrap;
-    width: 1.575rem;
-    height: 1.75rem;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
   }
+
   &__warehouses {
+    width: 164px;
+    height: 36px;
+    background-color: #13182c;
+    color: white;
+    border-radius: 20px;
     width: 10.25rem;
     height: 1.25rem;
   }
+
   &__inventory {
-    min-width: 10.25rem;
-    min-height: 1.25rem;
+    background-color: #13182c;
+    color: #bdc5d5;
   }
 }

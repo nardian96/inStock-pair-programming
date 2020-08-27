@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Header from './components/Header';
+import NotFound from './components/NotFound';
 
 import App from './App';
 import {
@@ -22,6 +23,7 @@ ReactDOM.render(
         <Route path='/Warehouse/:warehouseId' component={App} exact />
         <Route path='/Inventory' component={App} exact />
         <Route path='/Inventory/:inventoryId' component={App} exact />
+        <Route path='/*' component={NotFound} />
       </Switch>
     </Router>
   </React.StrictMode>,
