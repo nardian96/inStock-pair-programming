@@ -1,29 +1,40 @@
 import React, { Component } from "react";
-import axios from "axios";
-import InventoryList from "./components/InventoryList";
-import "./Sass/Apps.css";
-import "./styles/main.css";
 import { Switch, Route, Link } from "react-router-dom";
+import Warehouse from "./components/WarehouseList/Warehouse";
+import InventoryList from "./components/InventoryList";
+import axios from "axios";
 import "./Sass/App.css";
 import WarehouseDetails from "./components/WarehouseDetail";
 import WarehouseInfo from "./components/WarehouseInfo";
 
-const axiosURL = `http://localhost:5000/inventories`;
+const warehouseApi = "http://localhost:8080/warehouse";
+const inventoryURL = `http://localhost:8080/inventories`;
 
 class App extends Component {
   state = {
-    inventoryArr: [],
-    inventoryObj: {},
+    inventory: [],
+    products: [],
+    warehouse: [],
+  };
+
+  displayWarehouseList = () => {
+    return axios.get(warehouseApi).then((response) => {
+      console.log("Hello");
+      this.setState({
+        warehouse: response.data,
+      });
+    });
   };
 
   getInventoryObj() {
-    axios.get(axiosURL).then((response) => {
+    axios.get(inventoryURL).then((response) => {
       console.log(response);
-      this.setState({ inventoryObj: response.data });
+      this.setState({ inventory: response.data });
     });
   }
 
   componentDidMount() {
+    this.displayWarehouseList();
     this.getInventoryObj();
   }
 
@@ -57,9 +68,15 @@ export default class App extends Component {
   componentDidMount() {}
 
   render() {
+    const { warehouse } = this.state;
     return (
       <div className="instock">
+        <InventoryList InventoryList={this.state.inventory} />
         <Switch>
+          <Route
+            path="/warehouse"
+            render={() => <Warehouse warehouses={warehouse} />}
+          />
           <Route
             path="/warehouse/:id"
             render={() => (
@@ -74,3 +91,5 @@ export default class App extends Component {
     );
   }
 }
+
+export default App;
