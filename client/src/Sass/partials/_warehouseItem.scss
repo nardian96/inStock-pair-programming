@@ -1,26 +1,98 @@
 .warehouse-item {
+  padding: 0 $padding__base * 4;
+  @include display-flex(row, left, center);
+  flex-wrap: wrap;
+  border-bottom: 1px solid $color-secondary__cloud;
+  min-width: 320px;
+
   &__left {
+    width: 156px;
+    flex-grow: 1;
+    @include tablet {
+      @include display-flex(row, left, center);
+      min-width: 271px;
+    }
   }
   &__label {
+    color: $color-secondary__slate;
+    @include tablet {
+      display: none;
+    }
   }
   &__name {
+    @include tablet {
+      min-width: 150px;
+      // flex-grow: 1;
+    }
   }
   &__category {
+    @include tablet {
+      min-width: 121px;
+      // flex-grow: 1;
+    }
   }
   &__right {
+    flex-grow: 1;
+    @include tablet {
+      @include display-flex(row, left, center);
+    }
   }
   &__status {
+    height: 24px;
+    border-radius: 20px;
+    text-align: center;
+    &-container {
+      @include tablet {
+        min-width: 182px;
+        flex-grow: 1;
+      }
+    }
     &--inStock {
+      width: 61px;
+      color: $color-supporting__green;
+      background: rgba(21, 132, 99, 0.07);
     }
     &--noStock {
+      width: 86px;
+      color: $color-supporting__red;
+
+      background: rgba(201, 69, 21, 0.07);
     }
   }
   &__quantity {
+    text-align: left;
+    @include tablet {
+      min-width: 128px;
+      // flex-grow: 1;
+    }
   }
   &__actions {
+    @include display-flex(row, space-between, center);
+    width: 100%;
+    margin-bottom: 28px;
+    @include tablet {
+      justify-content: left;
+      width: fit-content;
+      margin: 0;
+      flex-grow: 1;
+    }
   }
   &__delete-button {
+    @include tablet {
+      // flex-grow: 1;
+
+      // width: 14px;
+      // height: 18px;
+    }
+    @include desktop {
+      margin-right: $padding__base * 3;
+    }
   }
   &__edit-button {
+    @include tablet {
+      // width: 18px;
+      // flex-grow: 1;
+      // height: 18px;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
-import editIcon from "../../assets/Icons/edit-24px.svg";
+import editIconWhite from "../../assets/Icons/edit-24px-white.svg";
 
 function WarehouseHeader(props) {
   return (
@@ -18,10 +18,11 @@ function WarehouseHeader(props) {
       <div className="warehouse-header__header-right">
         <button className="warehouse-header__edit-button">
           <img
-            src={editIcon}
+            src={editIconWhite}
             alt="edit icon"
             className="warehouse-header__edit-icon"
           />
+          <span>Edit</span>
         </button>
       </div>
     </div>

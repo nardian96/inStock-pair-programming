@@ -13,17 +13,19 @@ function WarehouseItem(props) {
       </div>
       <div className="warehouse-item__right">
         <h4 className="warehouse-item__label">STATUS</h4>
-        {props.item.quantity ? (
-          <p className="warehouse-item__status--inStock warehouse-item__status">
-            {props.item.status}
-          </p>
-        ) : (
-          <p className="warehouse-item__status--noStock warehouse-item__status">
-            {props.item.status}
-          </p>
-        )}
+        <div className="warehouse-item__status-container">
+          {props.item.quantity ? (
+            <p className="warehouse-item__status--inStock warehouse-item__status">
+              {props.item.status}
+            </p>
+          ) : (
+            <p className="warehouse-item__status--noStock warehouse-item__status">
+              {props.item.status}
+            </p>
+          )}
+        </div>
         <h4 className="warehouse-item__label">QTY</h4>
-        <p className="warehouse-itme__quantity">{props.item.quantity}</p>
+        <p className="warehouse-item__quantity">{props.item.quantity}</p>
       </div>
       <div className="warehouse-item__actions">
         <img

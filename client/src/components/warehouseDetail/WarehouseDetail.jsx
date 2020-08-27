@@ -34,6 +34,9 @@ function WarehouseDetail({ warehouseItems, warehouseInfo }) {
         </div>
         <ul className="warehouse-detail__list">{warehouseList}</ul>
       </div>
+      <p className="warehouse-detail__copyright">
+        &#169 InStock Inc. All Rights Reserved
+      </p>
     </div>
   );
 }
