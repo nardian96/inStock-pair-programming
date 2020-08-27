@@ -5,6 +5,12 @@ import WarehouseDetails from "./components/warehouseDetail/";
 
 export default class App extends Component {
   state = {
+    inventory: [],
+    products: [],
+    warehouse: [],
+  };
+
+  state = {
     inventory: [
       {
         warehouseID: "2922c286-16cd-4d43-ab98-c79f698aeab0",

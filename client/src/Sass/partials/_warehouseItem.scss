@@ -1,16 +1,18 @@
 .warehouse-item {
-  padding: 0 $padding__base * 4;
   @include display-flex(row, left, center);
   flex-wrap: wrap;
   border-bottom: 1px solid $color-secondary__cloud;
   min-width: 320px;
 
   &__left {
+    padding-left: $padding__base * 4;
+
     width: 156px;
     flex-grow: 1;
     @include tablet {
       @include display-flex(row, left, center);
-      min-width: 271px;
+      width: 38.49%;
+      flex-grow: 0;
     }
   }
   &__label {
@@ -21,13 +23,13 @@
   }
   &__name {
     @include tablet {
-      min-width: 150px;
+      width: 55.33%;
       // flex-grow: 1;
     }
   }
   &__category {
     @include tablet {
-      min-width: 121px;
+      width: 44.67%;
       // flex-grow: 1;
     }
   }
@@ -35,6 +37,8 @@
     flex-grow: 1;
     @include tablet {
       @include display-flex(row, left, center);
+      width: 44.03%;
+      flex-grow: 0;
     }
   }
   &__status {
@@ -43,8 +47,8 @@
     text-align: center;
     &-container {
       @include tablet {
-        min-width: 182px;
-        flex-grow: 1;
+        width: 58.71%;
+        // flex-grow: 1;
       }
     }
     &--inStock {
@@ -62,7 +66,7 @@
   &__quantity {
     text-align: left;
     @include tablet {
-      min-width: 128px;
+      width: 41.29%;
       // flex-grow: 1;
     }
   }
@@ -70,11 +74,12 @@
     @include display-flex(row, space-between, center);
     width: 100%;
     margin-bottom: 28px;
+    padding: 0 $padding__base * 4;
     @include tablet {
       justify-content: left;
       width: fit-content;
       margin: 0;
-      flex-grow: 1;
+      // flex-grow: 1;
     }
   }
   &__delete-button {
