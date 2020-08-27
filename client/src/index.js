@@ -1,8 +1,10 @@
-// import Header from "./Header";
-import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
-// import "./index.css";
+import Header from "./components/Header";
+import NotFound from "./components/NotFound";
+
+import App from "./App";
+import "./index.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,16 +15,21 @@ import {
 // ####COMPONENTS TO BE ADDED FOR ROUTES####
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Header /> */}
-    {/* <App /> */}
+    <Header />
+    <App />
     <Router>
       {/* <Header /> ###HEADER TO BE ADDED### */}
+      <Header />
       <Redirect from="/" to="/Warehouse" />
       <Switch>
         <Route path="/Warehouse" component={App} exact />
         <Route path="/Warehouse/:warehouseId" component={App} exact />
         <Route path="/Inventory" component={App} exact />
         <Route path="/Inventory/:inventoryId" component={App} exact />
+<<<<<<< HEAD
+=======
+        <Route path="/*" component={NotFound} />
+>>>>>>> front-end-header-component
       </Switch>
     </Router>
   </React.StrictMode>,
