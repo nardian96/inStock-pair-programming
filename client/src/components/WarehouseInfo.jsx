@@ -19,7 +19,7 @@ function WarehouseInfo(props) {
         <div className="warehouse-info__contact-info-container">
           <h4>CONTACT INFORMATION</h4>
           <p>{props.warehouseInfo.contact.phone}</p>
-          <p>{warehouseInfo.contact.email}</p>
+          {/* <p>{warehouseInfo.contact.email}</p> */}
         </div>
       </div>
     </div>

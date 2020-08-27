@@ -1,14 +1,14 @@
 import React from "react";
 import WarehouseItem from "./WarehouseItem.jsx";
-import WarehouseHeader from ".WarehouseHeader.jsk";
+import WarehouseHeader from "./WarehouseHeader.jsx";
 import WarehouseInfo from "./WarehouseInfo.jsx";
 import sortIcon from "../assets/icons/sort-24px.svg";
 
 function WarehouseDetail(warehouseItems, warehouseInfo) {
-  const warehouseList = warehouseItems.map((item) => {
-    if (item.warehouseID === warehouseInfo.id)
-      <WarehouseItem key={item.name} item={item} />;
-  });
+  // const warehouseList = warehouseItems.map((item) => {
+  //   if (item.warehouseID === warehouseInfo.id)
+  //     <WarehouseItem key={item.name} item={item} />;
+  // });
 
   return (
     <div className="warehouse-detail">
@@ -26,7 +26,7 @@ function WarehouseDetail(warehouseItems, warehouseInfo) {
           <h4 className="warehouse-detail__label-qty">QUANTITY {sortIcon}</h4>
           <h4 className="warehouse-detail__label-actions">ACTIONS</h4>
         </div>
-        <ul className="warehouse-detail__list">{warehouseList}</ul>
+        {/* <ul className="warehouse-detail__list">{warehouseList}</ul> */}
       </div>
     </div>
   );
