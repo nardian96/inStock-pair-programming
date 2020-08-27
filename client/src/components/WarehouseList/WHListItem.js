@@ -13,7 +13,7 @@ function WHListItem(props) {
             </div>
             <div>
                 <h4>CONTACT NAME</h4>
-                <p>{props.warehouseItem.contactName}</p>
+                <p>{props.warehouseItem.contact.name}</p>
             </div>
             <div>
                 <h4>ADDRESS</h4>
@@ -25,8 +25,10 @@ function WHListItem(props) {
             </div>
             <div>
                 <h4>CONTACT INFORMATION</h4>
-                <p>{props.warehouseItem.contactPhone}</p>
-                <p>{props.warehouseItem.contactEmail}</p>
+                <p>
+                    {props.warehouseItem.contact.phone}
+                    {props.warehouseItem.contact.email}
+                </p>
             </div>
             <div>
                 <img src={deleteIcon} />

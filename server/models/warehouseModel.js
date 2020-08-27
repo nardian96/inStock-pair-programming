@@ -24,7 +24,7 @@ function Warehouse(
   this.city = city;
   this.country = country;
   this.contactName = contactName;
-  this.contactPosition = contactPosition;
+  this.contactPosistion = contactPosistion;
   this.contactPhone = contactPhone;
   this.contactEmail = contactEmail;
   this.inventory = [];
@@ -45,13 +45,15 @@ function Warehouse(
 // }
 
 // function to load warehouse data
-function loadWarehouseData(callback) {
-  fs.readFile(warehouseFile, (err, data) => {
-    if (err) throw err;
-    const warehouses = JSON.parse(data);
-    callback(warehouses)
-  })
+function warehouseList(callback) {
+  const data = fs.readFileSync(warehouseFile)
+  return JSON.parse(data)
+  // fs.readFile(warehouseFile, (err, data) => {
+  //   if (err) throw err;
+  //   const warehouses = JSON.parse(data);
+  //   callback(warehouses)
+  // })
 }
 
 //export multiple functions
-module.exports = { loadWarehouseData }
+module.exports = { warehouseList }

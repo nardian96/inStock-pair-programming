@@ -15,17 +15,21 @@ class App extends Component {
     displayWarehouseList = () => {
         return(Axios.get(warehouseApi)
         .then((response) => {
+            console.log('Hello')
             this.setState({
                 warehouseList: response.data
             })
         })
     )}
 
+    componentDidMount() {
+        this.displayWarehouseList()
+    }
+
     
     render() {
 
         const { warehouseList } = this.state
-
         return (
             <Warehouse warehouses={warehouseList}/>
         )

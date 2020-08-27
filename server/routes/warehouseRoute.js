@@ -4,7 +4,7 @@ const warehouseController = require("../controllers/warehouseController"); // im
 
 // warehouse routes
 // router.get("/", warehouseController.warehouseList); //Function to be done
-router.get("/", warehouseController.warehouseList);
+router.get("/", warehouseController.getWarehouse);
 // router.get("/:warehouseId", warehouseController.getWarehouseByID); //Function to be done
 
 // export routes
