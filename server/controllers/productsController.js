@@ -1,9 +1,9 @@
 // load models
-const warehouse = require("../models/warehouseModel");
+const products = require("../models/productsModel");
 
 //get list of warehouses
-function getWarehouse(req, res) {
-  res.json(warehouse.warehouseList());
+function getProducts(req, res) {
+  res.json(products.productsList());
   // warehouse.loadWarehouseData((warehouses) => {
   // const warehouseList = warehouses.map((warehouseItem) => {
   //     return {
@@ -22,4 +22,4 @@ function getWarehouse(req, res) {
 }
 
 // export functions
-module.exports = { getWarehouse };
+module.exports = { getProducts };
