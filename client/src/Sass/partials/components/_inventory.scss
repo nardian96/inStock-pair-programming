@@ -1,0 +1,35 @@
+.table {
+  &__header {
+    display: none;
+  }
+
+  &__item {
+    display: flex;
+    //flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+
+    &__container {
+      width: 50%;
+      margin-bottom: 20px;
+    }
+    &-label {
+      color: $color-secondary__slate;
+      font-weight: 600;
+      font-size: 11px;
+      line-height: 16px;
+    }
+
+    &-text {
+      font-size: 13px;
+      line-height: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__icons {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}

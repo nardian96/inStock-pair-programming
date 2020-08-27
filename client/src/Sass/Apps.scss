@@ -6,7 +6,7 @@
 @import "./partials/warehouseInfo";
 @import "./partials/warehouseItem";
 
-//global body
+@import "./partials/components/inventory"; //global body
 body {
   font-family: "titilliumWeb";
 }

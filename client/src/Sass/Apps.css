@@ -30,6 +30,49 @@
   font-display: swap;
 }
 
+.table__header {
+  display: none;
+}
+
+.table__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.table__item__container {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.table__item-label {
+  color: #5c667e;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 16px;
+}
+
+.table__item-text {
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.table__item__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
 body {
   font-family: "titilliumWeb";
 }

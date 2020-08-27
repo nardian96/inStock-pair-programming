@@ -18,56 +18,89 @@ export default function Inventory(props) {
       </div>
       <hr />
       <div className="table">
+        <div className="table__header">
+          <span className="table__header--container">
+            <span className="table__header-text">INVENTORY ITEM</span>
+            <img className="table__header-img" src={sortIcon} alt="sort" />
+          </span>
+
+          <span className="table__header--container">
+            <span className="table__header-text">CATEGORY</span>
+            <img className="table__header-img" src={sortIcon} alt="sort" />
+          </span>
+
+          <span className="table__header--container">
+            <span className="table__header-text">STATUS</span>
+            <img className="table__header-img" src={sortIcon} alt="sort" />
+          </span>
+
+          <span className="table__header--container">
+            <span className="table__header-text">QTY</span>
+            <img className="table__header-img" src={sortIcon} alt="sort" />
+          </span>
+
+          <span className="table__header--container">
+            <span className="table__header-text">WAREHOUSE</span>
+            <img className="table__header-img" src={sortIcon} alt="sort" />
+          </span>
+
+          <span className="table__header--container">
+            <span className="table__header-text">ACTIONS</span>
+            <img className="table__header-img" src={sortIcon} alt="sort" />
+          </span>
+        </div>
         {props.inventories.map((inventory, index) => {
           return (
-            <div key={index} className="table__item">
-              <div className="table__item__container">
-                <div className="table__item-label">INVENTORY ITEM</div>
-                <span className="table__item-text">{inventory.itemName}</span>
-                <img
-                  className="table__item-right"
-                  src={rightIcon}
-                  alt="right icon"
-                />
-              </div>
+            <React.Fragment key={index}>
+              <div className="table__item">
+                <div className="table__item__container">
+                  <div className="table__item-label">INVENTORY ITEM</div>
+                  <span className="table__item-text">{inventory.itemName}</span>
+                  <img
+                    className="table__item-right"
+                    src={rightIcon}
+                    alt="right icon"
+                  />
+                </div>
 
-              <div className="table__item__container">
-                <div className="table__item-label">STATUS</div>
-                <span className="table__item-text">{inventory.status}</span>
-              </div>
+                <div className="table__item__container">
+                  <div className="table__item-label">STATUS</div>
+                  <span className="table__item-text">{inventory.status}</span>
+                </div>
 
-              <div className="table__item__container">
-                <div className="table__item-label">CATEGORY</div>
-                <span className="table__item-text">{inventory.category}</span>
-              </div>
+                <div className="table__item__container">
+                  <div className="table__item-label">CATEGORY</div>
+                  <span className="table__item-text">{inventory.category}</span>
+                </div>
 
-              <div className="table__item__container">
-                <div className="table__item-label">QTY</div>
-                <span className="table__item-text">{inventory.quantity}</span>
-              </div>
+                <div className="table__item__container">
+                  <div className="table__item-label">QTY</div>
+                  <span className="table__item-text">{inventory.quantity}</span>
+                </div>
 
-              <div className="table__item__container">
-                <div className="table__item-label">WAREHOUSE</div>
-                <span className="table__item-text">
-                  {inventory.warehouseName}
-                </span>
-              </div>
+                <div className="table__item__container">
+                  <div className="table__item-label">WAREHOUSE</div>
+                  <span className="table__item-text">
+                    {inventory.warehouseName}
+                  </span>
+                </div>
 
-              <div className="table__item__icons">
-                <img
-                  className="table__item__icons--delete"
-                  src={deleteIcon}
-                  alt="delete"
-                />
+                <div className="table__item__icons">
+                  <img
+                    className="table__item__icons--delete"
+                    src={deleteIcon}
+                    alt="delete"
+                  />
 
-                <img
-                  className="table__item__icons--edit"
-                  src={editIcon}
-                  alt="edit"
-                />
+                  <img
+                    className="table__item__icons--edit"
+                    src={editIcon}
+                    alt="edit"
+                  />
+                </div>
               </div>
               <hr />
-            </div>
+            </React.Fragment>
           );
         })}
       </div>
