@@ -2,8 +2,8 @@ import React from 'react';
 import InventoryItem from './InventoryItem';
 
 function InventoryList(props) {
-  console.log('InventoryList props', props.inventories);
-  if (props.warehouseID === undefined) {
+  console.log('InventoryList props', props.inventory);
+  if (props.inventory === undefined) {
     return <p>Loading Inventory</p>;
   }
 

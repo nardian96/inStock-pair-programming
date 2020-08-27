@@ -3,31 +3,28 @@ import axios from 'axios';
 import InventoryList from './components/InventoryList';
 import './Sass/Apps.css';
 
-const axiosURL = 'http://localhost:5000/inventories';
+const axiosURL = `http://localhost:5000/inventories`;
 
 class App extends Component {
   state = {
     inventoryArr: [],
-    activeInventoryObj: {},
+    inventoryObj: {},
   };
 
-  getactiveInventoryObj() {
-    axios.get(`axiosURL`).then((response) => {
+  getInventoryObj() {
+    axios.get(axiosURL).then((response) => {
       console.log(response);
-      this.setState({ activeInventoryObj: response.data });
+      this.setState({ inventoryObj: response.data });
     });
   }
 
   componentDidMount() {
-    this.getactiveInventoryObj();
+    this.getInventoryObj();
   }
 
   componentDidUpdate(_prevProps, prevState) {
     const { params } = this.props.match;
-    if (
-      params.id !== undefined &&
-      prevState.activeInventoryObj.id !== params.id
-    ) {
+    if (params.id !== undefined && prevState.inventoryObj.id !== params.id) {
       this.getactiveInventoryObj(params.id);
     }
   }
@@ -39,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <InventoryList InventoryList={this.state.activeInventoryObj} />
+        <InventoryList InventoryList={this.state.inventoryObj} />
       </div>
     );
   }
