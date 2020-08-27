@@ -18,12 +18,12 @@ ReactDOM.render(
     <Router>
       {/* <Header /> ###HEADER TO BE ADDED### */}
       <Redirect from="/" to="/Warehouse" />
-      {/* <Switch> */}
+      <Switch>
         <Route path="/Warehouse" component={App} exact />
-        {/* <Route path="/Warehouse/:warehouseId" component={} exact />
-        <Route path="/Inventory" component={} exact />
-        <Route path="/Inventory/:inventoryId" component={} exact /> */}
-      {/* </Switch> */}
+        <Route path="/Warehouse/:warehouseId" component={App} exact />
+        <Route path="/Inventory" component={App} exact />
+        <Route path="/Inventory/:inventoryId" component={App} exact />
+      </Switch>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

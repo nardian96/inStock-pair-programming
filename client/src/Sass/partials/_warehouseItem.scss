@@ -1,24 +1,114 @@
 .warehouse-item {
+  @include display-flex(row, left, center);
+  flex-wrap: wrap;
+  border-bottom: 1px solid $color-secondary__cloud;
+  min-width: 320px;
+
   &__left {
+    padding-left: $padding__base * 4;
+
+    width: 156px;
+    flex-grow: 1;
+    @include tablet {
+      @include display-flex(row, left, center);
+      width: 38.49%;
+      flex-grow: 0;
+    }
   }
   &__label {
+    color: $color-secondary__slate;
+    @include tablet {
+      display: none;
+    }
   }
   &__name {
+    position: relative;
+    img {
+      position: absolute;
+      top: 2px;
+    }
+  }
+  &__link {
+    @include tablet {
+      width: 55.33%;
+      text-decoration: none;
+      color: $color-primary__instock-indigo;
+      font-weight: bold;
+    }
   }
   &__category {
+    @include tablet {
+      width: 44.67%;
+      // flex-grow: 1;
+    }
   }
   &__right {
+    flex-grow: 1;
+    @include tablet {
+      @include display-flex(row, left, center);
+      width: 44.03%;
+      flex-grow: 0;
+    }
   }
   &__status {
+    height: 24px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    &-container {
+      @include tablet {
+        width: 58.71%;
+        // flex-grow: 1;
+      }
+    }
     &--inStock {
+      width: 61px;
+      color: $color-supporting__green;
+      background: rgba(21, 132, 99, 0.07);
     }
     &--noStock {
+      width: 86px;
+      color: $color-supporting__red;
+
+      background: rgba(201, 69, 21, 0.07);
+    }
+  }
+  &__quantity {
+    text-align: left;
+    @include tablet {
+      width: 41.29%;
+      // flex-grow: 1;
     }
   }
   &__actions {
+    @include display-flex(row, space-between, center);
+    width: 100%;
+    margin-bottom: 28px;
+    padding: 0 $padding__base * 4;
+    @include tablet {
+      justify-content: left;
+      width: fit-content;
+      margin: 0;
+      padding: 0;
+      // flex-grow: 1;
+    }
   }
   &__delete-button {
+    @include tablet {
+      // flex-grow: 1;
+
+      // width: 14px;
+      // height: 18px;
+    }
+    @include desktop {
+      margin-right: $padding__base * 3;
+    }
   }
   &__edit-button {
+    @include tablet {
+      // width: 18px;
+      // flex-grow: 1;
+      // height: 18px;
+    }
   }
 }

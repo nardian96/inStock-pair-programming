@@ -1,12 +1,15 @@
 import React from "react";
 
 function WarehouseInfo(props) {
+  if (!props.warehouseInfo.address) {
+    return <p>loading more</p>;
+  }
   return (
     <div className="warehouse-info">
       <div className="warehouse-info__contact-left">
         <div className="warehouse-info__address-container">
           <h4>WAREHOUSE ADDRESS</h4>
-          <p>{props.warehouseInfo.address}</p>
+          <p>{props.warehouseInfo && props.warehouseInfo.address}</p>
           <p>{`${props.warehouseInfo.city}, ${props.warehouseInfo.country}`}</p>
         </div>
       </div>
@@ -19,7 +22,7 @@ function WarehouseInfo(props) {
         <div className="warehouse-info__contact-info-container">
           <h4>CONTACT INFORMATION</h4>
           <p>{props.warehouseInfo.contact.phone}</p>
-          <p>{warehouseInfo.contact.email}</p>
+          <p>{props.warehouseInfo.contact.email}</p>
         </div>
       </div>
     </div>
