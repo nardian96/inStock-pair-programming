@@ -11,9 +11,10 @@ function WHListItem(props) {
             <div className="list__subcontainer">
                 <div className="list__warehouse">
                     <h4>WAREHOUSE</h4>
-                    <h3>{props.warehouseItem.name}
-                    <img src={detailIcon}/>
-                    </h3>
+                    <div className="list__warehouse-wrapper">
+                        <h3>{props.warehouseItem.name}</h3>
+                        <img src={detailIcon}/>
+                    </div> 
                 </div>
                 <div className="list__contact-name">
                     <h4>CONTACT NAME</h4>

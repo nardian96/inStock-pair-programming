@@ -3,8 +3,8 @@ import { Switch, Route, Link } from "react-router-dom"
 import Warehouse from './components/WarehouseList/Warehouse'
 import axios from 'axios'
 import './Sass/App.css'
-import WarehouseDetails from "./components/WarehouseDetail";
-import WarehouseInfo from "./components/WarehouseInfo";
+// import WarehouseDetails from "./components/WarehouseDetail";
+// import WarehouseInfo from "./components/WarehouseInfo";
 
   
 const warehouseApi = 'http://localhost:8080/warehouse';
@@ -45,7 +45,7 @@ class App extends Component {
                         <Warehouse warehouses={warehouse}/>
                     )}
                 />
-                <Route
+                {/* <Route
                     path="/warehouse/:id"
                     render={() => (
                     <WarehouseDetails
@@ -53,7 +53,7 @@ class App extends Component {
                         WarehouseInfo={this.state.warehouse}
                     />
                     )}
-                />
+                /> */}
             </Switch>
           </div>
         );
