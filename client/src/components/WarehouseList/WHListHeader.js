@@ -5,13 +5,13 @@ function WHListHeader() {
     return (
         <div className="warehouse__list-header">
             <h1 className="header__title">Warehouses</h1>
-            <form>
-                <label>
+            <form className="header__search-container">
+                <label htmlFor="header__search" className="header__search-icon">
                     <img src={searchIcon} alt='search icon'/>
                 </label>
-                <input></input>
+                <input className="header__search" type="search" name="searchbar" placeholder="Search..."></input>
             </form>
-            <button> + Add New Warehouse</button>
+            <button className="header__button"> + Add New Warehouse</button>
         </div>
     )
 }

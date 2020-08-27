@@ -3,7 +3,7 @@ import WHListItem from './WHListItem'
 
 function WHListContainer(props) {
     return (
-        <ul>
+        <ul className="warehouse__list-container">
             {props.warehouses
             .map((warehouse) => (
                 <WHListItem key={warehouse.id} warehouseItem={warehouse}/>
