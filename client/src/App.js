@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
+import { Switch, Route, Link } from "react-router-dom"
 import Warehouse from './components/WarehouseList/Warehouse'
-import Axios from 'axios'
+import axios from 'axios'
 import './Sass/App.css'
+import WarehouseDetails from "./components/WarehouseDetail";
+import WarehouseInfo from "./components/WarehouseInfo";
 
+  
 const warehouseApi = 'http://localhost:8080/warehouse';
 
 
 class App extends Component {
     
     state = {
-        warehouseList: []
+        inventory: [],
+        products: [],
+        warehouse: []
     }
 
     displayWarehouseList = () => {
-        return(Axios.get(warehouseApi)
+        return(axios.get(warehouseApi)
         .then((response) => {
             console.log('Hello')
             this.setState({
-                warehouseList: response.data
+                warehouse: response.data
             })
         })
     )}
@@ -26,13 +32,31 @@ class App extends Component {
         this.displayWarehouseList()
     }
 
-    
-    render() {
 
-        const { warehouseList } = this.state
+    render() {
+        const { warehouse } = this.state
+        
         return (
-            <Warehouse warehouses={warehouseList}/>
-        )
+        <div className="instock">
+            <Switch>
+                <Route
+                    path="/warehouse"
+                    render={() => (
+                        <Warehouse warehouses={warehouse}/>
+                    )}
+                />
+                <Route
+                    path="/warehouse/:id"
+                    render={() => (
+                    <WarehouseDetails
+                        warehouseItems={this.state.inventory}
+                        WarehouseInfo={this.state.warehouse}
+                    />
+                    )}
+                />
+            </Switch>
+          </div>
+        );
     }
 }
 
