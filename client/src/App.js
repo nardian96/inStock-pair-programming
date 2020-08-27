@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Warehouse from './components/WarehouseList/Warehouse'
 import Axios from 'axios'
+import './Sass/App.css'
 
 const warehouseApi = 'http://localhost:8080/warehouse';
 
@@ -20,9 +21,6 @@ class App extends Component {
         })
     )}
 
-    componentDidMount() {
-        this.displayWarehouseList()
-    }
     
     render() {
 
@@ -32,7 +30,6 @@ class App extends Component {
             <Warehouse warehouses={warehouseList}/>
         )
     }
-
 }
 
-export default App;
+export default App

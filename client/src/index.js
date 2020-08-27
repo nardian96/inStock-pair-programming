@@ -1,8 +1,8 @@
+import Header from "./Header";
+import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
-import App from './App';
-import "./index.css";
-
+// import "./index.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +13,8 @@ import {
 // ####COMPONENTS TO BE ADDED FOR ROUTES####
 ReactDOM.render(
   <React.StrictMode>
+    {/* <Header /> */}
+    {/* <App /> */}
     <Router>
       {/* <Header /> ###HEADER TO BE ADDED### */}
       <Redirect from="/" to="/Warehouse" />

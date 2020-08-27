@@ -7,6 +7,7 @@ const warehouseFile = path.join(__dirname, "../data/warehouses.json");
 
 
 // Warehouse Object Constructor
+
 function Warehouse(
   name,
   streetAddress,
@@ -28,6 +29,20 @@ function Warehouse(
   this.contactEmail = contactEmail;
   this.inventory = [];
 }
+
+// function Warehouse(name, address, city, country, contact, contactName, contactPosition, contactPhone, contactEmail) {
+//   this.id = uuidv4();
+//   this.name = name;
+//   this.streetAddress = address;
+//   this.city = city;
+//   this.country = country;
+//   this.contactName = contactName;
+//   this.contactPosition = contactPosition;
+//   this.contactPhone = contactPhone;
+//   this.contactEmail = contactEmail;
+//   this.inventory = [];
+//   this.contact = contact;
+// }
 
 // function to load warehouse data
 function loadWarehouseData(callback) {
