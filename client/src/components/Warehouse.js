@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Inventory() {
+function Warehouse() {
   return <div></div>;
 }
 
-export default Inventory;
+export default Warehouse;

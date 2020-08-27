@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Warehouse from './components/WHInventoryList/WHIventoryListContainer';
-import Inventory from './components/Inventory';
-import { API_Key } from './';
+import axios from 'axios';
+import InventoryList from './components/InventoryList';
 import './Sass/Apps.css';
+
+const axiosURL = 'http://localhost:5000/inventories';
 
 class App extends Component {
   state = {
@@ -10,9 +11,15 @@ class App extends Component {
     activeInventoryObj: {},
   };
 
+  getactiveInventoryObj() {
+    axios.get(`axiosURL`).then((response) => {
+      console.log(response);
+      this.setState({ activeInventoryObj: response.data });
+    });
+  }
+
   componentDidMount() {
-    this.getactiveInventoryObj('');
-    this.getInventoryArrData();
+    this.getactiveInventoryObj();
   }
 
   componentDidUpdate(_prevProps, prevState) {
@@ -32,8 +39,7 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Warehouse />
-        <Inventory />
+        <InventoryList InventoryList={this.state.activeInventoryObj} />
       </div>
     );
   }
