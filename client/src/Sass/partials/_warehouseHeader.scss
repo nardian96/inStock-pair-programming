@@ -1,4 +1,5 @@
 .warehouse-header {
+  @include display-flex(row, space-between, center);
   &__header-left {
   }
   &__warehouse-name {
@@ -8,7 +9,16 @@
   &__header-right {
   }
   &__edit-button {
+    background: #2e66e6;
+    border-radius: 20px;
+    width: 36px;
+    height: 36px;
+    margin-right: $padding__base * 3;
   }
   &__edit-icon {
+  }
+  svg {
+    color: $color-primary__white;
+    fill: $color-primary__white;
   }
 }

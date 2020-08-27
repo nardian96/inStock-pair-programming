@@ -1,6 +1,10 @@
 //global body
 body {
   font-family: "titilliumWeb";
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: $color-background__light-grey;
 }
 
 // global fonts h1, h2, h3, h4, p
