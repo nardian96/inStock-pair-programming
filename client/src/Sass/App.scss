@@ -6,4 +6,11 @@
 @import "./partials/warehouseHeader";
 @import "./partials/warehouseInfo";
 @import "./partials/warehouseItem";
+@import "./partials/utilities";
+@import "./partials/header";
 @import "./partials/global";
+
+@import "./partials/components/inventory"; //global body
+body {
+  font-family: "titilliumWeb";
+}
