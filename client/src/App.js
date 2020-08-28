@@ -27,6 +27,7 @@ export default class App extends Component {
   };
   displayInventoryList = () => {
     return axios.get(inventoryApi).then((response) => {
+      console.log(response.data);
       this.setState({
         inventory: response.data,
       });
@@ -34,27 +35,23 @@ export default class App extends Component {
   };
 
   render() {
-    if (!this.props.match) {
-      return <p>loading</p>;
-    } else if (this.props.match.path === "/warehouse") {
-      console.log(this.props.match);
-      const warehouseId = "2922c286-16cd-4d43-ab98-c79f698aeab0";
-      // const warehouseId = this.props.match.params.id;
-      console.log(this.props.match.id);
-      const warehouse = this.state.warehouse.filter(
-        (place) => place.id === warehouseId
-      );
-      const warehouseInventory = this.state.inventory.filter(
-        (place) => place.warehouseID === warehouseId
-      );
-      return (
-        <div className="instock">
-          <WarehouseDetails
-            warehouseItems={warehouseInventory}
-            warehouseInfo={warehouse}
+    return (
+      <div className="instock">
+        <Switch>
+          <Route
+            path="/warehouse/:warehouseId"
+            render={(props) => (
+              <>
+                <WarehouseDetails
+                  warehouseItems={this.state.inventory}
+                  warehouseInfo={this.state.warehouse}
+                  {...props}
+                />
+              </>
+            )}
           />
-        </div>
-      );
-    }
+        </Switch>
+      </div>
+    );
   }
 }

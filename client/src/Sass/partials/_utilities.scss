@@ -1,0 +1,15 @@
+.container {
+  max-width: 90rem;
+  margin: 0 auto;
+}
+
+//Flex wrapper utility for use through out the project
+.flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+//Setting the box sizing for all objects on the Website
+* {
+  box-sizing: border-box;
+  border: 1px dashed grey;
+}

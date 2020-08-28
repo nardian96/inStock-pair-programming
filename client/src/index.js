@@ -1,8 +1,9 @@
-// import Header from "./Header";
-import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from ".";
+import Header from "./components/Header";
+import NotFound from "./components/NotFound";
+
+import App from "./App";
 // import "./index.css";
 import {
   BrowserRouter as Router,
@@ -14,16 +15,18 @@ import {
 // ####COMPONENTS TO BE ADDED FOR ROUTES####
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Header /> */}
-    {/* <App /> */}
+    {/* <Header />
+    <App /> */}
     <Router>
       {/* <Header /> ###HEADER TO BE ADDED### */}
-      <Redirect from="/" to="/warehouse" />
+      <Header />
+      {/* <Redirect from="/" to="/warehouse" /> */}
       <Switch>
         <Route path="/warehouse" component={App} exact />
-        <Route path="/warehouse/:warehouseId" component={App} exact />
+        <Route path="/warehouse/:warehouseId" component={App} />
         <Route path="/Inventory" component={App} exact />
         <Route path="/Inventory/:inventoryId" component={App} exact />
+        <Route path="/*" component={NotFound} />
       </Switch>
     </Router>
   </React.StrictMode>,

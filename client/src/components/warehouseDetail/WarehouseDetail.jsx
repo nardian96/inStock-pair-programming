@@ -1,22 +1,29 @@
-import React from "react";
+import React, { Component } from "react";
 import WarehouseItem from "./WarehouseItem.jsx";
 import WarehouseHeader from "./WarehouseHeader.jsx";
 import WarehouseInfo from "./WarehouseInfo.jsx";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 
-function WarehouseDetail({ warehouseItems, warehouseInfo }) {
-  const warehouseList = warehouseItems.map((item, index) => {
+function WarehouseDetail(props) {
+  const { warehouseItems, warehouseInfo } = props;
+  const warehouseId = props.match.params.warehouseId;
+  const warehouseInventory = warehouseItems.filter(
+    (place) => place.warehouseID === warehouseId
+  );
+  const warehouseList = warehouseInventory.map((item, index) => {
     return <WarehouseItem key={index} item={item} />;
   });
-
-  if (!warehouseInfo[0]) {
-    return <p>loading</p>;
+  const warehouseDetails = warehouseInfo.filter(
+    (place) => place.id === warehouseId
+  );
+  if (!warehouseDetails[0]) {
+    return <p>loading here</p>;
   }
   return (
     <div className="warehouse-detail">
       <div className="warehouse-detail__container">
-        <WarehouseHeader warehouseName={warehouseInfo[0].name} />
-        <WarehouseInfo warehouseInfo={warehouseInfo[0]} />
+        <WarehouseHeader warehouseName={warehouseDetails[0].name} />
+        <WarehouseInfo warehouseInfo={warehouseDetails[0]} />
         <div className="warehouse-detail__label">
           <h4 className="warehouse-detail__label-item">
             INVENTORY ITEM <img src={sortIcon} alt="" />
@@ -40,5 +47,4 @@ function WarehouseDetail({ warehouseItems, warehouseInfo }) {
     </div>
   );
 }
-
 export default WarehouseDetail;

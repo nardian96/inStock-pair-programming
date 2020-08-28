@@ -4,22 +4,25 @@ const warehouse = require("../models/warehouseModel");
 //get list of warehouses
 function getWarehouse(req, res) {
   res.json(warehouse.warehouseList());
-  // warehouse.loadWarehouseData((warehouses) => {
-  // const warehouseList = warehouses.map((warehouseItem) => {
-  //     return {
-  //         id: warehouseItem.id,
-  //         name: warehouseItem.name,
-  //         address: warehouseItem.address,
-  //         city: warehouseItem.city,
-  //         country: warehouseItem.country,
-  //         contactName: warehouseItem.contact.name,
-  //         contactPhone: warehouseItem.contact.phone,
-  //         contactEmail: warehouseItem.contact.email,
-  //     }
-  // })
-  // res.json(warehouseList);
-  // })
+}
+
+function deleteWarehouse(req, res) {
+  res.json(warehouse.removeWarehouse(req.params.id));
+}
+
+function editWarehouse(req, res) {
+  res.json(warehouse.updateWarehouse(req.params.id, req.body));
+}
+// get Video by id
+function getWarehouseByID(req, res) {
+  console.log(req.params);
+  res.json(videos.getByID(req.params.id));
 }
 
 // export functions
-module.exports = { getWarehouse };
+module.exports = {
+  getWarehouse,
+  deleteWarehouse,
+  editWarehouse,
+  getWarehouseByID,
+};

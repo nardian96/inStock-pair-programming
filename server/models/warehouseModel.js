@@ -5,55 +5,71 @@ const { v4: uuidv4 } = require("uuid");
 // json data to read and write
 const warehouseFile = path.join(__dirname, "../data/warehouses.json");
 
-
 // Warehouse Object Constructor
 
 function Warehouse(
   name,
-  streetAddress,
+  address,
   city,
   country,
   contactName,
-  contactPosistion,
+  contactPosition,
   contactPhone,
   contactEmail
 ) {
   this.id = uuidv4();
   this.name = name;
-  this.streetAddress = streetAddress;
+  this.address = address;
   this.city = city;
   this.country = country;
-  this.contactName = contactName;
-  this.contactPosistion = contactPosistion;
-  this.contactPhone = contactPhone;
-  this.contactEmail = contactEmail;
-  this.inventory = [];
+  this.contact = {
+    name: contactName,
+    position: contactPosition,
+    phone: contactPhone,
+    email: contactEmail,
+  };
 }
 
-// function Warehouse(name, address, city, country, contact, contactName, contactPosition, contactPhone, contactEmail) {
-//   this.id = uuidv4();
-//   this.name = name;
-//   this.streetAddress = address;
-//   this.city = city;
-//   this.country = country;
-//   this.contactName = contactName;
-//   this.contactPosition = contactPosition;
-//   this.contactPhone = contactPhone;
-//   this.contactEmail = contactEmail;
-//   this.inventory = [];
-//   this.contact = contact;
-// }
-
 // function to load warehouse data
-function warehouseList(callback) {
-  const data = fs.readFileSync(warehouseFile)
-  return JSON.parse(data)
-  // fs.readFile(warehouseFile, (err, data) => {
-  //   if (err) throw err;
-  //   const warehouses = JSON.parse(data);
-  //   callback(warehouses)
-  // })
+function warehouseList() {
+  const data = fs.readFileSync(warehouseFile);
+  return JSON.parse(data);
+}
+// delete warehouse by id
+function removeWarehouse(id) {
+  const warehouseArray = warehouselist();
+  const warehouseIndex = warehouseArray.findIndex(
+    (warehouse) => warehouse.id === id
+  );
+  warehouseArray.splice(warehouseIndex, 1);
+  fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArray));
+  return warehouseArray;
+}
+function getByID(id) {
+  const warehouseArray = fullList();
+  return warehouseArray.filter((warehouse) => warehouse.id === id).shift();
+}
+
+// update warehouse by id
+function editWarehouse(id, data) {
+  const updatedWarehouse = {
+    name: data.name,
+    address: data.address,
+    city: data.city,
+    country: data.country,
+    contact: {
+      name: data.contactName,
+      position: data.contactPosition,
+      phone: data.contactPhone,
+      email: data.contactEmail,
+    },
+  };
+  const warehouseArray = warehouselist();
+  const warehouseIndex = warehouseArray.findIndex((video) => video.id === id);
+  warehouseArray.splice(warehouseIndex, 1, updatedWarehouse);
+  fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArray));
+  return warehouseArray;
 }
 
 //export multiple functions
-module.exports = { warehouseList }
+module.exports = { warehouseList, removeWarehouse, editWarehouse };
