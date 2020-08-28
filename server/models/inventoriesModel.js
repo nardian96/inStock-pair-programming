@@ -24,11 +24,6 @@ function Inventory(
 function inventoriesList(callback) {
   const data = fs.readFileSync(inventoriesFile);
   return JSON.parse(data);
-  // fs.readFile(warehouseFile, (err, data) => {
-  //   if (err) throw err;
-  //   const warehouses = JSON.parse(data);
-  //   callback(warehouses)
-  // })
 }
 
-modules.export = { inventoriesList };
+module.exports = { inventoriesList };

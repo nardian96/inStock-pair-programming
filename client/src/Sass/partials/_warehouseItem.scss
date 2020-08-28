@@ -46,7 +46,7 @@
     flex-grow: 1;
     @include tablet {
       @include display-flex(row, left, center);
-      width: 44.03%;
+      width: 46%; //44.03%;;
       flex-grow: 0;
     }
   }

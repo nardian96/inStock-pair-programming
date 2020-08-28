@@ -2,6 +2,7 @@
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom";
+import Header from ".";
 // import "./index.css";
 import {
   BrowserRouter as Router,
@@ -17,10 +18,10 @@ ReactDOM.render(
     {/* <App /> */}
     <Router>
       {/* <Header /> ###HEADER TO BE ADDED### */}
-      <Redirect from="/" to="/Warehouse" />
+      <Redirect from="/" to="/warehouse" />
       <Switch>
-        <Route path="/Warehouse" component={App} exact />
-        <Route path="/Warehouse/:warehouseId" component={App} exact />
+        <Route path="/warehouse" component={App} exact />
+        <Route path="/warehouse/:warehouseId" component={App} exact />
         <Route path="/Inventory" component={App} exact />
         <Route path="/Inventory/:inventoryId" component={App} exact />
       </Switch>

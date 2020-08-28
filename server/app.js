@@ -14,9 +14,8 @@ app.use(express.static("public"));
 
 // Warehouse, inventory endpoint, setup using express.Router()
 app.use("/warehouse", warehouseRoute);
-app.use("/invertory", inventoriesRoute);
+app.use("/inventory", inventoriesRoute);
 app.use("/products", productsRoute);
-// app.use("/inventories", inventoriesRoute);
 
 // listen, start the application
 app.listen(PORT, () => console.log(`listening at: ${BACKEND_URL}:${PORT}`));

@@ -15,4 +15,4 @@ function productsList(callback) {
   // })
 }
 
-modules.export = { productsList };
+module.exports = { productsList };

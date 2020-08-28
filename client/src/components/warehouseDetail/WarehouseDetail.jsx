@@ -9,7 +9,7 @@ function WarehouseDetail({ warehouseItems, warehouseInfo }) {
     return <WarehouseItem key={index} item={item} />;
   });
 
-  if (!warehouseInfo) {
+  if (!warehouseInfo[0]) {
     return <p>loading</p>;
   }
   return (
