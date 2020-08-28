@@ -7,17 +7,13 @@ const warehouseFile = path.join(__dirname, "../data/warehouses.json");
 
 
 // Warehouse Object Constructor
-function Warehouse(name, address, city, country, contactName, contactPhone, contactEmail) {
+function Warehouse(name, address, city, country, contact) {
   this.id = uuidv4();
   this.name = name;
   this.address = address;
   this.city = city;
   this.country = country;
-  this.contact = function () {
-    this.contactName = contactName,
-    this.contactPhone = contactPhone,
-    this.contactEmail = contactEmail
-  }
+  this.contact = contact;
 }
 
 const list = JSON.parse(fs.readFileSync('./data/warehouses.json'))
@@ -25,7 +21,7 @@ const list = JSON.parse(fs.readFileSync('./data/warehouses.json'))
 //function to post warehouse data
 function addWarehouse(data) {
   const warehouseArray = list;
-  const newWarehouse = new Warehouse(data.name, data.address, data.city, data.country, data.contactName, data.contactPhone, data.contactEmail)
+  const newWarehouse = new Warehouse(data.name, data.address, data.city, data.country, data.contact)
   pushNewWarehouse = (newWarehouse) => {
     return {
       id: newWarehouse.id,
