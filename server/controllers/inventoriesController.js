@@ -1,7 +1,7 @@
 // load models
 const inventories = require("../models/inventoriesModel");
 
-function getInventories(_req, res) {
+function getInventories(req, res) {
   res.json(inventories.inventoryList());
 }
 

@@ -8,7 +8,7 @@ import Inventory from "./components/Inventory";
 // import WarehouseInfo from "./components/WarehouseInfo/";
 
   
-const warehouseApi = 'http://localhost:8080/warehouse';
+const warehouseApi = "http://localhost:8080/warehouse";
 const inventoryApi = "http://localhost:8080/inventory";
 
 
