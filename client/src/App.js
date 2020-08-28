@@ -9,66 +9,64 @@ import Inventory from "./components/Inventory";
 
   
 const warehouseApi = "http://localhost:8080/warehouse";
-const inventoryApi = "http://localhost:8080/inventory";
+const inventoryApi = "http://localhost:8080/inventories";
 
 
 export default class App extends Component {
-    
-    state = {
-        inventory: [],
-        warehouse: []
-    }
 
-    displayWarehouseList = () => {
-        return axios.get(warehouseApi).then((response) => {
-        this.setState({
-            warehouse: response.data,
-            });
-        });
-    };
-    displayInventoryList = () => {
-        return axios.get(inventoryApi).then((response) => {
-          console.log(response.data);
-          this.setState({
-            inventory: response.data,
-            });
-        });
-    };
+  state = {
+    inventory: [],
+    warehouse: [],
+  };
+  componentDidMount() {
+    this.displayWarehouseList();
+    this.displayInventoryList();
+  }
+  displayWarehouseList = () => {
+    return axios.get(warehouseApi).then((response) => {
+      console.log(response.data);
+      this.setState({
+        warehouse: response.data,
+      });
+    });
+  };
+  displayInventoryList = () => {
+    return axios.get(inventoryApi).then((response) => {
+      console.log(response.data);
+      this.setState({
+        inventory: response.data,
+      });
+    });
+  };
 
-    componentDidMount() {
-        this.displayWarehouseList();
-        this.displayInventoryList();
-    };
-
-    render() {
-
-        return (
-            <div className="instock">
-                <Switch>
-                    <Route
-                        path="/warehouse"
-                        render={() => (
-                            <Warehouse warehouses={this.state.warehouse}/>
-                        )}/>
-                    <Route
-                        path="/warehouse/:warehouseId"
-                        render={(props) => (
-                            <>
-                                <WarehouseDetails
-                                warehouseItems={this.state.inventory}
-                                warehouseInfo={this.state.warehouse}
-                                {...props}
-                                />
-                            </>
-                        )}
-                    />
-                    <Route
-                        path="/Inventory"
-                        render={() => <Inventory inventories={this.state.inventory} />}
-                    />
-                </Switch>
-            </div>
-        );
-    }    
+  render() {
+    return (
+      <div className="instock">
+        <Switch>
+         <Route
+            path="/warehouse"
+            render={() => (
+            <Warehouse warehouses={this.state.warehouse}/>
+          )}/>
+          <Route
+            path="/warehouse/:warehouseId"
+            render={(props) => (
+              <>
+                <WarehouseDetails
+                  warehouseItems={this.state.inventory}
+                  warehouseInfo={this.state.warehouse}
+                  {...props}
+                />
+              </>
+            )}
+          />
+          <Route
+            path="/Inventories"
+            render={() => <Inventory inventories={this.state.inventory} />}
+          ></Route>
+        </Switch>
+      </div>
+    );
+  }
 }
 
