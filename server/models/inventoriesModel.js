@@ -22,9 +22,9 @@ function Inventory(
   this.quantity = 0;
 }
 
-function inventoryList() {
+function inventoriesList() {
   const data = fs.readFileSync(inventoriesFile);
   return JSON.parse(data);
 }
 
-module.exports = { inventoryList };
+module.exports = { inventoriesList };

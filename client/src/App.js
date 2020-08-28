@@ -8,7 +8,7 @@ import Inventory from "./components/Inventory";
 // import WarehouseInfo from "./components/WarehouseInfo/";
 
 const warehouseApi = "http://localhost:8080/warehouse";
-const inventoryApi = "http://localhost:8080/inventory";
+const inventoryApi = "http://localhost:8080/inventories";
 
 export default class App extends Component {
   state = {
@@ -53,7 +53,7 @@ export default class App extends Component {
             )}
           />
           <Route
-            path="/Inventory"
+            path="/Inventories"
             render={() => <Inventory inventories={this.state.inventory} />}
           ></Route>
         </Switch>
