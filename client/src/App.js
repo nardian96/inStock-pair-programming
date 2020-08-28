@@ -10,7 +10,7 @@ import './Sass/App.css'
 const warehouseApi = 'http://localhost:8080/warehouse';
 
 
-class App extends Component {
+export default class App extends Component {
     
     state = {
         inventory: [],
@@ -28,8 +28,7 @@ class App extends Component {
 
     componentDidMount() {
         this.displayWarehouseList();
-    }
-    }
+    };
 
     render() {
         if (!this.props.match) {
@@ -48,22 +47,18 @@ class App extends Component {
         );
         const warehouseInventory = this.state.inventory.filter(
             (place) => place.warehouseID === warehouseId
+        )};
+
+        return (
+            <div className="instock">
+                <Switch>
+                    <Route
+                        path="/warehouse"
+                        render={() => (
+                            <Warehouse warehouses={this.state.warehouse}/>
+                        )}/>
+                </Switch>
+            </div>
         );
-    }
-
-    return (
-        <div className="instock">
-            <Switch>
-                <Route
-                    path="/warehouse"
-                    render={() => (
-                        <Warehouse warehouses={warehouse}/>
-                    )}/>
-            </Switch>
-        </div>
-    );
+    }    
 }
-
-export default App
-
- 

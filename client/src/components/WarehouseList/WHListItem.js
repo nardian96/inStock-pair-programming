@@ -5,7 +5,6 @@ import detailIcon from '../../assets/Icons/chevron_right-24px.svg';
 // import { Link } from 'react-router-dom'
 
 function WHListItem(props) {
-<<<<<<< HEAD
     return (
         <>
         <li className="list">
@@ -40,45 +39,6 @@ function WHListItem(props) {
         </li>
         </>
     )
-=======
-  return (
-    <>
-      <li className='list'>
-        <div className='list__subcontainer'>
-          <div className='list__warehouse'>
-            <h4>WAREHOUSE</h4>
-            <h3>
-              {props.warehouseItem.name}
-              <img src={detailIcon} />
-            </h3>
-          </div>
-          <div className='list__contact-name'>
-            <h4>CONTACT NAME</h4>
-            <p>{props.warehouseItem.contact.name}</p>
-          </div>
-        </div>
-        <div className='list__subcontainer'>
-          <div className='list__address'>
-            <h4>ADDRESS</h4>
-            <p>
-              {props.warehouseItem.address}, {props.warehouseItem.city},{' '}
-              {props.warehouseItem.country}
-            </p>
-          </div>
-          <div className='list__contact-info'>
-            <h4>CONTACT INFORMATION</h4>
-            <p>{props.warehouseItem.contact.phone}</p>
-            <p>{props.warehouseItem.contact.email}</p>
-          </div>
-        </div>
-        <div className='list__icons'>
-          <img src={deleteIcon} />
-          <img src={editIcon} />
-        </div>
-      </li>
-    </>
-  );
->>>>>>> master
 }
 
 export default WHListItem;

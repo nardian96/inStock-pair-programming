@@ -2,22 +2,28 @@
 
 .warehouse {
     &__list {
-        min-width: 18rem;
-        z-index: 99;
-        background-color: $color-primary__white;
+        display: flex;
+        flex-direction: column;
+        height: 64px;
+        // justify-content: normal;
+        // align-items: center;
+        background-color: $color-background__graphite;
         box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-        position: absolute;
     }
 
     &__list-header {
+        background-color: $color-primary__white;
         padding: 1rem 1.5rem;
         display: flex;
         flex-direction: column;
         border-bottom: 1px solid $color-secondary__cloud;
+        margin: 0 1rem;
     }
     &__list-container {
+        background-color: $color-primary__white;
         list-style-type: none;
         padding: 0;
+        margin: 0 1rem;
     }
 }
 
@@ -159,6 +165,7 @@
     .warehouse {
         &__list {
             min-width: 44rem;
+            height: 93px;
         }
         &__list-header {
             flex-direction: row;
@@ -197,14 +204,12 @@
     }
     .list {
         flex-direction: row;
-        justify-content: space-between;
         padding: 0 1.5rem 1.25rem;
         h4 {
             display: none;
         }
         &__main-header {
             display: flex;
-            justify-content: space-between;
             padding: 0 1.5rem;
             h4 {
                 font-size: 0.75rem;
