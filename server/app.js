@@ -4,8 +4,9 @@ const cors = require("cors");
 require("dotenv").config();
 const { PORT, BACKEND_URL } = process.env;
 
-const inventoriesRoute = require("./routes/inventoriesRoute");
 const warehouseRoute = require("./routes/warehouseRoute");
+const productsRoute = require("./routes/productsRoute");
+const inventoriesRoute = require("./routes/inventoriesRoute");
 
 // add middleware to help work with req.body
 app.use(express.json());

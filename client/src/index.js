@@ -18,8 +18,8 @@ ReactDOM.render(
       <Header />
       {/* <Redirect from="/" to="/Warehouse" /> */}
       <Switch>
-        <Route path="/Warehouse" component={App} exact />
-        <Route path="/Warehouse/:warehouseId" component={App} exact />
+        <Route path="/warehouse" component={App} exact />
+        <Route path="/warehouse/:warehouseId" component={App} />
         <Route path="/Inventory" component={App} exact />
         <Route path="/Inventory/:inventoryId" component={App} exact />
         <Route path="/*" component={NotFound} />
