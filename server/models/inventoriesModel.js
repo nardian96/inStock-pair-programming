@@ -21,3 +21,10 @@ function Inventory(
   this.status = "In Stock";
   this.quantity = 0;
 }
+
+function inventoryList() {
+  const data = fs.readFileSync(inventoriesFile);
+  return JSON.parse(data);
+}
+
+module.exports = { inventoryList };

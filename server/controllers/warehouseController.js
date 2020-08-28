@@ -18,6 +18,25 @@ function postWarehouse (req, res) {
     res.json(warehouse.addWarehouse(req.body))
 }
 
+function deleteWarehouse(req, res) {
+  res.json(warehouse.removeWarehouse(req.params.id));
+}
+
+function editWarehouse(req, res) {
+  res.json(warehouse.updateWarehouse(req.params.id, req.body));
+}
+// get Warehouse by id
+function getWarehouseByID(req, res) {
+  console.log(req.params);
+  res.json(warehouse.getByID(req.params.id));
+}
 
 // export functions
-module.exports = { getWarehouse, postWarehouse };
+
+module.exports = {
+  getWarehouse,
+  postWarehouse,
+  deleteWarehouse,
+  editWarehouse,
+  getWarehouseByID,
+};

@@ -3,18 +3,19 @@ import { Switch, Route, Link } from "react-router-dom"
 import Warehouse from './components/WarehouseList/Warehouse'
 import axios from 'axios'
 import './Sass/App.css'
-// import WarehouseDetails from "./components/WarehouseDetail";
-// import WarehouseInfo from "./components/WarehouseInfo";
+import WarehouseDetails from "./components/warehouseDetail/";
+import Inventory from "./components/Inventory";
+// import WarehouseInfo from "./components/WarehouseInfo/";
 
   
 const warehouseApi = 'http://localhost:8080/warehouse';
+const inventoryApi = "http://localhost:8080/inventory";
 
 
 export default class App extends Component {
     
     state = {
         inventory: [],
-        products: [],
         warehouse: []
     }
 
@@ -22,32 +23,24 @@ export default class App extends Component {
         return axios.get(warehouseApi).then((response) => {
         this.setState({
             warehouse: response.data,
+            });
         });
+    };
+    displayInventoryList = () => {
+        return axios.get(inventoryApi).then((response) => {
+          console.log(response.data);
+          this.setState({
+            inventory: response.data,
+            });
         });
     };
 
     componentDidMount() {
         this.displayWarehouseList();
+        this.displayInventoryList();
     };
 
     render() {
-        if (!this.props.match) {
-        return <p></p>;
-        }
-
-        if (
-        this.props.match.path === `/Warehouse`
-        // ${this.props.match.params.id}
-        ) {
-        const warehouseId = "2922c286-16cd-4d43-ab98-c79f698aeab0";
-        // const warehouseId = this.props.match.params.id;
-        console.log(this.props.match);
-        const warehouse = this.state.warehouse.filter(
-            (place) => place.id === warehouseId
-        );
-        const warehouseInventory = this.state.inventory.filter(
-            (place) => place.warehouseID === warehouseId
-        )};
 
         return (
             <div className="instock">
@@ -57,8 +50,25 @@ export default class App extends Component {
                         render={() => (
                             <Warehouse warehouses={this.state.warehouse}/>
                         )}/>
+                    <Route
+                        path="/warehouse/:warehouseId"
+                        render={(props) => (
+                            <>
+                                <WarehouseDetails
+                                warehouseItems={this.state.inventory}
+                                warehouseInfo={this.state.warehouse}
+                                {...props}
+                                />
+                            </>
+                        )}
+                    />
+                    <Route
+                        path="/Inventory"
+                        render={() => <Inventory inventories={this.state.inventory} />}
+                    />
                 </Switch>
             </div>
         );
     }    
 }
+

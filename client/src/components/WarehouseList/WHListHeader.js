@@ -1,5 +1,5 @@
-import React from 'react';
-import searchIcon from '../../assets/Icons/search-24px.svg'
+import React from "react";
+import searchIcon from "../../assets/Icons/search-24px.svg";
 
 function WHListHeader() {
     return (

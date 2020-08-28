@@ -1,7 +1,7 @@
-import React from 'react';
-import deleteIcon from '../../assets/Icons/delete_outline-24px.svg';
-import editIcon from '../../assets/Icons/edit-24px.svg';
-import detailIcon from '../../assets/Icons/chevron_right-24px.svg';
+import React from "react";
+import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
+import editIcon from "../../assets/Icons/edit-24px.svg";
+import detailIcon from "../../assets/Icons/chevron_right-24px.svg";
 // import { Link } from 'react-router-dom'
 
 function WHListItem(props) {
@@ -24,7 +24,8 @@ function WHListItem(props) {
             <div className="list__subcontainer">
                 <div className="list__address">
                     <h4>ADDRESS</h4>
-                    <p>{props.warehouseItem.address}, {props.warehouseItem.city}, {props.warehouseItem.country}</p>
+    <p>{props.warehouseItem.address}, {props.warehouseItem.city}, {" "}
+      {props.warehouseItem.country}</p>
                 </div>
                 <div className="list__contact-info">
                     <h4>CONTACT INFORMATION</h4>
