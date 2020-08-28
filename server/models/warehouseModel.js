@@ -7,53 +7,45 @@ const warehouseFile = path.join(__dirname, "../data/warehouses.json");
 
 
 // Warehouse Object Constructor
-
-function Warehouse(
-  name,
-  streetAddress,
-  city,
-  country,
-  contactName,
-  contactPosistion,
-  contactPhone,
-  contactEmail
-) {
+function Warehouse(name, address, city, country, contactName, contactPhone, contactEmail) {
   this.id = uuidv4();
   this.name = name;
-  this.streetAddress = streetAddress;
+  this.address = address;
   this.city = city;
   this.country = country;
-  this.contactName = contactName;
-  this.contactPosistion = contactPosistion;
-  this.contactPhone = contactPhone;
-  this.contactEmail = contactEmail;
-  this.inventory = [];
+  this.contact = function () {
+    this.contactName = contactName,
+    this.contactPhone = contactPhone,
+    this.contactEmail = contactEmail
+  }
 }
 
-// function Warehouse(name, address, city, country, contact, contactName, contactPosition, contactPhone, contactEmail) {
-//   this.id = uuidv4();
-//   this.name = name;
-//   this.streetAddress = address;
-//   this.city = city;
-//   this.country = country;
-//   this.contactName = contactName;
-//   this.contactPosition = contactPosition;
-//   this.contactPhone = contactPhone;
-//   this.contactEmail = contactEmail;
-//   this.inventory = [];
-//   this.contact = contact;
-// }
+const list = JSON.parse(fs.readFileSync('./data/warehouses.json'))
+
+//function to post warehouse data
+function addWarehouse(data) {
+  const warehouseArray = list;
+  const newWarehouse = new Warehouse(data.name, data.address, data.city, data.country, data.contactName, data.contactPhone, data.contactEmail)
+  pushNewWarehouse = (newWarehouse) => {
+    return {
+      id: newWarehouse.id,
+      name: newWarehouse.name,
+      address: newWarehouse.address,
+      city: newWarehouse.city,
+      country: newWarehouse.country,
+      contact: newWarehouse.contact
+    }
+  }
+  warehouseArray.push(pushNewWarehouse(newWarehouse));
+  fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArray));
+  return warehouseArray;
+}
 
 // function to load warehouse data
 function warehouseList(callback) {
   const data = fs.readFileSync(warehouseFile)
   return JSON.parse(data)
-  // fs.readFile(warehouseFile, (err, data) => {
-  //   if (err) throw err;
-  //   const warehouses = JSON.parse(data);
-  //   callback(warehouses)
-  // })
 }
 
 //export multiple functions
-module.exports = { warehouseList }
+module.exports = { addWarehouse, warehouseList }

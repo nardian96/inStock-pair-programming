@@ -4,23 +4,20 @@ const warehouse = require("../models/warehouseModel");
 //get list of warehouses
 function getWarehouse (req, res) {
     res.json(warehouse.warehouseList())
-    // warehouse.loadWarehouseData((warehouses) => {
-        // const warehouseList = warehouses.map((warehouseItem) => {
-        //     return {
-        //         id: warehouseItem.id, 
-        //         name: warehouseItem.name,
-        //         address: warehouseItem.address, 
-        //         city: warehouseItem.city, 
-        //         country: warehouseItem.country,
-        //         contactName: warehouseItem.contact.name,
-        //         contactPhone: warehouseItem.contact.phone,
-        //         contactEmail: warehouseItem.contact.email,
-        //     }
-        // })
-    // res.json(warehouseList);    
-    // })
+}
+
+//post new warehouse
+function postWarehouse (req, res) {
+    if (!req.body.name || !req.body.address || !req.body.city || !req.body.country 
+        || !req.body.contact.name || !req.body.contact.phone || !req.body.contact.email) {
+        res.status(400).json({
+            error: 'POST body must contain all requiredProperties',
+            requiredProperties: ['name', 'address', 'city', 'country','contactName', 'contactPhone', 'contactEmail']
+        });
+    }
+    res.json(warehouse.addWarehouse(req.body))
 }
 
 
 // export functions
-module.exports = { getWarehouse };
+module.exports = { getWarehouse, postWarehouse };
