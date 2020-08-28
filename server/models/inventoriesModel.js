@@ -11,15 +11,18 @@ function Inventory(
   warehouseName,
   itemName,
   description,
-  category
+  category,
+  status,
+  quantity
 ) {
+  this.id = uuidv4();
   this.warehouseId = warehouseId;
   this.warehouseName = warehouseName;
   this.itemName = itemName;
   this.description = description;
   this.category = category;
-  this.status = "In Stock";
-  this.quantity = 0;
+  this.status = status;
+  this.quantity = quantity;
 }
 
 function inventoriesList() {
@@ -27,4 +30,21 @@ function inventoriesList() {
   return JSON.parse(data);
 }
 
-module.exports = { inventoriesList };
+// Add inventory to json data
+function add(data) {
+  const inventoryArr = inventoriesList();
+  const newInventory = new Inventory(
+    data.warehouseId,
+    data.warehouseName,
+    data.itemName,
+    data.description,
+    data.category,
+    data.status,
+    data.quantity
+  );
+  inventoryArr.push(newInventory);
+  fs.writeFileSync(inventoriesFile, JSON.stringify(inventoryArr));
+  return newInventory;
+}
+
+module.exports = { inventoriesList, add };
