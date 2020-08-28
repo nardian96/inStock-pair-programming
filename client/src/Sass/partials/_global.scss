@@ -1,15 +1,26 @@
-@import "./partials/variables";
-@import "./partials/fonts";
-@import "./partials/mixins";
-@import "./partials/warehouse-list";
-@import "./partials/warehouseDetail";
-@import "./partials/warehouseHeader";
-@import "./partials/warehouseInfo";
-@import "./partials/warehouseItem";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  box-sizing: border-box;
+}
 
-@import "./partials/components/inventory"; //global body
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+//global body
 body {
   font-family: "titilliumWeb";
+  width: 100%;
+  margin: 0;
+  min-width: 320px;
+
+  box-sizing: border-box;
+  background-color: $color-background__light-grey;
+  color: $color-primary__instock-black;
 }
 
 // global fonts h1, h2, h3, h4, p
@@ -44,6 +55,3 @@ p {
     @include font__p2;
   }
 }
-@import "./partials/utilities";
-@import "./partials/header";
-@import "./partials/global";
