@@ -462,113 +462,6 @@
   width: 15px;
 }
 
-.table__header {
-  display: none;
-}
-
-.table__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-
-.table__item__container {
-  width: 50%;
-  margin-bottom: 20px;
-}
-
-.table__item-label {
-  color: #5c667e;
-  font-weight: bold;
-  font-size: 0.85rem;
-  line-height: 1.23rem;
-}
-
-.table__item-text {
-  font-size: 13px;
-  line-height: 20px;
-  margin-bottom: 20px;
-}
-
-.table__item__icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-}
-
-body {
-  font-family: "titilliumWeb";
-}
-
-h1 {
-  font-size: 2.15rem;
-  line-height: 2.77rem;
-}
-
-@media screen and (min-width: 767px) {
-  h1 {
-    font-size: 2.29rem;
-    line-height: 2.86rem;
-  }
-}
-
-h2 {
-  font-size: 1.54rem;
-  line-height: 2.15rem;
-}
-
-@media screen and (min-width: 767px) {
-  h2 {
-    font-size: 1.71rem;
-    line-height: 2.29rem;
-  }
-}
-
-h3 {
-  font-size: 1rem;
-  line-height: 1.54rem;
-}
-
-@media screen and (min-width: 767px) {
-  h3 {
-    font-size: 1rem;
-    line-height: 1.57rem;
-  }
-}
-
-h4 {
-  font-size: 0.85rem;
-  line-height: 1.23rem;
-}
-
-@media screen and (min-width: 767px) {
-  h4 {
-    font-size: 0.86rem;
-    line-height: 1.29rem;
-  }
-}
-
-p {
-  font-size: 13px;
-  line-height: 1.54rem;
-}
-
-@media screen and (min-width: 767px) {
-  p {
-    font-size: 14px;
-    line-height: 1.57rem;
-  }
-}
-
 .container {
   max-width: 90rem;
   margin: 0 auto;
@@ -585,7 +478,6 @@ p {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px dashed grey;
 }
 
 .header {
@@ -734,5 +626,52 @@ p {
     font-size: 14px;
     line-height: 1.57rem;
   }
+}
+
+.table__header {
+  display: none;
+}
+
+.table__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.table__item__container {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.table__item-label {
+  color: #5c667e;
+  font-weight: bold;
+  font-size: 0.85rem;
+  line-height: 1.23rem;
+}
+
+.table__item-text {
+  font-size: 13px;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.table__item__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+body {
+  font-family: "titilliumWeb";
 }
 /*# sourceMappingURL=App.css.map */

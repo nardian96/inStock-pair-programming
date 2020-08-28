@@ -4,11 +4,10 @@ import Warehouse from "./components/WarehouseList/Warehouse";
 import axios from "axios";
 import "./Sass/App.css";
 import WarehouseDetails from "./components/warehouseDetail/";
+import Inventory from "./components/Inventory";
 // import WarehouseInfo from "./components/WarehouseInfo/";
 
 const warehouseApi = "http://localhost:8080/warehouse";
-
-import Inventory from "./components/Inventory";
 
 //Api variables
 const api_url = "http://localhost:8080/";

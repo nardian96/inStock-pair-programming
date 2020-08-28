@@ -16,7 +16,7 @@ ReactDOM.render(
     <Router>
       {/* <Header /> ###HEADER TO BE ADDED### */}
       <Header />
-      <Redirect from="/" to="/Warehouse" />
+      {/* <Redirect from="/" to="/Warehouse" /> */}
       <Switch>
         <Route path="/Warehouse" component={App} exact />
         <Route path="/Warehouse/:warehouseId" component={App} exact />

@@ -2,14 +2,14 @@ import React from "react";
 import WarehouseItem from "./WarehouseItem.jsx";
 import WarehouseHeader from "./WarehouseHeader.jsx";
 import WarehouseInfo from "./WarehouseInfo.jsx";
-import sortIcon from "../../assets/Icons/sort-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 
 function WarehouseDetail({ warehouseItems, warehouseInfo }) {
   const warehouseList = warehouseItems.map((item, index) => {
     return <WarehouseItem key={index} item={item} />;
   });
 
-  if (!warehouseInfo) {
+  if (warehouseInfo.length === 0) {
     return <p>loading</p>;
   }
   return (
