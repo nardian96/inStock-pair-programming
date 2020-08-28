@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import axios from "axios";
-import "./Sass/Apps.css";
+import "./Sass/App.css";
 import WarehouseDetails from "./components/WarehouseDetail";
 import WarehouseInfo from "./components/WarehouseInfo";
 

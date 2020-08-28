@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Header from "./Header";
 import App from "./App";
-//import App from "./App";
 import {
   BrowserRouter as Router,
   Switch,

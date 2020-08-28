@@ -15,9 +15,8 @@
     }
     &-label {
       color: $color-secondary__slate;
-      font-weight: 600;
-      font-size: 11px;
-      line-height: 16px;
+      font-weight: bold;
+      @include font-mobile__h4;
     }
 
     &-text {

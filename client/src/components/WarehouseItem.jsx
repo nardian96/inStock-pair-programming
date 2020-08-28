@@ -1,6 +1,6 @@
 import React from "react";
-import deleteIcon from "../assets/icons/delete_outline-24px.svg";
-import editIcon from "../assets/icons/edit-24px.svg";
+import deleteIcon from "../assets/Icons/delete_outline-24px.svg";
+import editIcon from "../assets/Icons/edit-24px.svg";
 
 function WarehouseItem(props) {
   return (
