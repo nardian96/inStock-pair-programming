@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 require("dotenv").config();
 const { PORT, BACKEND_URL } = process.env;
+
 const warehouseRoute = require("./routes/warehouseRoute");
 const productsRoute = require("./routes/productsRoute");
 const inventoriesRoute = require("./routes/inventoriesRoute");
@@ -13,9 +14,8 @@ app.use(cors());
 app.use(express.static("public"));
 
 // Warehouse, inventory endpoint, setup using express.Router()
+app.use("/inventories", inventoriesRoute);
 app.use("/warehouse", warehouseRoute);
-app.use("/inventory", inventoriesRoute);
-app.use("/products", productsRoute);
 
 // listen, start the application
 app.listen(PORT, () => console.log(`listening at: ${BACKEND_URL}:${PORT}`));

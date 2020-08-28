@@ -4,6 +4,8 @@ import Warehouse from "./components/WarehouseList/Warehouse";
 import axios from "axios";
 import "./Sass/App.css";
 import WarehouseDetails from "./components/warehouseDetail/";
+import Inventory from "./components/Inventory";
+// import WarehouseInfo from "./components/WarehouseInfo/";
 
 const warehouseApi = "http://localhost:8080/warehouse";
 const inventoryApi = "http://localhost:8080/inventory";
@@ -50,6 +52,10 @@ export default class App extends Component {
               </>
             )}
           />
+          <Route
+            path="/Inventory"
+            render={() => <Inventory inventories={this.state.inventory} />}
+          ></Route>
         </Switch>
       </div>
     );
