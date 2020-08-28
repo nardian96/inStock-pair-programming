@@ -8,7 +8,7 @@ export default function Inventory(props) {
   return (
     <div className="inventory">
       <div className="page-header">
-        <h1>Inventory</h1>
+        <h1 className="page-header__h1">Inventory</h1>
         <input
           className="page-header-search"
           type="text"
@@ -16,7 +16,7 @@ export default function Inventory(props) {
         />
         <button className="page-header-button"> + Add New Item</button>
       </div>
-      <hr />
+      <hr className="inventory--break" />
       <div className="table">
         <div className="table__header">
           <span className="table__header--container">
@@ -50,6 +50,14 @@ export default function Inventory(props) {
           </span>
         </div>
         {props.inventories.map((inventory, index) => {
+          let status = inventory.status.toUpperCase();
+          let statusClass = "";
+          if (status === "IN STOCK") {
+            statusClass = "status-in";
+          } else {
+            statusClass = "status-out";
+          }
+
           return (
             <React.Fragment key={index}>
               <div className="table__item">
@@ -65,7 +73,9 @@ export default function Inventory(props) {
 
                 <div className="table__item__container">
                   <div className="table__item-label">STATUS</div>
-                  <span className="table__item-text">{inventory.status}</span>
+                  <span className={`table__item-text status ${statusClass}`}>
+                    {status}
+                  </span>
                 </div>
 
                 <div className="table__item__container">
@@ -99,7 +109,7 @@ export default function Inventory(props) {
                   />
                 </div>
               </div>
-              <hr />
+              <hr className="inventory--break" />
             </React.Fragment>
           );
         })}
