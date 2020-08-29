@@ -51,7 +51,7 @@ function getByID(id) {
 }
 
 // update warehouse by id
-function editWarehouse(id, data) {
+function updateWarehouse(id, data) {
   const updatedWarehouse = {
     name: data.name,
     address: data.address,
@@ -72,4 +72,4 @@ function editWarehouse(id, data) {
 }
 
 //export multiple functions
-module.exports = { warehouseList, removeWarehouse, editWarehouse };
+module.exports = { warehouseList, removeWarehouse, updateWarehouse, getByID };

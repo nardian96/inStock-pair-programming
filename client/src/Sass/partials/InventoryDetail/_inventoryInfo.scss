@@ -1,0 +1,105 @@
+.inventory-info {
+  border-bottom: 1px solid $color-secondary__cloud;
+  padding-left: $padding__base * 3;
+  padding-right: $padding__base * 3;
+
+  &__label {
+    color: $color-secondary__slate;
+    margin: 0;
+    margin-bottom: $padding__base/2;
+  }
+  p {
+    margin: 0;
+  }
+  @include display-flex(column, left, normal);
+  @include tablet {
+    padding-left: $padding__base * 4;
+    border: none;
+    flex-direction: row;
+  }
+  &__left {
+    @include tablet {
+      width: 50%;
+      border-right: 1px solid $color-secondary__cloud;
+      // height: 66px;
+      flex-grow: 1;
+      padding-right: $padding__base * 3;
+    }
+    @include desktop {
+      width: 410px;
+    }
+  }
+  &__description {
+    margin-bottom: $padding__base * 2;
+    @include tablet {
+      margin-bottom: $padding__base * 4;
+    }
+  }
+  &__category {
+    margin-bottom: $padding__base * 2;
+    @include tablet {
+      margin-bottom: $padding__base * 4;
+    }
+  }
+  &__right {
+    @include tablet {
+      width: 50%;
+    }
+  }
+  &__right-inner {
+    @include display-flex(row, left, center);
+
+    margin-bottom: $padding__base * 2;
+    @include tablet {
+      margin-left: $padding__base * 5;
+      margin-bottom: $padding__base * 4;
+    }
+  }
+  &__status {
+    height: 24px;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: bold;
+    &-container {
+      width: 52.48%;
+
+      @include tablet {
+        // width: 58.71%;
+
+        // flex-grow: 1;
+      }
+    }
+    &--inStock {
+      width: 61px;
+      color: $color-supporting__green;
+      background: rgba(21, 132, 99, 0.07);
+    }
+    &--noStock {
+      width: 86px;
+      color: $color-supporting__red;
+
+      background: rgba(201, 69, 21, 0.07);
+    }
+  }
+  &__quantity-container {
+    flex-grow: 1;
+    width: 140px;
+    margin-right: $padding__base * 2;
+    @include desktop {
+      width: 50p;
+    }
+  }
+
+  &__contact-info-container {
+    flex-grow: 1;
+  }
+  &__bottom {
+    margin-bottom: $padding__base * 3;
+    @include tablet {
+      margin-bottom: $padding__base * 4;
+      margin-left: $padding__base * 5;
+    }
+  }
+  &__warehouse {
+  }
+}

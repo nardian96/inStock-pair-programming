@@ -1,5 +1,6 @@
 // load models
 const warehouse = require("../models/warehouseModel");
+const inventory = require("../models/inventoriesModel");
 
 //get list of warehouses
 function getWarehouse(req, res) {
@@ -16,7 +17,14 @@ function editWarehouse(req, res) {
 // get Video by id
 function getWarehouseByID(req, res) {
   console.log(req.params);
-  res.json(videos.getByID(req.params.id));
+  res.json(warehouse.getByID(req.params.id));
+}
+function getWarehouseInventory(req, res) {
+  console.log(req.params);
+  const warehouseId = warehouse.getByID(req.params.id);
+  res
+    .json(inventory.inventoriesList)
+    .filter((item) => item.warehouseId === warehouseId);
 }
 
 // export functions
@@ -25,4 +33,5 @@ module.exports = {
   deleteWarehouse,
   editWarehouse,
   getWarehouseByID,
+  getWarehouseInventory,
 };
