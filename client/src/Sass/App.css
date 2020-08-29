@@ -504,6 +504,12 @@ p {
   }
 }
 
+@media screen and (min-width: 1280px) {
+  .warehouse__list-container {
+    margin: 0 8.12rem;
+  }
+}
+
 .warehouse__subsection {
   width: 100%;
   padding: 0 1.5rem 1.5rem;
@@ -534,7 +540,7 @@ p {
 .warehouse__header-title {
   font-size: 1.75rem;
   line-height: 2.25rem;
-  margin: 1rem 0;
+  margin: 0.87rem 0 0.5rem;
   font-weight: bold;
 }
 
@@ -624,6 +630,15 @@ p {
   .warehouse__small-button {
     width: 4.5rem;
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .warehouse__form-header {
+    margin: 0 8.12rem;
+  }
+  .warehouse__subsection {
+    padding: 0 2.5rem 1.5rem;
   }
 }
 

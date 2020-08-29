@@ -252,3 +252,12 @@
         }
     }
 }
+
+//Desktop Design 
+@include desktop {
+    .warehouse {
+        &__list-container {
+            margin: 0 8.12rem;
+        }
+    }
+}
