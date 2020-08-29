@@ -53,13 +53,8 @@ function fullList() {
 }
 function getByID(id) {
   const array = fullList();
-  return returnArray.filter((item) => item.id === id).shift();
+  return array.filter((item) => item.id === id).shift();
 }
-// function findWarehouse(id) {
-//   return list.filter((warehouse) => {
-//       return id === warehouse.id
-//   })
-// }
 
 // update warehouse by id
 function updateWarehouse(id, data) {
@@ -71,19 +66,7 @@ function updateWarehouse(id, data) {
     country: data.country,
     contact: data.contact,
   };
-  // const updatedWarehouse = {
-  //   name: data.name,
-  //   address: data.address,
-  //   city: data.city,
-  //   country: data.country,
-  //   contact: {
-  //     name: data.contactName,
-  //     position: data.contactPosition,
-  //     phone: data.contactPhone,
-  //     email: data.contactEmail,
-  //   },
-  // };
-  console.log(id);
+  console.log(id)
   const warehouseArray = warehouseList();
   const warehouseIndex = warehouseArray.findIndex(
     (selectedWarehouse) => selectedWarehouse.id === id
@@ -101,6 +84,7 @@ function warehouseList(callback) {
 }
 //export multiple functions
 module.exports = {
+  addWarehouse,
   warehouseList,
   // removeWarehouse,
   updateWarehouse,

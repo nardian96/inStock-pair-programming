@@ -22,9 +22,28 @@ function Inventory(
   this.quantity = 0;
 }
 
+//get list of inventories
 function inventoriesList() {
   const data = fs.readFileSync(inventoriesFile);
   return JSON.parse(data);
 }
 
-module.exports = { inventoriesList };
+//get single inventory item
+function getSingleInventory(id) {
+  const array = inventoriesList();
+  // console.log(array.filter((item) => item.id === id));
+  return array.filter((item) => item.id === id).shift();
+}
+
+//delete single inventory item
+function deleteInventory(id) {
+  const array = inventoriesList();
+  const inventoryIndex = array.findIndex((selectedInventory) => {return selectedInventory.id === id});
+  delete array[inventoryIndex]
+  const updatedArray = array.filter((item) => item !== null)
+  fs.writeFileSync(inventoriesFile, JSON.stringify(updatedArray));
+  return updatedArray
+}
+
+
+module.exports = { inventoriesList, getSingleInventory, deleteInventory };
