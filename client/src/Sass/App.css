@@ -505,6 +505,7 @@ p {
 }
 
 .warehouse__subsection {
+  width: 100%;
   padding: 0 1.5rem 1.5rem;
 }
 
@@ -516,15 +517,29 @@ p {
   margin: 1.25rem 0 1.8rem;
 }
 
+.warehouse__form-header {
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-bottom: 1px solid #bdc5d5;
+  margin: 0 1rem;
+}
+
 .warehouse__header-title {
   font-size: 1.75rem;
   line-height: 2.25rem;
   margin: 1rem 0;
+  font-weight: bold;
 }
 
 .warehouse__input-container {
   width: 100%;
-  height: 100%;
 }
 
 .warehouse__input-container h3 {
@@ -580,6 +595,36 @@ p {
   margin-left: 0.5rem;
   color: #ffffff;
   background-color: #2e66e6;
+}
+
+@media screen and (min-width: 767px) {
+  .warehouse__form-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .warehouse__subsection {
+    width: 50%;
+    padding: 0 2rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .warehouse__subsection h2 {
+    margin-top: 0;
+  }
+  .warehouse__subsection--border {
+    border-bottom: none;
+    border-right: 1px solid #bdc5d5;
+    margin: 2rem 0;
+  }
+  .warehouse__button-container {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .warehouse__small-button {
+    width: 4.5rem;
+    padding: 0;
+  }
 }
 
 .warehouse-detail {

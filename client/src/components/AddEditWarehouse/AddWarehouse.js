@@ -44,7 +44,7 @@ export default class AddWarehouse extends Component {
     render() {
         return(
             <div className="warehouse__list">
-                <div className="warehouse__list-header">
+                <div className="warehouse__form-header">
                     <div>
                         <h1 className="warehouse__header-title">
                         <img

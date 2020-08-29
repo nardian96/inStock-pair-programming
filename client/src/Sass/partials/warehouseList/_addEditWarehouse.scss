@@ -1,7 +1,9 @@
 // Mobile Design
 
 .warehouse {
+
     &__subsection {
+        width: 100%;
         padding: 0 1.5rem 1.5rem;
         &--border {
             border-bottom: 1px solid $color-secondary__cloud;
@@ -10,14 +12,22 @@
             margin: 1.25rem 0 1.8rem;
         }
     }
+    &__form-header {
+        background-color: $color-primary__white;
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $color-secondary__cloud;
+        margin: 0 1rem;
+    }
     &__header-title {
         font-size: 1.75rem;
         line-height: 2.25rem;
         margin: 1rem 0;
+        font-weight: bold;
     }
     &__input-container {
         width: 100%;
-        height: 100%;
         h3 {
             margin: 0;
             margin-top: 0.85rem;
@@ -65,3 +75,34 @@
         }
     }
 }
+
+//Tablet Design
+@include tablet {
+    .warehouse {
+        &__form-container {
+            display: flex;
+        }
+        &__subsection {
+            width: 50%;
+            padding: 0 2rem 1.5rem;
+            margin: 2rem 0;
+            h2 {
+                margin-top: 0;
+            }
+            &--border {
+                border-bottom: none;
+                border-right: 1px solid $color-secondary__cloud ;
+                margin: 2rem 0;
+            }
+        }
+        &__button-container {
+            justify-content: flex-end;
+        }
+        &__small-button {
+            width: 4.5rem;
+            padding: 0;
+        }
+    }
+}
+
+//Desktop Design
