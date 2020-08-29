@@ -27,4 +27,10 @@ function inventoriesList() {
   return JSON.parse(data);
 }
 
-module.exports = { inventoriesList };
+function getSingleInventory(id) {
+  const array = inventoriesList();
+  return array.filter((item) => item.id === id).shift();
+}
+
+
+module.exports = { inventoriesList, getSingleInventory };
