@@ -117,16 +117,7 @@ p {
   }
 }
 
-.warehouse__list {
-  width: 18rem;
-  z-index: 99;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-          box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-  position: absolute;
-}
 
-.warehouse__list-header {
   padding: 1rem 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,11 +127,7 @@ p {
       -ms-flex-direction: column;
           flex-direction: column;
   border-bottom: 1px solid #bdc5d5;
-}
 
-.warehouse__list-container {
-  list-style-type: none;
-  padding: 0;
 }
 
 .header {
@@ -191,7 +178,6 @@ p {
   margin-top: 1rem;
   border-radius: 20px;
   padding: 0 3rem;
-  font-size: 11px;
   border: none;
   background-color: #2e66e6;
   color: #ffffff;
@@ -219,6 +205,7 @@ p {
   margin: 0;
 }
 
+
 .list__subcontainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -236,7 +223,7 @@ p {
   width: 50%;
 }
 
-.list__warehouse h3 {
+
   font-size: 1rem;
   line-height: 1.54rem;
   font-family: "titilliumWeb";
@@ -245,11 +232,7 @@ p {
   margin: 0;
 }
 
-.list__warehouse h3 img {
-  width: 1rem;
-  height: 100%;
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
+
 }
 
 .list__contact-name {
@@ -309,6 +292,7 @@ p {
           justify-content: space-between;
   padding-top: 1rem;
 }
+
 
 .warehouse-detail {
   height: 64px;
@@ -860,66 +844,6 @@ p {
           box-sizing: border-box;
 }
 
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  text-align: center;
-  height: 195px;
-  background-color: #232940;
-  font-size: 13px;
-  line-height: 1.54rem;
-}
-
-@media screen and (min-width: 767px) {
-  .header {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-
-.header__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-}
-
-.header__warehouses {
-  width: 164px;
-  height: 36px;
-  background-color: #13182c;
-  color: white;
-  border-radius: 20px;
-  width: 10.25rem;
-  height: 1.25rem;
-}
-
-.header__inventory {
-  background-color: #13182c;
-  color: #bdc5d5;
-}
 
 .inventory {
   margin-right: 16px;
