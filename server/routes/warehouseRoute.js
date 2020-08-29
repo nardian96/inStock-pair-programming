@@ -11,6 +11,5 @@ router.put("/:warehouseId/edit", warehouseController.editWarehouse);
 // router.get("/:warehouseId", warehouseController.getWarehouseByID); //Function to be done
 router.get("/:warehouseId", warehouseController.getWarehouseByID);
 router.get("/list/:warehouseId", warehouseController.getWarehouseInventory);
-
 // export routes
 module.exports = router;
