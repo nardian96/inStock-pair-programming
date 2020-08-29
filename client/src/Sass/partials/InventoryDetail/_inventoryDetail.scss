@@ -1,0 +1,33 @@
+.inventory-detail {
+  height: $padding__base * 8;
+  background-color: $color-background__graphite;
+  @include tablet {
+    height: 93px;
+  }
+  @include desktop {
+    @include display-flex(column, normal, center);
+  }
+  &__container {
+    background-color: $color-primary__white;
+    border-radius: 3px;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    margin: 0 $grid-mobile__margin;
+    @include tablet {
+      margin: 0 $grid-tablet__margin;
+    }
+    @include desktop {
+      margin: 0;
+      width: $width__desktop-min - $padding__base * 32.5;
+    }
+  }
+  &__copyright {
+    margin: $padding__base * 5 0;
+    text-align: center;
+    @include tablet {
+      margin-top: 582px;
+    }
+    @include desktop {
+      margin-top: 493px;
+    }
+  }
+}

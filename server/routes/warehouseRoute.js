@@ -8,7 +8,8 @@ router.get("/", warehouseController.getWarehouse);
 router.post("/", warehouseController.postWarehouse);
 router.delete("/:warehouseId", warehouseController.deleteWarehouse);
 router.put("/:warehouseId", warehouseController.editWarehouse);
-// router.get("/:warehouseId", warehouseController.getWarehouseByID); //Function to be done
 
+router.get("/:warehouseId", warehouseController.getWarehouseByID);
+router.get("/list/:warehouseId", warehouseController.getWarehouseInventory
 // export routes
 module.exports = router;

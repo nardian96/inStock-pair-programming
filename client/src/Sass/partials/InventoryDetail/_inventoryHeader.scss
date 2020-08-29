@@ -1,7 +1,7 @@
-.warehouse-header {
+.inventory-header {
   border-bottom: 1px solid $color-secondary__cloud;
   @include display-flex(row, space-between, center);
-  margin-bottom: 28px;
+  margin-bottom: $padding__base * 2;
 
   &__header-left {
     margin-left: $padding__base * 3.5;
@@ -12,7 +12,7 @@
       margin-left: $padding__base * 5.5;
     }
   }
-  &__warehouse-name {
+  &__inventory-name {
   }
   &__backArrow {
     width: 24px;

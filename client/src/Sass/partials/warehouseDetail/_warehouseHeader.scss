@@ -1,0 +1,62 @@
+.warehouse-header {
+  border-bottom: 1px solid $color-secondary__cloud;
+  @include display-flex(row, space-between, center);
+  margin-bottom: $padding__base * 2;
+
+  &__header-left {
+    margin-left: $padding__base * 3.5;
+    @include tablet {
+      margin-left: $padding__base * 4.5;
+    }
+    @include desktop {
+      margin-left: $padding__base * 5.5;
+    }
+  }
+  &__warehouse-name {
+  }
+  &__backArrow {
+    width: 24px;
+    height: 24px;
+    margin-right: $padding__base;
+    @include tablet {
+      margin-right: $padding__base * 1.5;
+      object-fit: fill;
+    }
+  }
+  &__header-right {
+    margin-right: $padding__base * 3;
+    @include tablet {
+      margin-right: $padding__base * 4;
+    }
+    @include desktop {
+      margin-right: $padding__base * 5;
+    }
+  }
+  &__edit-button {
+    background: #2e66e6;
+    border-radius: 20px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    span {
+      display: none;
+      @include tablet {
+        display: inline;
+        color: $color-primary__white;
+        @include font__p2;
+      }
+    }
+    @include tablet {
+      width: 81px;
+      height: 38px;
+      @include display-flex(row, center, center);
+      padding: 8px 16px;
+    }
+    @include desktop {
+    }
+  }
+  &__edit-icon {
+    height: 15px;
+    width: 15px;
+  }
+}
