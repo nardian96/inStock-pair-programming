@@ -42,6 +42,11 @@ function addWarehouse(data) {
   return warehouseArray;
 }
 
+function getByID(id) {
+  const array = fullList();
+  return returnArray.filter((item) => item.id === id).shift();
+}
+
 // update warehouse by id
 function updateWarehouse(id, data) {
   const updatedWarehouse = {
@@ -68,4 +73,9 @@ function warehouseList(callback) {
   return JSON.parse(data);
 }
 //export multiple functions
-module.exports = { warehouseList, removeWarehouse, updateWarehouse, getByID };
+module.exports = {
+  warehouseList,
+  // removeWarehouse,
+  updateWarehouse,
+  getByID,
+};
