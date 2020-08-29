@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Switch, Route, Link } from "react-router-dom"
 import Warehouse from './components/WarehouseList/Warehouse'
-import AddWarehouse from './components/WarehouseList/AddEditWarehouse/AddWarehouse'
+import AddWarehouse from './components/AddEditWarehouse/AddWarehouse'
+import EditWarehouse from './components/AddEditWarehouse/EditWarehouse'
 import axios from 'axios'
 import './Sass/App.css'
 import WarehouseDetails from "./components/warehouseDetail/"
@@ -41,23 +42,37 @@ export default class App extends Component {
         this.displayInventoryList();
     };
 
+
     render() {
 
         return (
             <div className="instock">
                 <Switch>
                     <Route
-                        path="/warehouse" exact
+                        path="/warehouse"
+                        exact
                         render={() => (
                             <Warehouse warehouses={this.state.warehouse}/>
                         )}/>
                     <Route
                         path="/warehouse/add"
+                        exact
                         render={() => (
                             <AddWarehouse/>
-                        )}/>    
+                        )}
+                    />
+                    <Route
+                        path="/warehouse/:warehouseId/edit"
+                        exact
+                        render={(props) => (
+                            <EditWarehouse 
+                            warehouses={this.state.warehouse}
+                            {...props}/>
+                        )}
+                    />        
                     <Route
                         path="/warehouse/:warehouseId"
+                        exact
                         render={(props) => (
                             <>
                                 <WarehouseDetails
@@ -70,6 +85,7 @@ export default class App extends Component {
                     />
                     <Route
                         path="/Inventory"
+                        exact
                         render={() => <Inventory inventories={this.state.inventory} />}
                     />
                 </Switch>

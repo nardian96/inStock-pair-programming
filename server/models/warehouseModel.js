@@ -17,6 +17,12 @@ function Warehouse(name, address, city, country, contact) {
 
 const list = JSON.parse(fs.readFileSync('./data/warehouses.json'))
 
+// function to load warehouse data
+function warehouseList() {
+  const data = fs.readFileSync(warehouseFile)
+  return JSON.parse(data)
+}
+
 //function to post warehouse data
 function addWarehouse(data) {
   const warehouseArray = list;
@@ -36,11 +42,44 @@ function addWarehouse(data) {
   return warehouseArray;
 }
 
-// function to load warehouse data
-function warehouseList(callback) {
-  const data = fs.readFileSync(warehouseFile)
-  return JSON.parse(data)
+function findWarehouse(id) {
+  return list.filter((warehouse) => {
+      return id === warehouse.id
+  })
 }
 
+// update warehouse by id
+function updateWarehouse(id, data) {
+  const updatedWarehouse = {
+    id: id,
+    name: data.name,
+    address: data.address,
+    city: data.city,
+    country: data.country,
+    contact: data.contact,
+  };
+  // const updatedWarehouse = {
+  //   name: data.name,
+  //   address: data.address,
+  //   city: data.city,
+  //   country: data.country,
+  //   contact: {
+  //     name: data.contactName,
+  //     position: data.contactPosition,
+  //     phone: data.contactPhone,
+  //     email: data.contactEmail,
+  //   },
+  // };
+  console.log(id)
+  const warehouseArray = warehouseList();
+  const warehouseIndex = warehouseArray.findIndex((selectedWarehouse) => selectedWarehouse.id === id);
+  // const warehouseIndex = warehouseArray.findIndex((selectedWarehouse) => warehouseID[0].id === selectedWarehouse.id);
+  console.log(warehouseIndex)
+  warehouseArray.splice(warehouseIndex, 1, updatedWarehouse);
+  fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArray));
+  return warehouseArray;
+}
+
+
 //export multiple functions
-module.exports = { addWarehouse, warehouseList }
+module.exports = { addWarehouse, warehouseList, updateWarehouse, findWarehouse }

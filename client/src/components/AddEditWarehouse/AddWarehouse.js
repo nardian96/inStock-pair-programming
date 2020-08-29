@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
-import backArrow from '../../../assets/Icons/arrow_back-24px.svg'
+import backArrow from '../../assets/Icons/arrow_back-24px.svg'
 
 export default class AddWarehouse extends Component {
 

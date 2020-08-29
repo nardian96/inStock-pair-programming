@@ -2,7 +2,7 @@ import React from "react";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import detailIcon from "../../assets/Icons/chevron_right-24px.svg";
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function WHListItem(props) {
     return (
@@ -35,7 +35,9 @@ function WHListItem(props) {
             </div>
             <div className="list__icons">
                 <img src={deleteIcon} />
-                <img src={editIcon} />
+                <Link to={`/Warehouse/${props.id}/edit`} >
+                    <img src={editIcon} />
+                </Link>
             </div>
         </li>
         </>

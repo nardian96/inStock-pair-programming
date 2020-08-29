@@ -27,7 +27,7 @@ function WHListContainer(props) {
         <ul className="warehouse__list-container">
             {props.warehouses
             .map((warehouse) => (
-                <WHListItem key={warehouse.id} warehouseItem={warehouse}/>
+                <WHListItem id={warehouse.id} key={warehouse.id} warehouseItem={warehouse}/>
             ))}  
         </ul>
         </>
