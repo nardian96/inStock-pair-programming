@@ -21,6 +21,7 @@ ReactDOM.render(
         <Route path="/warehouse" component={App} exact />
         <Route path="/warehouse/:warehouseId" component={App} />
         <Route path="/Inventories" component={App} exact />
+        <Route path="/Inventories/add" component={App} exact />
         <Route path="/Inventory/:inventoryId" component={App} exact />
         <Route path="/*" component={NotFound} />
       </Switch>
