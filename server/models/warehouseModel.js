@@ -58,18 +58,6 @@ function updateWarehouse(id, data) {
     country: data.country,
     contact: data.contact,
   };
-  // const updatedWarehouse = {
-  //   name: data.name,
-  //   address: data.address,
-  //   city: data.city,
-  //   country: data.country,
-  //   contact: {
-  //     name: data.contactName,
-  //     position: data.contactPosition,
-  //     phone: data.contactPhone,
-  //     email: data.contactEmail,
-  //   },
-  // };
   console.log(id)
   const warehouseArray = warehouseList();
   const warehouseIndex = warehouseArray.findIndex((selectedWarehouse) => selectedWarehouse.id === id);
