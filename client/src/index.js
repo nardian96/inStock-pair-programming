@@ -20,6 +20,8 @@ ReactDOM.render(
       <Switch>
         <Route path="/warehouse" component={App} exact />
         <Route path="/warehouse/:warehouseId" exact component={App} />
+        <Route path="/warehouse/:warehouseId/edit" exact component={App} />
+        <Route path="/warehouse/add" exact component={App} />
         <Route
           path="/inventoryDetails/:warehouseId/:inventoryId"
           exact
