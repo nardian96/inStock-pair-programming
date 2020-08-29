@@ -54,10 +54,10 @@ export default class EditWarehouse extends Component {
         } 
 
         return(
-            <div>
-                <div className="warehouse-header">
-                    <div className="warehouse-header__header-left">
-                        <h1 className="warehouse-header__warehouse-name">
+            <div className="warehouse__list">
+                <div className="warehouse__list-header">
+                    <div>
+                        <h1 className="warehouse__header-title">
                         <img
                             src={backArrow}
                             className="warehouse-header__backArrow"
@@ -67,48 +67,48 @@ export default class EditWarehouse extends Component {
                         </h1>
                     </div>
                 </div>
-                <form ref={form => this.form = form} onSubmit={this.editWarehouse}>
-                    <section>
+                <form ref={form => this.form = form} className="warehouse__list-container" onSubmit={this.editWarehouse}>
+                    <section className="warehouse__subsection warehouse__subsection--border">
                         <h2>Warehouse Details</h2>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Warehouse Name</h3>
-                            <textarea name="name" defaultValue={selectedWarehouse.name}></textarea>
+                            <textarea name="name" className="warehouse__input-box" defaultValue={selectedWarehouse.name}></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Street Address</h3>
-                            <textarea name="address" defaultValue={selectedWarehouse.address}></textarea>
+                            <textarea name="address" className="warehouse__input-box" defaultValue={selectedWarehouse.address}></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>City</h3>
-                            <textarea name="city" defaultValue={selectedWarehouse.city}></textarea>
+                            <textarea name="city" className="warehouse__input-box" defaultValue={selectedWarehouse.city}></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Country</h3>
-                            <textarea name="country" defaultValue={selectedWarehouse.country}></textarea>
+                            <textarea name="country" className="warehouse__input-box" defaultValue={selectedWarehouse.country}></textarea>
                         </div>
                     </section>
-                    <section>
+                    <section className="warehouse__subsection">
                         <h2>Contact Details</h2>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Contact Name</h3>
-                            <textarea name="contactName" defaultValue={selectedWarehouse.contact.name}></textarea>
+                            <textarea name="contactName" className="warehouse__input-box" defaultValue={selectedWarehouse.contact.name}></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Position</h3>
-                            <textarea name="contactPosition" defaultValue={selectedWarehouse.contact.position}></textarea>
+                            <textarea name="contactPosition" className="warehouse__input-box" defaultValue={selectedWarehouse.contact.position}></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Phone Number</h3>
-                            <textarea name="contactPhone" defaultValue={selectedWarehouse.contact.phone}></textarea>
+                            <textarea name="contactPhone" className="warehouse__input-box" defaultValue={selectedWarehouse.contact.phone}></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Email</h3>
-                            <textarea name="contactEmail" defaultValue={selectedWarehouse.contact.email}></textarea>
+                            <textarea name="contactEmail" className="warehouse__input-box" defaultValue={selectedWarehouse.contact.email}></textarea>
                         </div>
                     </section>
-                    <div>
-                        <button>Cancel</button>
-                        <button>Save</button>
+                    <div className="warehouse__button-container">
+                        <button className="warehouse__small-button">Cancel</button>
+                        <button className="warehouse__small-button warehouse__small-button--blue">Save</button>
                     </div>
                 </form>    
             </div>    

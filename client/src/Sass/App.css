@@ -540,32 +540,7 @@ p {
   border-radius: 1.25rem;
   font-size: 13px;
   line-height: 20px;
-  padding-left: 1rem;
-}
-
-.warehouse__input-box::-webkit-input-placeholder {
-  padding-top: 0.25rem;
-  font-family: "titilliumWeb";
-  font-size: 13px;
-  font-weight: normal;
-}
-
-.warehouse__input-box:-ms-input-placeholder {
-  padding-top: 0.25rem;
-  font-family: "titilliumWeb";
-  font-size: 13px;
-  font-weight: normal;
-}
-
-.warehouse__input-box::-ms-input-placeholder {
-  padding-top: 0.25rem;
-  font-family: "titilliumWeb";
-  font-size: 13px;
-  font-weight: normal;
-}
-
-.warehouse__input-box::placeholder {
-  padding-top: 0.25rem;
+  padding: 0.4rem 1rem;
   font-family: "titilliumWeb";
   font-size: 13px;
   font-weight: normal;
