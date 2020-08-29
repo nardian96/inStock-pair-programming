@@ -12,7 +12,7 @@ function addInventory(req, res) {
     !req.body.description ||
     !req.body.category ||
     !req.body.status ||
-    !req.body.quantity ||
+    isNaN(req.body.quantity) ||
     !req.body.warehouseName
   ) {
     res.status(400).send({

@@ -56,8 +56,27 @@ export default class App extends Component {
     let warehouse = event.target.warehouse.value; // Can be updated once get by warehouse id is done
     newItem.warehouseId = warehouse.split(",")[0];
     newItem.warehouseName = warehouse.split(",").splice(1).join(",");
-
+    // Don't post if fields are empty
+    if (newItem.itemName === "") {
+      newItem.itemName = undefined;
+    }
+    if (newItem.description === "") {
+      newItem.description = undefined;
+    }
+    if (newItem.category === "") {
+      newItem.category = undefined;
+    }
+    if (isNaN(newItem.quantity)) {
+      newItem.quantity = undefined;
+    }
+    if (newItem.warehouseName === "") {
+      newItem.warehouseName = undefined;
+    }
     console.log(newItem);
+    axios.post(inventoryApi, newItem).then(() => {
+      this.displayInventoryList();
+      this.props.history.push("/Inventories");
+    });
   };
 
   render() {

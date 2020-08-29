@@ -66,12 +66,19 @@ export default function Inventory(props) {
               <div className="table__item">
                 <div className="table__item__container">
                   <div className="table__item-label">INVENTORY ITEM</div>
-                  <span className="table__item-text">{inventory.itemName}</span>
-                  <img
-                    className="table__item-right"
-                    src={rightIcon}
-                    alt="right icon"
-                  />
+                  <Link
+                    className="table__item-link"
+                    to={`/Inventories/${inventory.id}`}
+                  >
+                    <span className="table__item-text">
+                      {inventory.itemName}
+                    </span>
+                    <img
+                      className="table__item-right"
+                      src={rightIcon}
+                      alt="right icon"
+                    />
+                  </Link>
                 </div>
 
                 <div className="table__item__container">
@@ -104,12 +111,16 @@ export default function Inventory(props) {
                     src={deleteIcon}
                     alt="delete"
                   />
-
-                  <img
-                    className="table__item__icons--edit"
-                    src={editIcon}
-                    alt="edit"
-                  />
+                  <Link
+                    className="table__item__icons--link"
+                    to={`/Inventories/${inventory.id}/edit`}
+                  >
+                    <img
+                      className="table__item__icons--edit"
+                      src={editIcon}
+                      alt="edit"
+                    />
+                  </Link>
                 </div>
               </div>
               <hr className="inventory--break" />

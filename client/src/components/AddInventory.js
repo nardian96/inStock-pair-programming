@@ -68,12 +68,8 @@ class AddInventory extends Component {
           ></textarea>
 
           <div className="add-inventory__form--label">Category</div>
-          <select
-            className="add-inventory__form--input"
-            name="category"
-            placeholder="Please select"
-          >
-            <option>Please Select</option>
+          <select className="add-inventory__form--input" name="category">
+            <option value="">Please Select</option>
             <option value="Electronics">Electronics</option>
             <option value="Gear">Gear</option>
             <option value="Apparel">Apparel</option>
