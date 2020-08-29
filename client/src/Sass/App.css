@@ -599,8 +599,13 @@ p {
   padding: 0;
   margin-right: 0;
   margin-left: 0.5rem;
+  padding: 0.5rem 3.5rem;
   color: #ffffff;
   background-color: #2e66e6;
+}
+
+.warehouse__small-button--add {
+  padding: 0.5rem 1.31rem;
 }
 
 @media screen and (min-width: 767px) {
@@ -622,6 +627,9 @@ p {
     border-right: 1px solid #bdc5d5;
     margin: 2rem 0;
   }
+  .warehouse__input-box {
+    width: 18rem;
+  }
   .warehouse__button-container {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
@@ -631,6 +639,10 @@ p {
     width: 4.5rem;
     padding: 0;
   }
+  .warehouse__small-button--add {
+    width: 8.62rem;
+    padding: 0.5rem 1.5rem;
+  }
 }
 
 @media screen and (min-width: 1280px) {
@@ -639,6 +651,9 @@ p {
   }
   .warehouse__subsection {
     padding: 0 2.5rem 1.5rem;
+  }
+  .warehouse__input-box {
+    width: 26.87rem;
   }
 }
 

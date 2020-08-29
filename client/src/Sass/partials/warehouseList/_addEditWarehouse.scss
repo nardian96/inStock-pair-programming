@@ -70,8 +70,12 @@
             padding: 0;
             margin-right: 0;
             margin-left: 0.5rem;
+            padding: 0.5rem 3.5rem;
             color: $color-primary__white;
             background-color: $color-primary__instock-indigo;
+        }
+        &--add {
+            padding: 0.5rem 1.31rem;
         }
     }
 }
@@ -95,12 +99,19 @@
                 margin: 2rem 0;
             }
         }
+        &__input-box {
+            width: 18rem;
+        }
         &__button-container {
             justify-content: flex-end;
         }
         &__small-button {
             width: 4.5rem;
             padding: 0;
+            &--add {
+                width: 8.62rem;
+                padding: 0.5rem 1.5rem;
+            }
         }
     }
 }
@@ -113,6 +124,9 @@
         }
         &__subsection {
             padding: 0 2.5rem 1.5rem;
+        }
+        &__input-box {
+            width: 26.87rem;
         }
     }
 }
