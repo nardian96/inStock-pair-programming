@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { Switch, Route, Link } from "react-router-dom"
 import Warehouse from './components/WarehouseList/Warehouse'
+import AddWarehouse from './components/WarehouseList/AddEditWarehouse/AddWarehouse'
 import axios from 'axios'
 import './Sass/App.css'
-import WarehouseDetails from "./components/warehouseDetail/";
+import WarehouseDetails from "./components/warehouseDetail/"
 import Inventory from "./components/Inventory";
 // import WarehouseInfo from "./components/WarehouseInfo/";
 
@@ -46,10 +47,15 @@ export default class App extends Component {
             <div className="instock">
                 <Switch>
                     <Route
-                        path="/warehouse"
+                        path="/warehouse" exact
                         render={() => (
                             <Warehouse warehouses={this.state.warehouse}/>
                         )}/>
+                    <Route
+                        path="/warehouse/add"
+                        render={() => (
+                            <AddWarehouse/>
+                        )}/>    
                     <Route
                         path="/warehouse/:warehouseId"
                         render={(props) => (
