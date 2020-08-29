@@ -35,7 +35,7 @@ function WHListItem(props) {
             </div>
             <div className="list__icons">
                 <img src={deleteIcon} />
-                <Link to={`/Warehouse/${props.id}/edit`} >
+                <Link to={`/warehouse/${props.id}/edit`} >
                     <img src={editIcon} />
                 </Link>
             </div>

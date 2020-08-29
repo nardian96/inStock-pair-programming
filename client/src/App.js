@@ -48,6 +48,7 @@ export default class App extends Component {
         <Switch>
          <Route
             path="/warehouse"
+            exact
             render={() => (
             <Warehouse warehouses={this.state.warehouse}/>
           )}/>
@@ -68,7 +69,8 @@ export default class App extends Component {
                 )}
             />
           <Route
-            path="/warehouse/:warehouseId"
+            path="/warehouse/:warehouseId" 
+            exact
             render={(props) => (
               <>
                 <WarehouseDetails
@@ -81,10 +83,12 @@ export default class App extends Component {
           />
             <Route
                 path="/Inventories"
+                exact
                 render={() => <Inventory inventories={this.state.inventory} />}
             ></Route>
           <Route
             path="/inventoryDetails/:warehouseId/:inventoryId"
+            exact
             render={(props) => (
               <>
                 <InventoryDetails items={this.state.inventory} {...props} />
