@@ -4,6 +4,7 @@ import Warehouse from "./components/WarehouseList/Warehouse";
 import axios from "axios";
 import "./Sass/App.css";
 import WarehouseDetails from "./components/warehouseDetail/";
+import InventoryDetails from "./components/InventoryDetail/";
 import Inventory from "./components/Inventory";
 import AddInventory from "./components/AddInventory";
 // import WarehouseInfo from "./components/WarehouseInfo/";
@@ -78,6 +79,15 @@ export default class App extends Component {
               </>
             )}
           />
+          <Route
+            path="/inventoryDetails/:warehouseId/:inventoryId"
+            render={(props) => (
+              <>
+                <InventoryDetails items={this.state.inventory} {...props} />
+              </>
+            )}
+          />
+
           <Route
             path="/Inventories"
             exact

@@ -36,6 +36,28 @@ function addWarehouse(data) {
   return warehouseArray;
 }
 
+
+// update warehouse by id
+function updateWarehouse(id, data) {
+  const updatedWarehouse = {
+    name: data.name,
+    address: data.address,
+    city: data.city,
+    country: data.country,
+    contact: {
+      name: data.contactName,
+      position: data.contactPosition,
+      phone: data.contactPhone,
+      email: data.contactEmail,
+    },
+  };
+  const warehouseArray = warehouselist();
+  const warehouseIndex = warehouseArray.findIndex((video) => video.id === id);
+  warehouseArray.splice(warehouseIndex, 1, updatedWarehouse);
+  fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArray));
+  return warehouseArray;
+}
+
 // function to load warehouse data
 function warehouseList(callback) {
   const data = fs.readFileSync(warehouseFile)
@@ -43,4 +65,5 @@ function warehouseList(callback) {
 }
 
 //export multiple functions
-module.exports = { addWarehouse, warehouseList }
+module.exports = { warehouseList, removeWarehouse, updateWarehouse, getByID };
+
