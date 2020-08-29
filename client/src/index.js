@@ -23,7 +23,9 @@ ReactDOM.render(
           exact
           component={App}
         />
+        <Route path="/warehouse/:warehouseId/edit" exact component={App} />
         <Route path="/warehouse/:warehouseId" exact component={App} />
+        <Route path="/warehouse/add" exact component={App} />
         <Route path="/warehouse" component={App} exact />
         <Route path="/Inventory" component={App} exact />
         <Route path="/Inventory/:inventoryId" component={App} exact />

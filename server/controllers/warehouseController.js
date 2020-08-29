@@ -1,5 +1,6 @@
 // load models
 const warehouse = require("../models/warehouseModel");
+const express = require("express");
 const inventory = require("../models/inventoriesModel");
 
 //get list of warehouses
@@ -38,9 +39,13 @@ function deleteWarehouse(req, res) {
   res.json(warehouse.removeWarehouse(req.params.id));
 }
 
+//edit warehouse
 function editWarehouse(req, res) {
-  res.json(warehouse.updateWarehouse(req.params.id, req.body));
+  if (req.params.warehouseId !== "") {
+    res.json(warehouse.updateWarehouse(req.params.warehouseId, req.body));
+  }
 }
+
 // get Warehouse by id
 function getWarehouseByID(req, res) {
   console.log(req.params);
