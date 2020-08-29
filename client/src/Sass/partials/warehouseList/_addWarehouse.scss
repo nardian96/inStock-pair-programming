@@ -1,0 +1,70 @@
+// Mobile Design
+
+.warehouse {
+    &__subsection {
+        padding: 0 1.5rem 1.5rem;
+        &--border {
+            border-bottom: 1px solid $color-secondary__cloud;
+        }
+        h2 {
+            margin: 1.25rem 0 1.8rem;
+        }
+    }
+    &__header-title {
+        font-size: 1.75rem;
+        line-height: 2.25rem;
+        margin: 1rem 0;
+    }
+    &__input-container {
+        width: 100%;
+        height: 100%;
+        h3 {
+            margin: 0;
+            margin-top: 0.85rem;
+            padding-bottom: 0.5rem;
+        }
+    }
+    &__input-box {
+        width: 100%;
+        height: 2.25rem;
+        border: 1px solid #BDC5D5;
+        border-radius: 1.25rem;
+        font-size: 13px;
+        line-height: 20px;
+        padding-left: 1rem;
+        &::placeholder {
+            padding-top: 0.25rem;
+            font-family: "titilliumWeb";
+            font-size: 13px;
+            font-weight: normal;
+        }
+    }
+    &__button-container {
+        width: 100%;
+        height: 4.25rem;
+        display: flex;
+        justify-content: center;
+        padding: 0 1.5rem;
+        background-color: $color-background__light-grey;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
+    }
+    &__small-button {
+        width: 8.75rem;
+        height: 2rem;
+        margin-top: 1rem;
+        border-radius: 20px;
+        padding: 0 3rem;
+        font-size: 0.68rem;
+        border: 1px solid $color-secondary__cloud;
+        color: $color-secondary__slate;
+        background-color: $color-primary__white;
+        margin-right: 0.5rem;
+        &--blue {
+            padding: 0;
+            margin-right: 0;
+            margin-left: 0.5rem;
+            color: $color-primary__white;
+            background-color: $color-primary__instock-indigo;
+        }
+    }
+}

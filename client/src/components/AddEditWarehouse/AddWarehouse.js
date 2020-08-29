@@ -43,61 +43,61 @@ export default class AddWarehouse extends Component {
 
     render() {
         return(
-            <div>
-                <div className="warehouse-header">
-                    <div className="warehouse-header__header-left">
-                        <h1 className="warehouse-header__warehouse-name">
+            <div className="warehouse__list">
+                <div className="warehouse__list-header">
+                    <div>
+                        <h1 className="warehouse__header-title">
                         <img
                             src={backArrow}
                             className="warehouse-header__backArrow"
                             alt="back arrow"
                         />
-                        ADD WAREHOUSE
+                        Add New Warehouse
                         </h1>
                     </div>
                 </div>
-                <form ref={form => this.form = form} onSubmit={this.addNewWarehouse}>
-                    <section>
+                <form ref={form => this.form = form} className="warehouse__list-container" onSubmit={this.addNewWarehouse}>
+                    <section className="warehouse__subsection warehouse__subsection--border">
                         <h2>Warehouse Details</h2>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Warehouse Name</h3>
-                            <textarea name="name" placeholder="Warehouse Name"></textarea>
+                            <textarea name="name" className="warehouse__input-box" placeholder="Warehouse Name"></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Street Address</h3>
-                            <textarea name="address" placeholder="Street Address"></textarea>
+                            <textarea name="address" className="warehouse__input-box" placeholder="Street Address"></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>City</h3>
-                            <textarea name="city" placeholder="City"></textarea>
+                            <textarea name="city" className="warehouse__input-box" placeholder="City"></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Country</h3>
-                            <textarea name="country" placeholder="Country"></textarea>
+                            <textarea name="country" className="warehouse__input-box" placeholder="Country"></textarea>
                         </div>
                     </section>
-                    <section>
+                    <section className="warehouse__subsection">
                         <h2>Contact Details</h2>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Contact Name</h3>
-                            <textarea name="contactName" placeholder="Contact Name"></textarea>
+                            <textarea name="contactName" className="warehouse__input-box" placeholder="Contact Name"></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Position</h3>
-                            <textarea name="contactPosition" placeholder="Position"></textarea>
+                            <textarea name="contactPosition" className="warehouse__input-box" placeholder="Position"></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Phone Number</h3>
-                            <textarea name="contactPhone" placeholder="Phone"></textarea>
+                            <textarea name="contactPhone" className="warehouse__input-box" placeholder="Phone"></textarea>
                         </div>
-                        <div>
+                        <div className="warehouse__input-container">
                             <h3>Email</h3>
-                            <textarea name="contactEmail" placeholder="Email"></textarea>
+                            <textarea name="contactEmail" className="warehouse__input-box" placeholder="Email"></textarea>
                         </div>
                     </section>
-                    <div>
-                        <button>Cancel</button>
-                        <button>+ Add Warehouse</button>
+                    <div className="warehouse__button-container">
+                        <button className="warehouse__small-button">Cancel</button>
+                        <button className="warehouse__small-button warehouse__small-button--blue">+ Add Warehouse</button>
                     </div>
                 </form>    
             </div>    

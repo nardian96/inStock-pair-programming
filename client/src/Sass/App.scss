@@ -3,7 +3,8 @@
 @import "./partials/mixins";
 @import "./partials/global";
 @import "./partials/header";
-@import "./partials/warehouse-list";
+@import "./partials/warehouseList/warehouse-list";
+@import "./partials/warehouseList/addWarehouse";
 @import "./partials/warehouseDetail/warehouseDetail";
 @import "./partials/warehouseDetail/warehouseHeader";
 @import "./partials/warehouseDetail/warehouseInfo";
