@@ -8,9 +8,13 @@ function getInventories(req, res) {
 
 // get inventory by ID
 function getInventoryByID(req, res) {
-  console.log(req)
   res.json(inventories.getSingleInventory(req.params.inventoryId));
 }
 
+// remove inventory by ID
+function removeInventoryByID(req, res) {
+  res.json(inventories.deleteInventory(req.params.inventoryId));
+}
+
 // export functions
-module.exports = { getInventories, getInventoryByID };
+module.exports = { getInventories, getInventoryByID, removeInventoryByID };
