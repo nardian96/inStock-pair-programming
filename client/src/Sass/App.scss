@@ -4,9 +4,12 @@
 @import "./partials/global";
 @import "./partials/header";
 @import "./partials/warehouse-list";
-@import "./partials/warehouseDetail";
-@import "./partials/warehouseHeader";
-@import "./partials/warehouseInfo";
-@import "./partials/warehouseItem";
+@import "./partials/warehouseDetail/warehouseDetail";
+@import "./partials/warehouseDetail/warehouseHeader";
+@import "./partials/warehouseDetail/warehouseInfo";
+@import "./partials/warehouseDetail/warehouseItem";
 @import "./partials/utilities";
 @import "./partials/components/inventory"; //global body
+@import "./partials/inventoryDetail/inventoryDetail";
+@import "./partials/inventoryDetail/inventoryHeader";
+@import "./partials/inventoryDetail/inventoryInfo";

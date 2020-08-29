@@ -42,11 +42,11 @@ function addWarehouse(data) {
   return warehouseArray;
 }
 
-function findWarehouse(id) {
-  return list.filter((warehouse) => {
-      return id === warehouse.id
-  })
-}
+// function findWarehouse(id) {
+//   return list.filter((warehouse) => {
+//       return id === warehouse.id
+//   })
+// }
 
 // update warehouse by id
 function updateWarehouse(id, data) {
@@ -82,4 +82,5 @@ function updateWarehouse(id, data) {
 
 
 //export multiple functions
-module.exports = { addWarehouse, warehouseList, updateWarehouse, findWarehouse }
+module.exports = { addWarehouse, warehouseList, updateWarehouse }
+
