@@ -7,6 +7,8 @@ router.get("/", inventoryController.getInventories); //Function to be done
 router.get("/:inventoryId", inventoryController.getInventoryByID);
 router.delete("/:inventoryId", inventoryController.removeInventoryByID);
 //router.get("/:warehouseId/:itemName", inventoryController.getInventoryByID); //Function to be done
+router.post("/", inventoryController.addInventory);
+router.put("/:inventoryId", inventoryController.updateInventory);
 
 // export routes
 module.exports = router;

@@ -173,9 +173,13 @@
       margin-bottom: auto;
     }
   }
-  &-button {
+  &-link {
     border-radius: 20px;
     background-color: $color-primary__instock-indigo;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 8px;
+    padding-bottom: 8px;
     width: 100%;
     height: 36px;
     color: $color-primary__white;
