@@ -15,18 +15,24 @@ function Warehouse(name, address, city, country, contact) {
   this.contact = contact;
 }
 
-const list = JSON.parse(fs.readFileSync('./data/warehouses.json'))
+const list = JSON.parse(fs.readFileSync("./data/warehouses.json"));
 
 // function to load warehouse data
 function warehouseList() {
-  const data = fs.readFileSync(warehouseFile)
-  return JSON.parse(data)
+  const data = fs.readFileSync(warehouseFile);
+  return JSON.parse(data);
 }
 
 //function to post warehouse data
 function addWarehouse(data) {
   const warehouseArray = list;
-  const newWarehouse = new Warehouse(data.name, data.address, data.city, data.country, data.contact)
+  const newWarehouse = new Warehouse(
+    data.name,
+    data.address,
+    data.city,
+    data.country,
+    data.contact
+  );
   pushNewWarehouse = (newWarehouse) => {
     return {
       id: newWarehouse.id,
@@ -34,19 +40,21 @@ function addWarehouse(data) {
       address: newWarehouse.address,
       city: newWarehouse.city,
       country: newWarehouse.country,
-      contact: newWarehouse.contact
-    }
-  }
+      contact: newWarehouse.contact,
+    };
+  };
   warehouseArray.push(pushNewWarehouse(newWarehouse));
   fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArray));
   return warehouseArray;
 }
-
-// function findWarehouse(id) {
-//   return list.filter((warehouse) => {
-//       return id === warehouse.id
-//   })
-// }
+function fullList() {
+  const data = fs.readFileSync(warehouseFile);
+  return JSON.parse(data);
+}
+function getByID(id) {
+  const array = fullList();
+  return array.filter((item) => item.id === id).shift();
+}
 
 // update warehouse by id
 function updateWarehouse(id, data) {
@@ -58,29 +66,27 @@ function updateWarehouse(id, data) {
     country: data.country,
     contact: data.contact,
   };
-  // const updatedWarehouse = {
-  //   name: data.name,
-  //   address: data.address,
-  //   city: data.city,
-  //   country: data.country,
-  //   contact: {
-  //     name: data.contactName,
-  //     position: data.contactPosition,
-  //     phone: data.contactPhone,
-  //     email: data.contactEmail,
-  //   },
-  // };
   console.log(id)
   const warehouseArray = warehouseList();
-  const warehouseIndex = warehouseArray.findIndex((selectedWarehouse) => selectedWarehouse.id === id);
+  const warehouseIndex = warehouseArray.findIndex(
+    (selectedWarehouse) => selectedWarehouse.id === id
+  );
   // const warehouseIndex = warehouseArray.findIndex((selectedWarehouse) => warehouseID[0].id === selectedWarehouse.id);
-  console.log(warehouseIndex)
+  console.log(warehouseIndex);
   warehouseArray.splice(warehouseIndex, 1, updatedWarehouse);
   fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArray));
   return warehouseArray;
 }
-
-
+// function to load warehouse data
+function warehouseList(callback) {
+  const data = fs.readFileSync(warehouseFile);
+  return JSON.parse(data);
+}
 //export multiple functions
-module.exports = { addWarehouse, warehouseList, updateWarehouse }
-
+module.exports = {
+  addWarehouse,
+  warehouseList,
+  // removeWarehouse,
+  updateWarehouse,
+  getByID,
+};

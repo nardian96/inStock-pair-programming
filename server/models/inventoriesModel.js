@@ -25,6 +25,7 @@ function Inventory(
   this.quantity = quantity;
 }
 
+//get list of inventories
 function inventoriesList() {
   const data = fs.readFileSync(inventoriesFile);
   return JSON.parse(data);
@@ -60,4 +61,29 @@ function update(index, data) {
   return inventoryArr[index];
 }
 
-module.exports = { inventoriesList, add, update };
+//get single inventory item
+function getSingleInventory(id) {
+  const array = inventoriesList();
+  // console.log(array.filter((item) => item.id === id));
+  return array.filter((item) => item.id === id).shift();
+}
+
+//delete single inventory item
+function deleteInventory(id) {
+  const array = inventoriesList();
+  const inventoryIndex = array.findIndex((selectedInventory) => {
+    return selectedInventory.id === id;
+  });
+  delete array[inventoryIndex];
+  const updatedArray = array.filter((item) => item !== null);
+  fs.writeFileSync(inventoriesFile, JSON.stringify(updatedArray));
+  return updatedArray;
+}
+
+module.exports = {
+  inventoriesList,
+  getSingleInventory,
+  deleteInventory,
+  add,
+  update,
+};

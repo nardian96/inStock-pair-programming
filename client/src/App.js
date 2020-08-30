@@ -157,6 +157,10 @@ export default class App extends Component {
             render={() => <Inventory inventories={this.state.inventory} />}
           ></Route>
           <Route
+            path="/warehouse"
+            render={() => <Warehouse warehouses={this.state.warehouse} />}
+          />
+          <Route
             path="/inventoryDetails/:warehouseId/:inventoryId"
             exact
             render={(props) => (
