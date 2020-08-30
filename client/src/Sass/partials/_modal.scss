@@ -1,0 +1,14 @@
+.modal {
+  &__background {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    padding: 0 $padding__base * 2;
+    height: 100vh;
+    background-color: $color-primary__instock-black;
+    opacity: 1;
+  }
+  &__window {
+    background-color: $color-primary__white;
+  }
+}

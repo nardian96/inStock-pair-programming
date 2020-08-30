@@ -5,13 +5,13 @@ import WarehouseInfo from "./WarehouseInfo.jsx";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 function WarehouseDetail(props) {
-  const { warehouseItems, warehouseInfo } = props;
+  const { warehouseItems, warehouseInfo, info } = props;
   const warehouseId = props.match.params.warehouseId;
   const warehouseInventory = warehouseItems.filter(
     (place) => place.warehouseID === warehouseId
   );
   const warehouseList = warehouseInventory.map((item, index) => {
-    return <WarehouseItem key={index} item={item} />;
+    return <WarehouseItem key={index} item={item} info={info} />;
   });
   const warehouseDetails = warehouseInfo.filter(
     (place) => place.id === warehouseId

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
@@ -9,7 +9,12 @@ function WarehouseItem(props) {
   const itemId = props.item.id;
   const category = props.item.category;
   const quantity = props.item.quantity;
+  const name = props.item.itemName;
   const status = props.item.status;
+  const event = props.item.event;
+  const cancel = props.item.cancel;
+  const visible = props.item.visible;
+
   return (
     <div className="warehouse-item">
       <div className="warehouse-item__left">
@@ -19,7 +24,7 @@ function WarehouseItem(props) {
           className="warehouse-item__link"
         >
           <p className="warehouse-item__name">
-            {props.item.itemName}
+            {name}
             <img src={chevron} alt="" />
           </p>
         </Link>
@@ -47,6 +52,7 @@ function WarehouseItem(props) {
           src={deleteIcon}
           alt="delete icon"
           className="warehouse-item__delete-button"
+          onClick={visible}
         />
         <img
           src={editIcon}
