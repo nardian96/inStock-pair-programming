@@ -36,7 +36,6 @@ function updateInventory(req, res) {
   const inventoryIndex = inventories
     .inventoriesList()
     .findIndex((inv) => inv.id === req.params.inventoryId);
-  console.log(req.body);
   if (inventoryIndex === -1) {
     res.status(404).json({ message: "No inventory with that id exists" });
   } else if (

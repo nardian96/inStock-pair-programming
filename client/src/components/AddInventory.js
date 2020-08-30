@@ -36,11 +36,16 @@ class AddInventory extends Component {
   };
 
   getInventoryById = (id) => {
+    let url =
+      "http://localhost:8080/inventories/" +
+      this.props.match.params.inventoryId;
     if (this.props.inventories.length !== 0) {
-      let inventory = this.props.inventories.filter(
-        (inventory) => inventory.id === id
-      )[0];
-      this.setState({ currInventory: inventory, status: inventory.status });
+      axios.get(url).then((response) => {
+        this.setState({
+          currInventory: response.data,
+          status: response.data.status,
+        });
+      });
     }
   };
 
