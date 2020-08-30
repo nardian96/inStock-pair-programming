@@ -518,10 +518,10 @@ p {
             justify-content: left;
   }
   .list__subcontainer--one {
-    width: 46.5%;
+    width: 47.4%;
   }
   .list__subcontainer--two {
-    width: 53.5%;
+    width: 52.6%;
   }
   .list__warehouse--wrapper {
     width: 54%;
@@ -533,7 +533,7 @@ p {
     width: 54%;
   }
   .list__address {
-    width: 34.45%;
+    width: 35%;
   }
   .list__address h4 {
     padding: 0;
@@ -577,7 +577,57 @@ p {
     margin: 0 8.12rem;
   }
   .list__main-subheader--one {
+    width: 25.58%;
     padding-left: 2.5rem;
+  }
+  .list__main-subheader--two {
+    width: 25.58%;
+  }
+  .list__main-subheader--three {
+    width: 17.05%;
+  }
+  .list__main-subheader--four {
+    width: 21.76%;
+  }
+  .list__main-subheader--five {
+    width: 19%;
+    padding-left: 3.4rem;
+    padding-right: 0.75rem;
+  }
+  .list__subcontainer--one {
+    width: 56%;
+  }
+  .list__subcontainer--two {
+    width: 44%;
+  }
+  .list__warehouse--wrapper {
+    width: 47%;
+  }
+  .list__warehouse--wrapper h3 {
+    font-size: 82px;
+  }
+  .list__warehouse {
+    width: 47%;
+  }
+  .list__address {
+    width: 53%;
+  }
+  .list__address h4 {
+    padding: 0;
+  }
+  .list__contact-name {
+    width: 50%;
+  }
+  .list__contact-info {
+    width: 59.01%;
+  }
+  .list__contact-info h4 {
+    padding: 0;
+  }
+  .list__icons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 

@@ -259,10 +259,10 @@
             flex-direction: row;
             justify-content: left;
             &--one {
-                width: 46.5%;
+                width: 47.4%;
             }
             &--two {
-                width: 53.5%;
+                width: 52.6%;
             }
         }
         &__warehouse--wrapper {
@@ -275,7 +275,7 @@
             width: 54%;
         }
         &__address {
-            width: 34.45%;
+            width: 35%;
             h4 {
                 padding: 0;
             }
@@ -321,9 +321,58 @@
         }
         &__main-subheader {
             &--one {
-                // width: 26%;
+                width: 25.58%;
                 padding-left: 2.5rem;
             }
+            &--two {
+                width: 25.58%;
+            }
+            &--three {
+                width: 17.05%;
+            }
+            &--four {
+                width: 21.76%;
+            }
+            &--five {
+                width: 19%;
+                padding-left: 3.4rem;
+                padding-right: 0.75rem;
+            }
+        }
+        &__subcontainer {
+            &--one {
+                width: 56%;
+            }
+            &--two {
+                width: 44%;
+            }
+        }
+        &__warehouse--wrapper {
+            width: 47%;
+            h3 {
+                font-size: 82px;
+            }
+        }
+        &__warehouse {
+            width: 47%;
+        }
+        &__address {
+            width: 53%;
+            h4 {
+                padding: 0;
+            }
+        }
+        &__contact-name {
+            width: 50%;
+        }
+        &__contact-info {
+            width: 59.01%;
+            h4 {
+                padding: 0;
+            }
+        }
+        &__icons {
+            justify-content: center;
         }
     }
 }
