@@ -29,9 +29,10 @@
     }
   }
   &__link {
+    text-decoration: none;
+
     @include tablet {
       width: 55.33%;
-      text-decoration: none;
       color: $color-primary__instock-indigo;
       font-weight: bold;
     }

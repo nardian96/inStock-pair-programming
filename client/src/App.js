@@ -10,6 +10,7 @@ import InventoryDetails from "./components/InventoryDetail/";
 import Inventory from "./components/Inventory";
 import AddInventory from "./components/AddInventory";
 // import WarehouseInfo from "./components/WarehouseInfo/";
+import ModalWindow from "./components/ModalWindow.jsx";
 
 const warehouseApi = "http://localhost:8080/warehouse";
 const inventoryApi = "http://localhost:8080/inventories";
@@ -18,7 +19,38 @@ export default class App extends Component {
   state = {
     inventory: [],
     warehouse: [],
+    show: false,
+    item: "",
+    warehouse: "",
   };
+
+  deleteInfo = {
+    title: (props) => `Delete ${props.name} inventory item?`,
+    body: (props) =>
+      `Please confirm that you'd like to delete ${props.name} from the inventory list. <br/>You won't be able to undo this action`,
+    // itemId: "a193a6a7-42ab-4182-97dc-555ee85e7486",
+    itemId: (props) => props.itemId,
+    show: this.state.show,
+    cancel: () => {
+      this.setState({ show: false });
+    },
+    visible: () => {
+      this.setState({ show: true });
+    },
+    setWarehouse: (props) => this.setState({ warehouse: props.id }),
+    removeWarehouse: () => this.setState({ warehouse: "" }),
+    setItem: (props) => this.setState({ item: props.id }),
+    removeItem: () => this.setState({ item: "" }),
+    deleteWarehouse: (props) =>
+      axios
+        .delete(`${warehouseApi}/${props.id})`)
+        .then(this.setState({ show: false })),
+    deleteInventory: (props) =>
+      axios
+        .delete(`${inventoryApi}/${props.id})`)
+        .then(this.setState({ show: false })),
+  };
+
   componentDidMount() {
     this.displayWarehouseList();
     this.displayInventoryList();
@@ -146,6 +178,7 @@ export default class App extends Component {
                 <WarehouseDetails
                   warehouseItems={this.state.inventory}
                   warehouseInfo={this.state.warehouse}
+                  info={this.deleteInfo}
                   {...props}
                 />
               </>
@@ -165,7 +198,11 @@ export default class App extends Component {
             exact
             render={(props) => (
               <>
-                <InventoryDetails items={this.state.inventory} {...props} />
+                <InventoryDetails
+                  items={this.state.inventory}
+                  info={this.deleteInfo}
+                  {...props}
+                />
               </>
             )}
           />
@@ -202,6 +239,7 @@ export default class App extends Component {
             )}
           ></Route>
         </Switch>
+        <ModalWindow info={this.deleteInfo}></ModalWindow>
       </div>
     );
   }

@@ -117,6 +117,20 @@ p {
   }
 }
 
+.modal__background {
+  display: none;
+  position: absolute;
+  width: 100vw;
+  padding: 0 16px;
+  height: 100vh;
+  background-color: #13182c;
+  opacity: 1;
+}
+
+.modal__window {
+  background-color: #ffffff;
+}
+
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1073,10 +1087,13 @@ p {
   top: 2px;
 }
 
+.warehouse-item__link {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 767px) {
   .warehouse-item__link {
     width: 55.33%;
-    text-decoration: none;
     color: #2e66e6;
     font-weight: bold;
   }
