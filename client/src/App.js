@@ -48,7 +48,7 @@ export default class App extends Component {
     newItem.category = event.target.category.value;
 
     newItem.status = event.target.status.value;
-    if (newItem.status === "In stock") {
+    if (newItem.status === "In Stock") {
       newItem.quantity = parseInt(event.target.quantity.value);
     } else {
       newItem.quantity = 0;
@@ -74,6 +74,48 @@ export default class App extends Component {
     }
     console.log(newItem);
     axios.post(inventoryApi, newItem).then(() => {
+      this.displayInventoryList();
+      this.props.history.push("/Inventories");
+    });
+  };
+
+  updateInventory = (event) => {
+    event.preventDefault();
+    let inventory = {};
+    inventory.itemName = event.target.itemName.value;
+    inventory.description = event.target.description.value;
+    inventory.category = event.target.category.value;
+
+    inventory.status = event.target.status.value;
+    if (inventory.status === "In Stock") {
+      inventory.quantity = parseInt(event.target.quantity.value);
+    } else {
+      inventory.quantity = 0;
+    }
+    let warehouse = event.target.warehouse.value; // Can be updated once get by warehouse id is done
+    inventory.warehouseId = warehouse.split(",")[0];
+    inventory.warehouseName = warehouse.split(",").splice(1).join(",");
+    // Don't post if fields are empty
+    if (inventory.itemName === "") {
+      inventory.itemName = undefined;
+    }
+    if (inventory.description === "") {
+      inventory.description = undefined;
+    }
+    if (inventory.category === "") {
+      inventory.category = undefined;
+    }
+    if (isNaN(inventory.quantity)) {
+      inventory.quantity = undefined;
+    }
+    if (inventory.warehouseName === "") {
+      inventory.warehouseName = undefined;
+    }
+    console.log("updating to ", inventory);
+    let url =
+      "http://localhost:8080/inventories/" +
+      this.props.match.params.inventoryId;
+    axios.put(url, inventory).then(() => {
       this.displayInventoryList();
       this.props.history.push("/Inventories");
     });
@@ -132,11 +174,26 @@ export default class App extends Component {
 
           <Route
             path="/Inventories/add"
-            render={() => (
+            exact
+            render={(props) => (
               <AddInventory
                 inventories={this.state.inventory}
                 warehouses={this.state.warehouse}
                 addInventory={this.postInventory}
+                {...props}
+              />
+            )}
+          ></Route>
+
+          <Route
+            path="/Inventories/:inventoryId/edit"
+            exact
+            render={(props) => (
+              <AddInventory
+                inventories={this.state.inventory}
+                warehouses={this.state.warehouse}
+                updateInventory={this.updateInventory}
+                {...props}
               />
             )}
           ></Route>

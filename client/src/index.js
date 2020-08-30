@@ -31,6 +31,7 @@ ReactDOM.render(
         <Route path="/Inventory/:inventoryId" component={App} exact />
         <Route path="/Inventories" component={App} exact />
         <Route path="/Inventories/add" component={App} exact />
+        <Route path="/Inventories/:inventoryId/edit" component={App} exact />
         <Route path="/*" component={NotFound} />
       </Switch>
     </Router>

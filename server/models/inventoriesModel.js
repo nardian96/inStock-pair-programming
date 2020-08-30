@@ -47,4 +47,17 @@ function add(data) {
   return newInventory;
 }
 
-module.exports = { inventoriesList, add };
+function update(index, data) {
+  const inventoryArr = inventoriesList();
+  inventoryArr[index].warehouseId = data.warehouseId;
+  inventoryArr[index].warehouseName = data.warehouseName;
+  inventoryArr[index].quantity = data.quantity;
+  inventoryArr[index].status = data.status;
+  inventoryArr[index].category = data.category;
+  inventoryArr[index].description = data.description;
+  inventoryArr[index].itemName = data.itemName;
+  fs.writeFileSync(inventoriesFile, JSON.stringify(inventoryArr));
+  return inventoryArr[index];
+}
+
+module.exports = { inventoriesList, add, update };
