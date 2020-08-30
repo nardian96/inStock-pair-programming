@@ -1,56 +1,62 @@
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
-export default class ModalWindow extends Component {
-  info = this.props.info;
-  render() {
-    if (this.info) {
-      return ReactDOM.createPortal(
-        <section className="modal">
-          <div className="modal__background">
-            <div className="modal__window">
-              <button
-                className="modal__button-exit"
-                onClick={this.info.cancel}
-              ></button>
-              <h1 className="modal__title">{this.info.title}</h1>
-              <p className="modal__body">{this.info.body}</p>
-              <button className="modal__button" onClick={this.info.cancel}>
-                Cancel
-              </button>
-              <button
-                className="modal__button modal__button--cancel"
-                onClick={this.info.delete}
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-        </section>,
-        document.querySelector("#modal")
-      );
-    } else return <p></p>;
+import React, { useState } from "react";
+import { Modal, Button, ModalDialog, ModalTitle } from "react-bootstrap";
+import deleteIcon from "../assets/Icons/delete_outline-24px.svg";
 
-    // <Modal
-    //   show={info.show}
-    //   onHide={info.handleClose}
-    //   backdrop="static"
-    //   keyboard={false}
-    //   centered
-    //   size="sm"
-    //   dialogClassName="modal"
-    // >
-    //   <Modal.Header closeButton>
-    //     <Modal.Title as="h1">{info.title}</Modal.Title>
-    //   </Modal.Header>
-    //   <Modal.Body>{info.body}</Modal.Body>
-    //   <Modal.Footer>
-    //     <Button variant="secondary" onClick={info.handleClose}>
-    //       Close
-    //     </Button>
-    //     <Button variant="primary" onClick={info.action}>
-    //       {info.actionName}
-    //     </Button>
-    //   </Modal.Footer>
-    // </Modal>
-  }
+function ModalWindow(props) {
+  const info = props.info;
+  console.log(info);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  if (info.name) {
+    return (
+      <>
+        <Button variant="primary" onClick={handleShow} className="modal-button">
+          <img
+            src={deleteIcon}
+            alt="delete icon"
+            className="warehouse-item__delete-button"
+            onClick={handleShow}
+          />
+        </Button>
+
+        <Modal
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+          size="sm"
+          // restoreFocus={false}
+          // autoFocus={false}
+          backdrop={false}
+          dialogClassName="modal"
+        >
+          <Modal.Header closeButton={true} closeLabel="">
+            <Modal.Title as="h1">{`Delete ${info.name} ${info.item}?`}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body as="p">
+            {`Please confirm that you'd like to delete ${info.name} from the ${info.item} list.`}{" "}
+            <br /> {`You won't be able to undo this action`}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                info.action(info.id);
+                handleClose();
+              }}
+            >
+              Delete
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+    );
+  } else return <p></p>;
 }
+
+export default ModalWindow;
