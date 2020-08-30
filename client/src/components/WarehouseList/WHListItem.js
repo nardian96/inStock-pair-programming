@@ -8,31 +8,33 @@ function WHListItem(props) {
     return (
         <>
         <li className="list">
-            <div className="list__subcontainer">
-                <div className="list__warehouse">
-                    <h4>WAREHOUSE</h4>
-                    <div className="list__warehouse-wrapper">
-                        <h3>{props.warehouseItem.name}</h3>
-                        <img src={detailIcon}/>
-                    </div> 
+            <div className="list__subcontainer-wrapper">
+                <div className="list__subcontainer list__subcontainer--one">
+                    <div className="list__warehouse">
+                        <h4>WAREHOUSE</h4>
+                        <div className="list__warehouse-wrapper">
+                            <h3>{props.warehouseItem.name}</h3>
+                            <img src={detailIcon}/>
+                        </div> 
+                    </div>
+                    <div className="list__address">
+                        <h4>ADDRESS</h4>
+                        <p>{props.warehouseItem.address}, {props.warehouseItem.city}, {" "}
+                        {props.warehouseItem.country}</p>
+                    </div>
                 </div>
-                <div className="list__contact-name">
-                    <h4>CONTACT NAME</h4>
-                    <p>{props.warehouseItem.contact.name}</p>
+                <div className="list__subcontainer list__subcontainer--two">
+                    <div className="list__contact-name">
+                        <h4>CONTACT NAME</h4>
+                        <p>{props.warehouseItem.contact.name}</p>
+                    </div>
+                    <div className="list__contact-info">
+                        <h4>CONTACT INFORMATION</h4>
+                        <p>{props.warehouseItem.contact.phone}</p> 
+                        <p>{props.warehouseItem.contact.email}</p>
+                    </div>
                 </div>
-            </div>
-            <div className="list__subcontainer">
-                <div className="list__address">
-                    <h4>ADDRESS</h4>
-    <p>{props.warehouseItem.address}, {props.warehouseItem.city}, {" "}
-      {props.warehouseItem.country}</p>
-                </div>
-                <div className="list__contact-info">
-                    <h4>CONTACT INFORMATION</h4>
-                    <p>{props.warehouseItem.contact.phone}</p> 
-                    <p>{props.warehouseItem.contact.email}</p>
-                </div>
-            </div>
+            </div>    
             <div className="list__icons">
                 <img src={deleteIcon} />
                 <Link to={`/warehouse/${props.id}/edit`} >
