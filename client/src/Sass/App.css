@@ -1839,4 +1839,272 @@ p {
     margin-left: 40px;
   }
 }
+
+.add-inventory {
+  margin-right: 16px;
+  margin-left: 16px;
+  background-color: #ffffff;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory {
+    margin-right: 32;
+    margin-left: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .add-inventory {
+    margin-right: 130px;
+    margin-left: 130px;
+  }
+}
+
+.add-inventory-header {
+  padding-left: 24px;
+  padding-right: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.add-inventory-header--link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.add-inventory-header--back {
+  margin-right: 12px;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory-header {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .add-inventory-header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory__h2 {
+    margin-bottom: 32px;
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory__form {
+    width: 50%;
+  }
+}
+
+.add-inventory__form--label {
+  font-size: 1rem;
+  line-height: 1.54rem;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory__form--label {
+    font-size: 1rem;
+    line-height: 1.57rem;
+  }
+}
+
+.add-inventory__form--input {
+  background-color: #ffffff;
+  border: 1px solid #bdc5d5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  width: 100%;
+  height: 36px;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 1rem;
+  line-height: 1.54rem;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory__form--input {
+    font-size: 1rem;
+    line-height: 1.57rem;
+  }
+}
+
+.add-inventory__form-radio {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.add-inventory__form--text {
+  border: 1px solid #bdc5d5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  width: 100%;
+  height: 120px;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-family: titilliumWeb;
+  font-size: 1rem;
+  line-height: 1.54rem;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory__form--text {
+    font-size: 1rem;
+    line-height: 1.57rem;
+  }
+}
+
+.add-inventory--container {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory--container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-bottom: 24px;
+    padding-top: 24px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .add-inventory--container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.add-inventory__controller {
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(247, 248, 249, 0.7);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory__controller {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .add-inventory__controller {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+.add-inventory__controller-cancel {
+  width: 139px;
+  height: 36px;
+  border: 1px solid #bdc5d5;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding-top: 4px;
+  text-align: center;
+  text-decoration: none;
+  color: #5c667e;
+  font-size: 1rem;
+  line-height: 1.54rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory__controller-cancel {
+    width: 72px;
+    height: 38px;
+    margin-right: 16px;
+    font-size: 1rem;
+    line-height: 1.57rem;
+  }
+}
+
+.add-inventory__controller-button {
+  width: 139px;
+  height: 36px;
+  border-radius: 20px;
+  background-color: #2e66e6;
+  color: #ffffff;
+  border: none;
+  font-size: 1rem;
+  line-height: 1.54rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory__controller-button {
+    height: 38px;
+    font-size: 1rem;
+    line-height: 1.57rem;
+  }
+}
+
+.add-inventory--break {
+  margin: 0;
+}
+
+@media screen and (min-width: 767px) {
+  .add-inventory--break-item {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .add-inventory--break-item {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+.radio-label {
+  font-size: 1rem;
+  line-height: 1.54rem;
+}
+
+@media screen and (min-width: 767px) {
+  .radio-label {
+    font-size: 1rem;
+    line-height: 1.57rem;
+  }
+}
 /*# sourceMappingURL=App.css.map */
