@@ -1,12 +1,11 @@
 import React from 'react'
-import WHListHeader from './WHListHeader'
-import WHListContainer from './WHListContainer'
+import WHList from './WHList'
 
 function Warehouse(props) {
+    console.log(props)
     return (
         <section className="warehouse__list">
-            <WHListHeader />
-            <WHListContainer warehouses={props.warehouses} />
+            <WHList warehouses={props.warehouses} />
         </section>
     )
 }

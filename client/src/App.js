@@ -18,7 +18,7 @@ const inventoryApi = "http://localhost:8080/inventories";
 export default class App extends Component {
   state = {
     inventory: [],
-    warehouse: [],
+    warehouses: [],
     show: false,
     item: "",
     warehouse: "",
@@ -55,14 +55,16 @@ export default class App extends Component {
     this.displayWarehouseList();
     this.displayInventoryList();
   }
+
   displayWarehouseList = () => {
     return axios.get(warehouseApi).then((response) => {
       console.log(response.data);
       this.setState({
-        warehouse: response.data,
+        warehouses: response.data,
       });
     });
   };
+
   displayInventoryList = () => {
     return axios.get(inventoryApi).then((response) => {
       console.log(response.data);
@@ -71,6 +73,11 @@ export default class App extends Component {
       });
     });
   };
+
+  editSearchTerm = (input) => {
+    this.setState({searchTerm: input.target.value})
+  }
+
 
   postInventory = (event) => {
     event.preventDefault();
@@ -160,14 +167,14 @@ export default class App extends Component {
           <Route
             path="/warehouse"
             exact
-            render={() => <Warehouse warehouses={this.state.warehouse} />}
+            render={() => <Warehouse warehouses={this.state.warehouses} />}
           />
           <Route path="/warehouse/add" exact render={() => <AddWarehouse />} />
           <Route
             path="/warehouse/:warehouseId/edit"
             exact
             render={(props) => (
-              <EditWarehouse warehouses={this.state.warehouse} {...props} />
+              <EditWarehouse warehouses={this.state.warehouses} {...props} />
             )}
           />
           <Route
@@ -177,7 +184,7 @@ export default class App extends Component {
               <>
                 <WarehouseDetails
                   warehouseItems={this.state.inventory}
-                  warehouseInfo={this.state.warehouse}
+                  warehouseInfo={this.state.warehouses}
                   info={this.deleteInfo}
                   {...props}
                 />
@@ -191,7 +198,7 @@ export default class App extends Component {
           ></Route>
           <Route
             path="/warehouse"
-            render={() => <Warehouse warehouses={this.state.warehouse} />}
+            render={() => <Warehouse warehouses={this.state.warehouses} />}
           />
           <Route
             path="/inventoryDetails/:warehouseId/:inventoryId"
