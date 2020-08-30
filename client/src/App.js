@@ -201,9 +201,7 @@ export default class App extends Component {
           <Route
             path="/Inventories"
             exact
-            render={(props) => (
-              <Inventory inventories={this.state.inventory} {...props} />
-            )}
+            render={(props) => <Inventory {...props} />}
           ></Route>
 
           <Route
