@@ -69,6 +69,7 @@ function getInventoryByID(req, res) {
 
 // remove inventory by ID
 function removeInventoryByID(req, res) {
+  console.log(req.params.inventoryId);
   res.json(inventories.deleteInventory(req.params.inventoryId));
 }
 

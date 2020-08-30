@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
+import React from "react";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { Link } from "react-router-dom";
+import ModalWindow from "../ModalWindow.jsx";
 
 function WarehouseItem(props) {
   const warehouseId = props.item.warehouseID;
@@ -11,9 +11,14 @@ function WarehouseItem(props) {
   const quantity = props.item.quantity;
   const name = props.item.itemName;
   const status = props.item.status;
-  const event = props.item.event;
-  const cancel = props.item.cancel;
-  const visible = props.item.visible;
+  const info = {
+    name: name,
+    item: "inventory",
+    action: props.action,
+    id: itemId,
+  };
+
+  // props.info.setWarehouse;
 
   return (
     <div className="warehouse-item">
@@ -48,12 +53,8 @@ function WarehouseItem(props) {
         <p className="warehouse-item__quantity">{quantity}</p>
       </div>
       <div className="warehouse-item__actions">
-        <img
-          src={deleteIcon}
-          alt="delete icon"
-          className="warehouse-item__delete-button"
-          onClick={visible}
-        />
+        <ModalWindow info={info}></ModalWindow>
+
         <img
           src={editIcon}
           alt="edit icon"
