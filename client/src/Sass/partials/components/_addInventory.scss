@@ -15,10 +15,11 @@
     padding-left: 24px;
     padding-right: 24px;
     display: flex;
-    &--link {
-      display: flex;
-    }
-    &--back {
+    &--button {
+      height: 50%;
+      align-self: center;
+      background-color: $color-primary__white;
+      border: none;
       margin-right: 12px;
     }
 

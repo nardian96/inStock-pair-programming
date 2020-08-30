@@ -1868,13 +1868,13 @@ p {
   display: flex;
 }
 
-.add-inventory-header--link {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.add-inventory-header--back {
+.add-inventory-header--button {
+  height: 50%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #ffffff;
+  border: none;
   margin-right: 12px;
 }
 

@@ -15,9 +15,12 @@ export default function Inventory(props) {
           type="text"
           placeholder="Search"
         />
-        <Link className="page-header-link" to="/Inventories/add">
+        <button
+          className="page-header-link"
+          onClick={() => props.history.push("/Inventories/add")}
+        >
           + Add New Item
-        </Link>
+        </button>
       </div>
       <hr className="inventory--break" />
       <div className="table">
@@ -68,7 +71,7 @@ export default function Inventory(props) {
                   <div className="table__item-label">INVENTORY ITEM</div>
                   <Link
                     className="table__item-link"
-                    to={`/Inventories/${inventory.id}`}
+                    to={`/inventoryDetails/${inventory.warehouseId}/${inventory.id}`}
                   >
                     <span className="table__item-text">
                       {inventory.itemName}
