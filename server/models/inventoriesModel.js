@@ -89,6 +89,14 @@ function deleteInventory(id) {
   return inventoryArray;
 }
 
+
+function deleteInventoryByWarehouse(id) {
+  const inventoryArray = inventoriesList();
+
+  const newArray = inventoryArray.filter((item) => item.warehouseID !== id);
+  fs.writeFileSync(inventoriesFile, JSON.stringify(newArray));
+  return newArray;
+}
 function sortInventories(property) {
   const inventoryArray = inventoriesList();
   const sortedArray = inventoryArray.sort((a, b) => {
@@ -111,6 +119,7 @@ function sortInventories(property) {
   });
 
   return sortedArray;
+
 }
 
 module.exports = {
@@ -119,5 +128,9 @@ module.exports = {
   deleteInventory,
   add,
   update,
+
+  deleteInventoryByWarehouse,
+
   sortInventories,
+
 };
