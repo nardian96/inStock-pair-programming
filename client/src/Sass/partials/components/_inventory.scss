@@ -177,11 +177,11 @@
     min-width: 91%;
     height: 64px;
     background-color: $color-background__graphite;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.5);
+    // box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.5);
 
     @include tablet {
       min-width: 44rem;
-      height: 109px;
+      height: 93px;
     }
 
     &--container {
@@ -209,7 +209,7 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 2rem 1.5rem;
+      padding: 1.5rem;
     }
   }
   &__list-container {
