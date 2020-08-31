@@ -36,7 +36,8 @@ function postWarehouse(req, res) {
 }
 
 function deleteWarehouse(req, res) {
-  res.json(warehouse.removeWarehouse(req.params.id));
+  console.log(req.params);
+  res.json(warehouse.removeWarehouse(req.params.warehouseId));
 }
 
 //edit warehouse

@@ -21,7 +21,7 @@ function WHListItem(props) {
             <div className="list__warehouse">
               <h4>WAREHOUSE</h4>
               <div className="list__warehouse-wrapper">
-                <Link to={`/warehouse/${props.warehouseItem.id}`}>
+                <Link className="list__warehouse-link" to={`/warehouse/${props.warehouseItem.id}`}>
                   <h3>{props.warehouseItem.name}</h3>
                   <img src={detailIcon} />{" "}
                 </Link>
@@ -48,7 +48,7 @@ function WHListItem(props) {
           </div>
         </div>
         <div className="list__icons">
-          <ModalWindow info={info} action={props.action}></ModalWindow>
+          <ModalWindow info={info}></ModalWindow>
 
           <Link to={`/warehouse/${props.id}/edit`}>
             <img src={editIcon} />
