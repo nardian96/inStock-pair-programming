@@ -5,29 +5,67 @@ import { Link } from "react-router-dom";
 
 class WHList extends Component {
   state = {
-    searchTerm: "",
+    searchVal: "",
+    warehouseList: [],
   };
 
   onSearch = (event) => {
-    this.setState({ searchTerm: event.target.value });
+    this.setState({ searchVal: event.target.value });
+
+    if (event.target.value !== "") {
+      this.warehouseSearch(event.target.value);
+    } else {
+      this.setState({ warehouseList: this.props.warehouses });
+    }
   };
 
-  onSearch = (event) => {
-    this.setState({ searchTerm: event.target.value });
+  warehouseSearch = (text) => {
+    let reg = new RegExp(`^${text}.*`, "i");
+    let filterList = [];
+    this.props.warehouses.map((warehouse) => {
+      if (reg.test(warehouse.name)) {
+        filterList.push(warehouse);
+      } else if (reg.test(warehouse.address)) {
+        filterList.push(warehouse);
+      } else if (reg.test(warehouse.city)) {
+        filterList.push(warehouse);
+      } else if (reg.test(warehouse.country)) {
+        filterList.push(warehouse);
+      } else if (reg.test(warehouse.contact.name)) {
+        filterList.push(warehouse);
+      } else if (reg.test(warehouse.contact.phone)) {
+        filterList.push(warehouse);
+      } else if (reg.test(warehouse.contact.email)) {
+        filterList.push(warehouse);
+      }
+    });
+    console.log("filer", filterList);
+    this.setState({
+      warehouseList: filterList,
+    });
   };
 
   dynamicSearch = () => {
     return this.props.warehouses.filter((warehouse) =>
-      warehouse.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+      warehouse.name.toLowerCase().includes(this.state.searchVal.toLowerCase())
     );
   };
 
   render() {
     console.log(
       this.props.warehouses.filter((wh) =>
-        wh.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+        wh.name.toLowerCase().includes(this.state.searchVal.toLowerCase())
       )
     );
+
+    let list = [];
+    console.log(this.state.warehouseList);
+    if (this.state.searchVal === "" && this.state.warehouseList.length === 0) {
+      list = this.props.warehouses;
+    } else {
+      list = this.state.warehouseList;
+    }
+
     return (
       <>
         <div className="warehouse__list-header">
@@ -40,7 +78,7 @@ class WHList extends Component {
               <input
                 className="header__search"
                 type="search"
-                value={this.state.searchTerm}
+                value={this.state.searchVal}
                 onChange={this.onSearch}
                 name="searchbar"
                 placeholder="Search..."
@@ -53,7 +91,7 @@ class WHList extends Component {
         </div>
         <WHListItemContainer
           warehouses={this.props.warehouses}
-          filteredList={this.dynamicSearch()}
+          filteredList={list}
           action={this.props.action}
         />
       </>
