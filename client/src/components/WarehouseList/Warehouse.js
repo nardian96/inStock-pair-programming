@@ -1,13 +1,13 @@
-import React from 'react'
-import WHList from './WHList'
+import React from "react";
+import WHList from "./WHList";
 
 function Warehouse(props) {
-    console.log(props)
-    return (
-        <section className="warehouse__list">
-            <WHList warehouses={props.warehouses} />
-        </section>
-    )
+  console.log(props);
+  return (
+    <section className="warehouse__list">
+      <WHList warehouses={props.warehouses} action={props.action} />
+    </section>
+  );
 }
 
-export default Warehouse
+export default Warehouse;

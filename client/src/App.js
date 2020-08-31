@@ -18,6 +18,7 @@ export default class App extends Component {
   state = {
     inventory: [],
     warehouse: [],
+    searchTerm: "",
   };
 
   deleteWarehouse = (id) => {
@@ -146,14 +147,19 @@ export default class App extends Component {
           <Route
             path="/warehouse"
             exact
-            render={() => <Warehouse warehouses={this.state.warehouses} />}
+            render={() => (
+              <Warehouse
+                warehouses={this.state.warehouse}
+                action={this.deleteWarehouse}
+              />
+            )}
           />
           <Route path="/warehouse/add" exact render={() => <AddWarehouse />} />
           <Route
             path="/warehouse/:warehouseId/edit"
             exact
             render={(props) => (
-              <EditWarehouse warehouses={this.state.warehouses} {...props} />
+              <EditWarehouse warehouses={this.state.warehouse} {...props} />
             )}
           />
           <Route
