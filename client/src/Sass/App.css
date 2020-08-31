@@ -46,6 +46,10 @@ body {
           box-sizing: inherit;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: "titilliumWeb";
   min-width: 320px;

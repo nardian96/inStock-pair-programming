@@ -30,7 +30,7 @@ export default function InventoryItem(props) {
                 <div className="table__item-label">INVENTORY ITEM</div>
                 <Link
                   className="table__item-link"
-                  to={`/inventoryDetails/${inventory.warehouseId}/${inventory.id}`}
+                  to={`/inventoryDetails/${inventory.warehouseID}/${inventory.id}/0`}
                 >
                   <span className="table__item-text">{inventory.itemName}</span>
                   <img
@@ -67,11 +67,6 @@ export default function InventoryItem(props) {
 
               <div className="table__item__icons">
                 <ModalWindow info={info}></ModalWindow>
-                {/* <img
-                  className="table__item__icons--delete"
-                  src={deleteIcon}
-                  alt="delete"
-                /> */}
                 <Link
                   className="table__item__icons--link"
                   to={`/Inventories/${inventory.id}/edit`}
