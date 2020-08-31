@@ -53,6 +53,7 @@ function ModalWindow(props) {
               className="modal__button-delete modal__button"
               variant="primary"
               onClick={() => {
+                console.log(info.id);
                 info.action(info.id);
                 handleClose();
               }}

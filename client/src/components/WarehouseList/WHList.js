@@ -54,6 +54,7 @@ class WHList extends Component {
         <WHListItemContainer
           warehouses={this.props.warehouses}
           filteredList={this.dynamicSearch()}
+          action={this.props.action}
         />
       </>
     );

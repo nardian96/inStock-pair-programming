@@ -47,12 +47,8 @@ function addWarehouse(data) {
   fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArray));
   return warehouseArray;
 }
-function fullList() {
-  const data = fs.readFileSync(warehouseFile);
-  return JSON.parse(data);
-}
 function getByID(id) {
-  const array = fullList();
+  const array = warehouseList();
   return array.filter((item) => item.id === id).shift();
 }
 
@@ -78,10 +74,10 @@ function updateWarehouse(id, data) {
   return warehouseArray;
 }
 // function to load warehouse data
-function warehouseList(callback) {
-  const data = fs.readFileSync(warehouseFile);
-  return JSON.parse(data);
-}
+// function warehouseList(callback) {
+//   const data = fs.readFileSync(warehouseFile);
+//   return JSON.parse(data);
+// }
 
 // delete warehouse by id
 function removeWarehouse(id) {
