@@ -2,9 +2,20 @@ import React, { Component } from "react";
 import InventoryHeader from "./InventoryHeader";
 import InventoryTableColumns from "./InventoryTableColumns";
 import InventoryItem from "./InventoryItem";
+import axios from "axios";
 
 export default class Inventory extends Component {
-  state = { searchValue: "", inventories: [] };
+  state = {
+    searchValue: "",
+    inventories: [],
+    sort: {
+      item: true,
+      category: true,
+      status: true,
+      qty: true,
+      warehouse: true,
+    },
+  };
 
   searchChange = (event) => {
     this.setState({ searchValue: event.target.value });
@@ -14,6 +25,17 @@ export default class Inventory extends Component {
     } else {
       this.setState({ inventories: this.props.inventories });
     }
+  };
+
+  sort = (asc, property, sortConditions) => {
+    const inventoryApi = `http://localhost:8080/inventories/sort/${property}`;
+    axios.get(inventoryApi).then((response) => {
+      let sortArr = response.data;
+      if (!asc) {
+        sortArr = sortArr.reverse();
+      }
+      this.setState({ inventories: sortArr, sort: sortConditions });
+    });
   };
 
   inventorySearch = (text) => {
@@ -32,13 +54,20 @@ export default class Inventory extends Component {
         filterList.push(inv);
       }
     });
-    console.log(filterList);
+    //console.log(filterList);
     this.setState({
       inventories: filterList,
     });
   };
 
   render() {
+    let list = [];
+    if (this.state.searchValue === "" && this.state.inventories.length === 0) {
+      list = this.props.inventories;
+    } else {
+      list = this.state.inventories;
+    }
+    console.log("list", list);
     return (
       <div className="inventory__list">
         <div className="inventory__list--container">
@@ -47,18 +76,15 @@ export default class Inventory extends Component {
             searchChange={this.searchChange}
             {...this.props}
           />
-          {/* <hr className="inventory--break" /> */}
-          {/* <div className="table"> */}
-          <InventoryTableColumns />
-          <InventoryItem
-            inventories={
-              this.state.searchValue === ""
-                ? this.props.inventories
-                : this.state.inventories
-            }
-            action={this.props.action}
+          <InventoryTableColumns
+            sortItem={this.state.sort.item}
+            sortCategory={this.state.sort.category}
+            sortStatus={this.state.sort.status}
+            sortQty={this.state.sort.qty}
+            sortWarehouse={this.state.sort.warehouse}
+            sort={this.sort}
           />
-          {/* </div> */}
+          <InventoryItem inventories={list} action={this.props.action} />
         </div>
       </div>
     );
