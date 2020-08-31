@@ -243,7 +243,29 @@ p {
           order: 2;
 }
 
+@media screen and (min-width: 767px) {
+  .modal-body {
+    width: 608px;
+    margin-left: 64px;
+  }
+}
 
+.modal-footer {
+  margin-top: 381px;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 767px) {
+  .modal-footer {
+    margin-top: 32px;
+    margin-bottom: 40px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.header-container {
+  height: 136px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

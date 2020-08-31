@@ -1,45 +1,63 @@
 import React, { Component } from "react";
 import searchIcon from "../../assets/Icons/search-24px.svg";
 import WHListItemContainer from "./WHListItemContainer";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 class WHList extends Component {
+  state = {
+    searchTerm: "",
+  };
 
-    state = {
-        searchTerm: ""
-    }
+  onSearch = (event) => {
+    this.setState({ searchTerm: event.target.value });
+  };
 
-    onSearch = (event) => {
-        this.setState({searchTerm: event.target.value})
-    }
+  onSearch = (event) => {
+    this.setState({ searchTerm: event.target.value });
+  };
 
-    dynamicSearch = () => {
-        return this.props.warehouses.filter(warehouse => warehouse.name.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
-    }
-    
-    render() {
-        console.log(this.props.warehouses.filter(wh => wh.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())))
-        return (
-            <>
-            <div className="warehouse__list-header">
-                <h1 className="header__title">Warehouses</h1>
-                <div className="warehouse__list-subheader">
-                    <form className="header__search-container">
-                        <label htmlFor="header__search" className="header__search-icon">
-                            <img src={searchIcon} alt='search icon'/>
-                        </label>
-                        <input className="header__search" type="search" value={this.state.searchTerm} onChange={this.onSearch} name="searchbar" placeholder="Search..."></input>
-                    </form>
-                    <Link to='/warehouse/add'>
-                        <button className="header__button"> + Add New Warehouse</button>
-                    </Link>
-                </div>
-            </div>
-            <WHListItemContainer warehouses={this.props.warehouses} filteredList={this.dynamicSearch()}/>
-            </>
-        )
-    }
-} 
+  dynamicSearch = () => {
+    return this.props.warehouses.filter((warehouse) =>
+      warehouse.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+    );
+  };
 
+  render() {
+    console.log(
+      this.props.warehouses.filter((wh) =>
+        wh.name.toLowerCase().includes(this.state.searchTerm.toLowerCase())
+      )
+    );
+    return (
+      <>
+        <div className="warehouse__list-header">
+          <h1 className="header__title">Warehouses</h1>
+          <div className="warehouse__list-subheader">
+            <form className="header__search-container">
+              <label htmlFor="header__search" className="header__search-icon">
+                <img src={searchIcon} alt="search icon" />
+              </label>
+              <input
+                className="header__search"
+                type="search"
+                value={this.state.searchTerm}
+                onChange={this.onSearch}
+                name="searchbar"
+                placeholder="Search..."
+              ></input>
+            </form>
+            <Link to="/warehouse/add">
+              <button className="header__button"> + Add New Warehouse</button>
+            </Link>
+          </div>
+        </div>
+        <WHListItemContainer
+          warehouses={this.props.warehouses}
+          filteredList={this.dynamicSearch()}
+        />
+      </>
+    );
+  }
+}
 
 export default WHList;

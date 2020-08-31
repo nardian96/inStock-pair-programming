@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import Header, { HeaderInventory } from './components/Header'
+import Header, { HeaderInventory } from "./components/Header";
 import Warehouse from "./components/WarehouseList/Warehouse";
 import AddWarehouse from "./components/AddEditWarehouse/AddWarehouse";
 import EditWarehouse from "./components/AddEditWarehouse/EditWarehouse";
@@ -19,6 +19,7 @@ export default class App extends Component {
   state = {
     inventory: [],
     warehouse: [],
+    searchTerm: "",
   };
 
   deleteWarehouse = (id) => {
@@ -147,29 +148,32 @@ export default class App extends Component {
           <Route
             path="/warehouse"
             exact
-            render={() => 
-            <>
-              <Header />    
-              <Warehouse warehouses={this.state.warehouse} />
-            </>
-            }
+            render={() => (
+              <>
+                <Header />
+                <Warehouse warehouses={this.state.warehouse} />
+              </>
+            )}
           />
-          <Route path="/warehouse/add" exact render={() => 
-            <>
-              <Header />
-              <AddWarehouse />
-            </>
-            } 
+          <Route
+            path="/warehouse/add"
+            exact
+            render={() => (
+              <>
+                <Header />
+                <AddWarehouse />
+              </>
+            )}
           />
           <Route
             path="/warehouse/:warehouseId/edit"
             exact
-            render={(props) => 
+            render={(props) => (
               <>
                 <Header />
                 <EditWarehouse warehouses={this.state.warehouse} {...props} />
               </>
-            }
+            )}
           />
           <Route
             path="/warehouse/:warehouseId"
@@ -194,7 +198,7 @@ export default class App extends Component {
                 <HeaderInventory />
                 <InventoryDetails
                   items={this.state.inventory}
-                  info={this.deleteInfo}
+                  action={this.deleteInventory}
                   {...props}
                 />
               </>
@@ -202,44 +206,44 @@ export default class App extends Component {
           />
 
           <Route
-            path="/Inventories"
-            exact
-            render={(props) => 
-              <>  
-              <HeaderInventory />
-              <Inventory {...props} />
-              </>
-            }
-          />
-
-          <Route
-            path="/Inventories/add"
+            path="/inventories"
             exact
             render={(props) => (
               <>
-              <HeaderInventory />
-              <AddInventory
-                inventories={this.state.inventory}
-                warehouses={this.state.warehouse}
-                addInventory={this.postInventory}
-                {...props}
-              />
+                <HeaderInventory />
+                <Inventory action={this.deleteInventory} {...props} />{" "}
+              </>
+            )}
+          ></Route>
+
+          <Route
+            path="/inventories/add"
+            exact
+            render={(props) => (
+              <>
+                <HeaderInventory />
+                <AddInventory
+                  inventories={this.state.inventory}
+                  warehouses={this.state.warehouse}
+                  addInventory={this.postInventory}
+                  {...props}
+                />
               </>
             )}
           />
 
           <Route
-            path="/Inventories/:inventoryId/edit"
+            path="/inventories/:inventoryId/edit"
             exact
             render={(props) => (
               <>
-              <HeaderInventory />
-              <AddInventory
-                inventories={this.state.inventory}
-                warehouses={this.state.warehouse}
-                updateInventory={this.updateInventory}
-                {...props}
-              />
+                <HeaderInventory />
+                <AddInventory
+                  inventories={this.state.inventory}
+                  warehouses={this.state.warehouse}
+                  updateInventory={this.updateInventory}
+                  {...props}
+                />
               </>
             )}
           />

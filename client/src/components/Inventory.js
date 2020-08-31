@@ -5,6 +5,7 @@ import rightIcon from "../assets/Icons/chevron_right-24px.svg";
 import sortIcon from "../assets/Icons/sort-24px.svg";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import ModalWindow from "./ModalWindow.jsx";
 
 const inventoryApi = "http://localhost:8080/inventories";
 
@@ -109,6 +110,13 @@ export default class Inventory extends Component {
           {this.state.inventories.map((inventory, index) => {
             let status = inventory.status.toUpperCase();
             let statusClass = "";
+            const info = {
+              name: inventory.itemName,
+              item: "inventory",
+              action: this.props.action,
+              id: inventory.id,
+            };
+
             if (status === "IN STOCK") {
               statusClass = "status-in";
             } else {
@@ -164,11 +172,7 @@ export default class Inventory extends Component {
                   </div>
 
                   <div className="table__item__icons">
-                    <img
-                      className="table__item__icons--delete"
-                      src={deleteIcon}
-                      alt="delete"
-                    />
+                    <ModalWindow info={info}></ModalWindow>
                     <Link
                       className="table__item__icons--link"
                       to={`/Inventories/${inventory.id}/edit`}
