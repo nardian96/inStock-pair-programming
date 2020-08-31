@@ -72,6 +72,9 @@ function removeInventoryByID(req, res) {
   console.log(req.params.inventoryId);
   res.json(inventories.deleteInventory(req.params.inventoryId));
 }
+function removeInventoryByWarehouse(req, res) {
+  res.json(inventories.deleteInventoryByWarehouse(req.params.warehouseId));
+}
 
 function sortInventories(req, res) {
   const propList = [
@@ -95,5 +98,9 @@ module.exports = {
   removeInventoryByID,
   addInventory,
   updateInventory,
+
+  removeInventoryByWarehouse,
+
   sortInventories,
+
 };

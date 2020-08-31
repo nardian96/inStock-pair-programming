@@ -23,7 +23,7 @@ function WarehouseItem(props) {
   return (
     <div className="warehouse-item">
       <div className="warehouse-item__left">
-        <h4 className="warehouse-item__label">INVENORY ITEM</h4>
+        <h4 className="warehouse-item__label">INVENTORY ITEM</h4>
         <Link
           to={`/inventoryDetails/${warehouseId}/${itemId}/1`}
           className="warehouse-item__link"

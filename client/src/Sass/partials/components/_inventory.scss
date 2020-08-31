@@ -91,7 +91,7 @@
       width: 50%;
       @include tablet {
         order: 5;
-        width: 10%;
+        width: 17.5%;
       }
     }
     &__icons {
@@ -112,7 +112,7 @@
       &--link {
         display: flex;
         @include tablet {
-          margin-left: 24px;
+          // margin-left: 24px;
         }
       }
     }
@@ -121,7 +121,22 @@
       position: relative;
       img {
         position: absolute;
-        top: 2px;
+        top: 1px;
+        width: 1.5rem;
+        height: 1.5rem;
+        padding-left: 0.5rem;
+        &:hover {
+          -webkit-transform: translateX(5px);
+          -webkit-transition: transform 0.4s ease-in-out;
+          -moz-transform: translateX(5px);
+          -moz-transition: transform 0.4s ease-in-out;
+          -ms-transform: translateX(5px);
+          -ms-transition: transform 0.4s ease-in-out;
+          -o-transform: translateX(5px);
+          -o-transition: transform 0.4s ease-in-out;
+          transform: translateX(5px);
+          transition: transform 0.4s ease-in-out;
+        }
       }
     }
     &-label {
@@ -144,9 +159,11 @@
 
     &-text {
       @include font-mobile__h3;
+      font-size: 13px;
       margin-bottom: 20px;
       @include tablet {
         @include font__h3;
+        font-size: 14px;
       }
     }
   }

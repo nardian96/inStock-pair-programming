@@ -560,6 +560,7 @@ p {
 
 .list__warehouse {
   width: 100%;
+  font-size: 13px;
 }
 
 .list__warehouse-wrapper {
@@ -584,14 +585,14 @@ p {
   font-size: 1rem;
   line-height: 1.54rem;
   font-family: "titilliumWeb";
-  font-size: 0.81rem;
+  font-size: 13px;
   color: #2e66e6;
   margin: 0;
 }
 
 .list__warehouse-wrapper img {
   width: 1.5rem;
-  height: 100%;
+  height: 1.5rem;
   padding-left: 0.5rem;
 }
 
@@ -619,7 +620,7 @@ p {
   font-size: 13px;
   line-height: 1.54rem;
   font-family: "titilliumWeb";
-  font-size: 0.75rem;
+  font-size: 13px;
   color: #13182c;
   margin: 0;
 }
@@ -636,7 +637,7 @@ p {
   font-size: 13px;
   line-height: 1.54rem;
   font-family: "titilliumWeb";
-  font-size: 0.75rem;
+  font-size: 13px;
   color: #13182c;
   margin: 0;
 }
@@ -653,7 +654,7 @@ p {
   font-size: 13px;
   line-height: 1.54rem;
   font-family: "titilliumWeb";
-  font-size: 0.75rem;
+  font-size: 13px;
   color: #13182c;
   margin: 0;
 }
@@ -685,7 +686,7 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
   .warehouse__list-subheader {
     display: -webkit-box;
@@ -787,7 +788,7 @@ p {
     width: 52.6%;
   }
   .list__warehouse {
-    width: 100%;
+    width: 54%;
   }
   .list__warehouse-wrapper {
     display: -webkit-box;
@@ -818,7 +819,7 @@ p {
     font-size: 1rem;
     line-height: 1.54rem;
     font-family: "titilliumWeb";
-    font-size: 0.81rem;
+    font-size: 14px;
     color: #2e66e6;
     margin: 0;
   }
@@ -842,33 +843,42 @@ p {
     transition: transform 0.4s ease-in-out;
     transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   }
-  .list__contact-name {
+  __contact-name {
     width: 100%;
   }
-  .list__contact-name p {
+  __contact-name p {
     font-size: 13px;
     line-height: 1.54rem;
     font-family: "titilliumWeb";
-    font-size: 0.75rem;
+    font-size: 14px;
     color: #13182c;
     margin: 0;
   }
-  .list__address {
+  __address {
     width: 35%;
   }
-  .list__address h4 {
+  __address h4 {
     padding: 0;
   }
-  .list__contact-name {
+  __address p {
+    font-size: 14px;
+  }
+  __contact-name {
     width: 61.27%;
   }
-  .list__contact-info {
+  __contact-name p {
+    font-size: 14px;
+  }
+  __contact-info {
     width: 59.01%;
   }
-  .list__contact-info h4 {
+  __contact-info h4 {
     padding: 0;
   }
-  .list__icons {
+  __contact-info p {
+    font-size: 14px;
+  }
+  __icons {
     width: 20%;
     height: 48px;
     -webkit-box-pack: end;
@@ -876,7 +886,7 @@ p {
             justify-content: flex-end;
     padding-top: 1rem;
   }
-  .list__icons a {
+  __icons a {
     height: 24px;
     padding-top: 3.5px;
   }
@@ -1511,7 +1521,26 @@ p {
 
 .warehouse-item__name img {
   position: absolute;
-  top: 2px;
+  top: 1px;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.warehouse-item__name img:hover {
+  -webkit-transform: translateX(5px);
+  -webkit-transition: transform 0.4s ease-in-out;
+  -moz-transform: translateX(5px);
+  -moz-transition: transform 0.4s ease-in-out;
+  -ms-transform: translateX(5px);
+  -ms-transition: transform 0.4s ease-in-out;
+  -o-transform: translateX(5px);
+  -o-transition: transform 0.4s ease-in-out;
+  transform: translateX(5px);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 
 .warehouse-item__link {
@@ -1797,7 +1826,7 @@ p {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
-    width: 10%;
+    width: 17.5%;
   }
 }
 
@@ -1833,19 +1862,32 @@ p {
   display: flex;
 }
 
-@media screen and (min-width: 767px) {
-  .table__item__icons--link {
-    margin-left: 24px;
-  }
-}
-
 .table__item-name {
   position: relative;
 }
 
 .table__item-name img {
   position: absolute;
-  top: 2px;
+  top: 1px;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.table__item-name img:hover {
+  -webkit-transform: translateX(5px);
+  -webkit-transition: transform 0.4s ease-in-out;
+  -moz-transform: translateX(5px);
+  -moz-transition: transform 0.4s ease-in-out;
+  -ms-transform: translateX(5px);
+  -ms-transition: transform 0.4s ease-in-out;
+  -o-transform: translateX(5px);
+  -o-transition: transform 0.4s ease-in-out;
+  transform: translateX(5px);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 
 .table__item-label {
@@ -1874,6 +1916,7 @@ p {
 .table__item-text {
   font-size: 1rem;
   line-height: 1.54rem;
+  font-size: 13px;
   margin-bottom: 20px;
 }
 
@@ -1881,6 +1924,7 @@ p {
   .table__item-text {
     font-size: 1rem;
     line-height: 1.57rem;
+    font-size: 14px;
   }
 }
 
