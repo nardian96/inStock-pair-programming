@@ -116,8 +116,8 @@ p {
 }
 
 .modal {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -134,9 +134,41 @@ p {
           justify-content: center;
 }
 
+.modal-open {
+  overflow: hidden !important;
+}
+
 .modal-button {
   background-color: #ffffff;
   border: none;
+}
+
+.modal__button {
+  width: 163px;
+  border-radius: 20px;
+  height: 36px;
+  background-color: #ffffff;
+  border: 1px solid #bdc5d5;
+}
+
+.modal__button-delete {
+  background-color: #c94515;
+  color: #ffffff;
+  margin-left: 17px;
+}
+
+@media screen and (min-width: 767px) {
+  .modal__button-delete {
+    margin-left: 16px;
+    margin-right: 64px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .modal__button {
+    width: 71px;
+    height: 38px;
+  }
 }
 
 .modal-content {
@@ -155,10 +187,17 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   background-color: #ffffff;
+  overflow: scroll !important;
+}
+
+@media screen and (min-width: 767px) {
+  .modal-content {
+    width: 672px;
+  }
 }
 
 .modal-dailog {
@@ -176,6 +215,13 @@ p {
           flex-direction: column;
 }
 
+@media screen and (min-width: 767px) {
+  .modal-header {
+    width: 608px;
+    margin-left: 64px;
+  }
+}
+
 .modal-header .close:nth-child(2) {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -184,11 +230,11 @@ p {
       align-self: flex-end;
   width: 24px;
   height: 24px;
-  margin-right: 21px;
   background-color: #ffffff;
   border: none;
-  font-size: 1.14rem;
-  line-height: 2rem;
+  font-size: 2.29rem;
+  line-height: 2.86rem;
+  margin-right: 24px;
 }
 
 .modal-title:nth-child(1) {
@@ -197,8 +243,7 @@ p {
           order: 2;
 }
 
-.header-container {
-  height: 136px;
+
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

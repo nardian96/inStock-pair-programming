@@ -27,9 +27,11 @@ function ModalWindow(props) {
           backdrop="static"
           keyboard={false}
           size="sm"
+          centered={true}
           // restoreFocus={false}
-          // autoFocus={false}
-          backdrop={false}
+          autoFocus={true}
+          backdrop={true}
+          scrollable={false}
           dialogClassName="modal"
         >
           <Modal.Header closeButton={true} closeLabel="">
@@ -40,10 +42,15 @@ function ModalWindow(props) {
             <br /> {`You won't be able to undo this action`}
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
+            <Button
+              variant="secondary"
+              onClick={handleClose}
+              className="modal__button"
+            >
               Close
             </Button>
             <Button
+              className="modal__button-delete modal__button"
               variant="primary"
               onClick={() => {
                 info.action(info.id);
