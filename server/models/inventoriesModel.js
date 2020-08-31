@@ -89,10 +89,35 @@ function deleteInventory(id) {
   return inventoryArray;
 }
 
+function sortInventories(property) {
+  const inventoryArray = inventoriesList();
+  const sortedArray = inventoryArray.sort((a, b) => {
+    let propA = "";
+    let propB = "";
+    if (property !== "quantity") {
+      propA = a[property].toUpperCase();
+      propB = b[property].toUpperCase();
+    } else {
+      propA = a[property];
+      propB = b[property];
+    }
+    let comparison = 0;
+    if (propA > propB) {
+      comparison = 1;
+    } else if (propA < propB) {
+      comparison = -1;
+    }
+    return comparison;
+  });
+
+  return sortedArray;
+}
+
 module.exports = {
   inventoriesList,
   getSingleInventory,
   deleteInventory,
   add,
   update,
+  sortInventories,
 };

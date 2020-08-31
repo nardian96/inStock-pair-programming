@@ -4,6 +4,7 @@ const inventoryController = require("../controllers/inventoriesController"); // 
 
 // warehouse routes
 router.get("/", inventoryController.getInventories); //Function to be done
+router.get("/sort/:property", inventoryController.sortInventories);
 router.get("/:inventoryId", inventoryController.getInventoryByID);
 router.delete("/:inventoryId", inventoryController.removeInventoryByID);
 //router.get("/:warehouseId/:itemName", inventoryController.getInventoryByID); //Function to be done
