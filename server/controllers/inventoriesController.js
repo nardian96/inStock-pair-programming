@@ -76,6 +76,21 @@ function removeInventoryByWarehouse(req, res) {
   res.json(inventories.deleteInventoryByWarehouse(req.params.warehouseId));
 }
 
+function sortInventories(req, res) {
+  const propList = [
+    "itemName",
+    "category",
+    "status",
+    "quantity",
+    "warehouseName",
+  ];
+  if (!propList.includes(req.params.property)) {
+    res.status(404).json({ message: "No property associated with that field" });
+  } else {
+    res.json(inventories.sortInventories(req.params.property, true));
+  }
+}
+
 // export functions
 module.exports = {
   getInventories,
@@ -83,5 +98,9 @@ module.exports = {
   removeInventoryByID,
   addInventory,
   updateInventory,
+
   removeInventoryByWarehouse,
+
+  sortInventories,
+
 };
