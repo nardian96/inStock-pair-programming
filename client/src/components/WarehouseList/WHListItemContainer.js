@@ -2,7 +2,8 @@ import React from 'react'
 import WHListItem from './WHListItem'
 import sortIcon from '../../assets/Icons/sort-24px.svg'
 
-function WHListContainer(props) {
+function WHListItemContainer(props) {
+    console.log(props)
     return (
         <>
         <div className="list__main-header">
@@ -27,7 +28,8 @@ function WHListContainer(props) {
             </div>
         </div>
         <ul className="warehouse__list-container">
-            {props.warehouses
+            {/* {props.warehouses */}
+            { props.filteredList
             .map((warehouse) => (
                 <WHListItem id={warehouse.id} key={warehouse.id} warehouseItem={warehouse}/>
             ))}  
@@ -36,4 +38,4 @@ function WHListContainer(props) {
     )
 }
 
-export default WHListContainer
+export default WHListItemContainer
