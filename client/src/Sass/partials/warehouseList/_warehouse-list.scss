@@ -279,14 +279,56 @@
         width: 52.6%;
       }
     }
-    &__warehouse--wrapper {
-      width: 54%;
-      h3 {
-        font-size: 82px;
-      }
-    }
     &__warehouse {
-      width: 54%;
+        width: 100%;
+    }
+    &__warehouse-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    &__warehouse-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        h3 {
+            @include font-mobile__h3;
+            font-family: "titilliumWeb";
+            font-size: 0.81rem;
+            color: $color-primary__instock-indigo;
+            margin: 0;
+        }
+        img {
+            width: 1.5rem;
+            height: 100%;
+            padding-left: 0.5rem;
+
+            &:hover {       
+                -webkit-transform: translateX(5px);
+                -webkit-transition: transform 0.4s ease-in-out;
+                -moz-transform: translateX(5px);
+                -moz-transition: transform 0.4s ease-in-out;
+                -ms-transform: translateX(5px);
+                -ms-transition: transform 0.4s ease-in-out;
+                -o-transform: translateX(5px);
+                -o-transition: transform 0.4s ease-in-out;
+                transform: translateX(5px);
+                transition: transform 0.4s ease-in-out;
+            }
+        }
+    }
+
+    &__contact-name {
+        width: 100%;
+        p {
+            @include font-mobile__p2;
+            font-family: "titilliumWeb";
+            font-size: 0.75rem;
+            color: $color-primary__instock-black;
+            margin: 0;
+        }
+
     }
     &__address {
       width: 35%;
