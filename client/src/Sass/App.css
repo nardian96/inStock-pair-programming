@@ -1866,14 +1866,12 @@ p {
   min-width: 91%;
   height: 64px;
   background-color: #232940;
-  -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.5);
-          box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.5);
 }
 
 @media screen and (min-width: 767px) {
   .inventory__list {
     min-width: 44rem;
-    height: 109px;
+    height: 93px;
   }
 }
 
@@ -1923,7 +1921,7 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
 }
 
