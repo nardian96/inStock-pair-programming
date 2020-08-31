@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 import backArrow from '../../assets/Icons/arrow_back-24px.svg'
+import { Link } from 'react-router-dom'
 
 export default class AddWarehouse extends Component {
 
@@ -47,11 +48,14 @@ export default class AddWarehouse extends Component {
                 <div className="warehouse__form-header">
                     <div>
                         <h1 className="warehouse__header-title">
-                        <img
-                            src={backArrow}
-                            className="warehouse-header__backArrow"
-                            alt="back arrow"
-                        />
+                        <Link to='/warehouse'>
+                            <img
+                                src={backArrow}
+                                className="warehouse-header__backArrow"
+                                alt="back arrow"
+                            />
+                        </Link>
+
                         Add New Warehouse
                         </h1>
                     </div>
@@ -98,7 +102,9 @@ export default class AddWarehouse extends Component {
                         </section>
                     </div>    
                     <div className="warehouse__button-container">
-                        <button className="warehouse__small-button">Cancel</button>
+                        <Link to='/warehouse'>
+                            <button className="warehouse__small-button">Cancel</button>
+                        </Link>
                         <button className="warehouse__small-button warehouse__small-button--blue warehouse__small-button--add">+ Add Warehouse</button>
                     </div>
                 </form>    

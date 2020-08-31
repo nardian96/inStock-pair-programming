@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
+import Header, { HeaderInventory } from "./components/Header";
 import Warehouse from "./components/WarehouseList/Warehouse";
 import AddWarehouse from "./components/AddEditWarehouse/AddWarehouse";
 import EditWarehouse from "./components/AddEditWarehouse/EditWarehouse";
@@ -148,18 +149,30 @@ export default class App extends Component {
             path="/warehouse"
             exact
             render={() => (
-              <Warehouse
-                warehouses={this.state.warehouse}
-                action={this.deleteWarehouse}
-              />
+              <>
+                <Header />
+                <Warehouse warehouses={this.state.warehouse} />
+              </>
             )}
           />
-          <Route path="/warehouse/add" exact render={() => <AddWarehouse />} />
+          <Route
+            path="/warehouse/add"
+            exact
+            render={() => (
+              <>
+                <Header />
+                <AddWarehouse />
+              </>
+            )}
+          />
           <Route
             path="/warehouse/:warehouseId/edit"
             exact
             render={(props) => (
-              <EditWarehouse warehouses={this.state.warehouse} {...props} />
+              <>
+                <Header />
+                <EditWarehouse warehouses={this.state.warehouse} {...props} />
+              </>
             )}
           />
           <Route
@@ -167,6 +180,7 @@ export default class App extends Component {
             exact
             render={(props) => (
               <>
+                <Header />
                 <WarehouseDetails
                   warehouseItems={this.state.inventory}
                   warehouseInfo={this.state.warehouse}
@@ -181,6 +195,7 @@ export default class App extends Component {
             exact
             render={(props) => (
               <>
+                <HeaderInventory />
                 <InventoryDetails
                   items={this.state.inventory}
                   action={this.deleteInventory}
@@ -194,7 +209,10 @@ export default class App extends Component {
             path="/inventories"
             exact
             render={(props) => (
-              <Inventory action={this.deleteInventory} {...props} />
+              <>
+                <HeaderInventory />
+                <Inventory action={this.deleteInventory} {...props} />{" "}
+              </>
             )}
           ></Route>
 
@@ -202,27 +220,33 @@ export default class App extends Component {
             path="/inventories/add"
             exact
             render={(props) => (
-              <AddInventory
-                inventories={this.state.inventory}
-                warehouses={this.state.warehouse}
-                addInventory={this.postInventory}
-                {...props}
-              />
+              <>
+                <HeaderInventory />
+                <AddInventory
+                  inventories={this.state.inventory}
+                  warehouses={this.state.warehouse}
+                  addInventory={this.postInventory}
+                  {...props}
+                />
+              </>
             )}
-          ></Route>
+          />
 
           <Route
             path="/inventories/:inventoryId/edit"
             exact
             render={(props) => (
-              <AddInventory
-                inventories={this.state.inventory}
-                warehouses={this.state.warehouse}
-                updateInventory={this.updateInventory}
-                {...props}
-              />
+              <>
+                <HeaderInventory />
+                <AddInventory
+                  inventories={this.state.inventory}
+                  warehouses={this.state.warehouse}
+                  updateInventory={this.updateInventory}
+                  {...props}
+                />
+              </>
             )}
-          ></Route>
+          />
         </Switch>
       </div>
     );

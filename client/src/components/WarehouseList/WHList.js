@@ -1,10 +1,15 @@
 import React, { Component } from "react";
 import searchIcon from "../../assets/Icons/search-24px.svg";
 import WHListItemContainer from "./WHListItemContainer";
+import { Link } from "react-router-dom";
 
 class WHList extends Component {
   state = {
     searchTerm: "",
+  };
+
+  onSearch = (event) => {
+    this.setState({ searchTerm: event.target.value });
   };
 
   onSearch = (event) => {
@@ -41,13 +46,14 @@ class WHList extends Component {
                 placeholder="Search..."
               ></input>
             </form>
-            <button className="header__button"> + Add New Warehouse</button>
+            <Link to="/warehouse/add">
+              <button className="header__button"> + Add New Warehouse</button>
+            </Link>
           </div>
         </div>
         <WHListItemContainer
           warehouses={this.props.warehouses}
           filteredList={this.dynamicSearch()}
-          action={this.props.action}
         />
       </>
     );
