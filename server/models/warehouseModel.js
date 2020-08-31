@@ -66,7 +66,7 @@ function updateWarehouse(id, data) {
     country: data.country,
     contact: data.contact,
   };
-  console.log(id)
+  console.log(id);
   const warehouseArray = warehouseList();
   const warehouseIndex = warehouseArray.findIndex(
     (selectedWarehouse) => selectedWarehouse.id === id
@@ -82,11 +82,23 @@ function warehouseList(callback) {
   const data = fs.readFileSync(warehouseFile);
   return JSON.parse(data);
 }
+
+// delete warehouse by id
+function removeWarehouse(id) {
+  const warehouseArr = warehouseList();
+  const warehouseIndex = warehouseArr.findIndex(
+    (warehouse) => warehouse.id === id
+  );
+  warehousesArr.splice(warehouseIndex, 1);
+  fs.writeFileSync(warehousesFile, JSON.stringify(warehousesArr));
+  return warehousesArr;
+}
+
 //export multiple functions
 module.exports = {
   addWarehouse,
   warehouseList,
-  // removeWarehouse,
+  removeWarehouse,
   updateWarehouse,
   getByID,
 };

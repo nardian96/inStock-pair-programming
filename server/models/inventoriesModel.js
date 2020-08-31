@@ -69,15 +69,24 @@ function getSingleInventory(id) {
 }
 
 //delete single inventory item
+// function deleteInventory(id) {
+//   const array = inventoriesList();
+//   const inventoryIndex = array.findIndex((selectedInventory) => {
+//     return selectedInventory.id === id;
+//   });
+//   delete array[inventoryIndex];
+//   const updatedArray = array.filter((item) => item !== null);
+//   fs.writeFileSync(inventoriesFile, JSON.stringify(updatedArray));
+//   return updatedArray;
+// }
 function deleteInventory(id) {
-  const array = inventoriesList();
-  const inventoryIndex = array.findIndex((selectedInventory) => {
-    return selectedInventory.id === id;
-  });
-  delete array[inventoryIndex];
-  const updatedArray = array.filter((item) => item !== null);
-  fs.writeFileSync(inventoriesFile, JSON.stringify(updatedArray));
-  return updatedArray;
+  const inventoryArray = inventoriesList();
+  const inventoryIndex = inventoryArray.findIndex(
+    (inventory) => inventory.id === id
+  );
+  inventoryArray.splice(inventoryIndex, 1);
+  fs.writeFileSync(inventoriesFile, JSON.stringify(inventoryArray));
+  return inventoryArray;
 }
 
 module.exports = {

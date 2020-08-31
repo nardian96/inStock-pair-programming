@@ -50,6 +50,7 @@ class AddInventory extends Component {
   };
 
   render() {
+    console.log(this.props);
     // Dynamically generate quantity components
     //console.log("logging", this.props.inventories);
     let quantityElement;
@@ -80,13 +81,16 @@ class AddInventory extends Component {
     return (
       <div className="add-inventory">
         <div className="add-inventory-header">
-          <Link className="add-inventory-header--link" to="/Inventories">
+          <button
+            className="add-inventory-header--button"
+            onClick={this.props.history.goBack}
+          >
             <img
               className="add-inventory-header--back"
               src={backIcon}
               alt="back"
             />
-          </Link>
+          </button>
           <h1 className="add-inventory-header__h1">
             {this.state.pathAdd ? "Add New" : "Edit"} Inventory Item
           </h1>
@@ -218,9 +222,12 @@ class AddInventory extends Component {
         </div>
 
         <div className="add-inventory__controller">
-          <Link className="add-inventory__controller-cancel" to="/Inventories">
-            <div>Cancel</div>
-          </Link>
+          <button
+            className="add-inventory__controller-cancel"
+            onClick={this.props.history.goBack}
+          >
+            Cancel
+          </button>
           <button
             className="add-inventory__controller-button"
             type="submit"
