@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import searchIcon from "../../assets/Icons/search-24px.svg";
 import WHListItemContainer from "./WHListItemContainer";
+import { Link } from 'react-router-dom'
 
 class WHList extends Component {
 
@@ -29,7 +30,9 @@ class WHList extends Component {
                         </label>
                         <input className="header__search" type="search" value={this.state.searchTerm} onChange={this.onSearch} name="searchbar" placeholder="Search..."></input>
                     </form>
-                    <button className="header__button"> + Add New Warehouse</button>
+                    <Link to='/warehouse/add'>
+                        <button className="header__button"> + Add New Warehouse</button>
+                    </Link>
                 </div>
             </div>
             <WHListItemContainer warehouses={this.props.warehouses} filteredList={this.dynamicSearch()}/>
