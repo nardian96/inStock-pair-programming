@@ -34,13 +34,15 @@ function ModalWindow(props) {
           scrollable={false}
           dialogClassName="modal"
         >
-          <Modal.Header closeButton={true} closeLabel="">
-            <Modal.Title as="h1">{`Delete ${info.name} ${info.item}?`}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body as="p">
-            {`Please confirm that you'd like to delete ${info.name} from the ${info.item} list.`}{" "}
-            <br /> {`You won't be able to undo this action`}
-          </Modal.Body>
+          <div>
+            <Modal.Header closeButton={true} closeLabel="">
+              <Modal.Title as="h1">{`Delete ${info.name} ${info.item}?`}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body as="p">
+              {`Please confirm that you'd like to delete ${info.name} from the ${info.item} list.`}{" "}
+              <br /> {`You won't be able to undo this action`}
+            </Modal.Body>
+          </div>
           <Modal.Footer>
             <Button
               variant="secondary"

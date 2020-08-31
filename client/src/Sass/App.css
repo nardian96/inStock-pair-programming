@@ -190,9 +190,9 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #ffffff;
   overflow: scroll !important;
 }
@@ -238,7 +238,14 @@ p {
   border: none;
   font-size: 2.29rem;
   line-height: 2.86rem;
-  margin-right: 24px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 767px) {
+  .modal-header .close:nth-child(2) {
+    margin-right: 24px;
+    margin-bottom: 0;
+  }
 }
 
 .modal-title {
@@ -260,6 +267,8 @@ p {
 
 .modal-footer {
   margin-bottom: 24px;
+  -ms-grid-column-align: end !important;
+      justify-self: end !important;
 }
 
 @media screen and (min-width: 767px) {

@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
     background-color: $color-primary__white;
     overflow: scroll !important;
     @include tablet {
@@ -70,7 +70,11 @@
         background-color: $color-primary__white;
         border: none;
         @include font__h1;
-        margin-right: 24px;
+        margin-bottom: $padding__base * 2;
+        @include tablet {
+          margin-right: 24px;
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -88,6 +92,7 @@
   }
   &-footer {
     margin-bottom: $padding__base * 3;
+    justify-self: end !important;
     @include tablet {
       margin-top: $padding__base * 4;
       margin-bottom: $padding__base * 5;
