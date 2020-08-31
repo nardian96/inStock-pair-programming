@@ -48,6 +48,7 @@ body {
 
 a {
   text-decoration: none;
+  font-family: "titilliumWeb";
 }
 
 body {
@@ -487,7 +488,7 @@ p {
 .header__search {
   width: 18.43rem;
   height: 36px;
-  border: 1px solid #BDC5D5;
+  border: 1px solid #bdc5d5;
   border-radius: 1.25rem;
   font-size: 13px;
   line-height: 20px;
@@ -562,6 +563,15 @@ p {
 }
 
 .list__warehouse-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.list__warehouse-wrapper a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -811,7 +821,6 @@ p {
   .list__icons a {
     height: 24px;
     padding-top: 3.5px;
-    padding-left: 24px;
   }
 }
 
@@ -1560,7 +1569,7 @@ p {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 767px) {
   .warehouse-item__delete-button {
     margin-right: 24px;
   }
