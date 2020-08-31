@@ -116,8 +116,8 @@ p {
 }
 
 .modal {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -134,9 +134,41 @@ p {
           justify-content: center;
 }
 
+.modal-open {
+  overflow: hidden !important;
+}
+
 .modal-button {
   background-color: #ffffff;
   border: none;
+}
+
+.modal__button {
+  width: 163px;
+  border-radius: 20px;
+  height: 36px;
+  background-color: #ffffff;
+  border: 1px solid #bdc5d5;
+}
+
+.modal__button-delete {
+  background-color: #c94515;
+  color: #ffffff;
+  margin-left: 17px;
+}
+
+@media screen and (min-width: 767px) {
+  .modal__button-delete {
+    margin-left: 16px;
+    margin-right: 64px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .modal__button {
+    width: 71px;
+    height: 38px;
+  }
 }
 
 .modal-content {
@@ -155,10 +187,17 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   background-color: #ffffff;
+  overflow: scroll !important;
+}
+
+@media screen and (min-width: 767px) {
+  .modal-content {
+    width: 672px;
+  }
 }
 
 .modal-dailog {
@@ -176,6 +215,13 @@ p {
           flex-direction: column;
 }
 
+@media screen and (min-width: 767px) {
+  .modal-header {
+    width: 608px;
+    margin-left: 64px;
+  }
+}
+
 .modal-header .close:nth-child(2) {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
@@ -184,11 +230,11 @@ p {
       align-self: flex-end;
   width: 24px;
   height: 24px;
-  margin-right: 21px;
   background-color: #ffffff;
   border: none;
-  font-size: 1.14rem;
-  line-height: 2rem;
+  font-size: 2.29rem;
+  line-height: 2.86rem;
+  margin-right: 24px;
 }
 
 .modal-title:nth-child(1) {
@@ -197,7 +243,29 @@ p {
           order: 2;
 }
 
-.header {
+@media screen and (min-width: 767px) {
+  .modal-body {
+    width: 608px;
+    margin-left: 64px;
+  }
+}
+
+.modal-footer {
+  margin-top: 381px;
+  margin-bottom: 24px;
+}
+
+@media screen and (min-width: 767px) {
+  .modal-footer {
+    margin-top: 32px;
+    margin-bottom: 40px;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+  }
+}
+
+.header-container {
+  height: 136px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,17 +273,59 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  text-align: center;
-  height: 195px;
   background-color: #232940;
+  padding: 0 1rem;
+}
+
+.logo {
+  padding: 1.89rem 0 1.5rem;
+}
+
+.button__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.button__warehouses {
+  width: 10.25rem;
+  padding-top: 0.70rem;
+  border: none;
   font-size: 13px;
-  line-height: 1.54rem;
+  background-color: #232940;
+  color: #bdc5d5;
+}
+
+.button__warehouses--active {
+  height: 36px;
+  border-radius: 20px;
+  padding-top: 0;
+  background-color: #13182c;
+  color: #ffffff;
+}
+
+.button__inventory {
+  width: 10.18rem;
+  padding-top: 0.70rem;
+  border: none;
+  background-color: #232940;
+  color: #bdc5d5;
+}
+
+.button__inventory--active {
+  height: 36px;
+  border-radius: 20px;
+  padding-top: 0;
+  background-color: #13182c;
+  color: #ffffff;
 }
 
 @media screen and (min-width: 767px) {
-  .header {
+  .header-container {
+    height: 92px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -224,38 +334,24 @@ p {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .button__container {
+    width: 11.81rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .button__warehouses {
+    width: 10rem;
+  }
 }
 
-.header__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-}
-
-.header__warehouses {
-  width: 164px;
-  height: 36px;
-  background-color: #13182c;
-  color: white;
-  border-radius: 20px;
-  width: 10.25rem;
-  height: 1.25rem;
-}
-
-.header__inventory {
-  background-color: #13182c;
-  color: #bdc5d5;
+@media screen and (min-width: 1280px) {
+  .header-container {
+    padding: 0 8.12rem;
+  }
 }
 
 .warehouse__list {

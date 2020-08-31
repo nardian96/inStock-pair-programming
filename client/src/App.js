@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
+import Header, { HeaderInventory } from "./components/Header";
 import Warehouse from "./components/WarehouseList/Warehouse";
 import AddWarehouse from "./components/AddEditWarehouse/AddWarehouse";
 import EditWarehouse from "./components/AddEditWarehouse/EditWarehouse";
@@ -18,13 +19,19 @@ export default class App extends Component {
   state = {
     inventory: [],
     warehouse: [],
+    searchTerm: "",
   };
 
-  deleteWarehouse = (id) =>
-    axios.delete(`${warehouseApi}/${id}`).then(this.displayWarehouseList());
+  deleteWarehouse = (id) => {
+    axios.delete(`${warehouseApi}/${id}`);
+    this.displayWarehouseList();
+  };
 
-  deleteInventory = (id) =>
-    axios.delete(`${inventoryApi}/${id}`).then(this.displayInventoryList());
+  deleteInventory = (id) => {
+    axios.delete(`${inventoryApi}/${id}`);
+    this.displayInventoryList();
+    console.log(this.state.inventory);
+  };
 
   componentDidMount() {
     this.displayWarehouseList();
@@ -35,7 +42,7 @@ export default class App extends Component {
     return axios.get(warehouseApi).then((response) => {
       console.log(response.data);
       this.setState({
-        warehouses: response.data,
+        warehouse: response.data,
       });
     });
   };
@@ -141,14 +148,31 @@ export default class App extends Component {
           <Route
             path="/warehouse"
             exact
-            render={() => <Warehouse warehouses={this.state.warehouses} />}
+            render={() => (
+              <>
+                <Header />
+                <Warehouse warehouses={this.state.warehouse} />
+              </>
+            )}
           />
-          <Route path="/warehouse/add" exact render={() => <AddWarehouse />} />
+          <Route
+            path="/warehouse/add"
+            exact
+            render={() => (
+              <>
+                <Header />
+                <AddWarehouse />
+              </>
+            )}
+          />
           <Route
             path="/warehouse/:warehouseId/edit"
             exact
             render={(props) => (
-              <EditWarehouse warehouses={this.state.warehouses} {...props} />
+              <>
+                <Header />
+                <EditWarehouse warehouses={this.state.warehouse} {...props} />
+              </>
             )}
           />
           <Route
@@ -156,6 +180,7 @@ export default class App extends Component {
             exact
             render={(props) => (
               <>
+                <Header />
                 <WarehouseDetails
                   warehouseItems={this.state.inventory}
                   warehouseInfo={this.state.warehouse}
@@ -170,9 +195,10 @@ export default class App extends Component {
             exact
             render={(props) => (
               <>
+                <HeaderInventory />
                 <InventoryDetails
                   items={this.state.inventory}
-                  info={this.deleteInfo}
+                  action={this.deleteInventory}
                   {...props}
                 />
               </>
@@ -180,38 +206,51 @@ export default class App extends Component {
           />
 
           <Route
-            path="/Inventories"
+            path="/inventories"
             exact
             render={(props) => (
-              <Inventory inventories={this.state.inventory} {...props} />
+              <>
+                <HeaderInventory />
+                <Inventory
+                  inventories={this.state.inventory}
+                  action={this.deleteInventory}
+                  {...props}
+                />
+              </>
             )}
           ></Route>
 
           <Route
-            path="/Inventories/add"
+            path="/inventories/add"
             exact
             render={(props) => (
-              <AddInventory
-                inventories={this.state.inventory}
-                warehouses={this.state.warehouse}
-                addInventory={this.postInventory}
-                {...props}
-              />
+              <>
+                <HeaderInventory />
+                <AddInventory
+                  inventories={this.state.inventory}
+                  warehouses={this.state.warehouse}
+                  addInventory={this.postInventory}
+                  {...props}
+                />
+              </>
             )}
-          ></Route>
+          />
 
           <Route
-            path="/Inventories/:inventoryId/edit"
+            path="/inventories/:inventoryId/edit"
             exact
             render={(props) => (
-              <AddInventory
-                inventories={this.state.inventory}
-                warehouses={this.state.warehouse}
-                updateInventory={this.updateInventory}
-                {...props}
-              />
+              <>
+                <HeaderInventory />
+                <AddInventory
+                  inventories={this.state.inventory}
+                  warehouses={this.state.warehouse}
+                  updateInventory={this.updateInventory}
+                  {...props}
+                />
+              </>
             )}
-          ></Route>
+          />
         </Switch>
       </div>
     );

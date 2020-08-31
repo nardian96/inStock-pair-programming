@@ -2,6 +2,7 @@ import React from "react";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import rightIcon from "../../assets/Icons/chevron_right-24px.svg";
+import ModalWindow from "../ModalWindow.jsx";
 import { Link } from "react-router-dom";
 
 export default function InventoryItem(props) {
@@ -10,6 +11,12 @@ export default function InventoryItem(props) {
       {props.inventories.map((inventory, index) => {
         let status = inventory.status.toUpperCase();
         let statusClass = "";
+        const info = {
+          name: inventory.itemName,
+          item: "inventory",
+          action: props.action,
+          id: inventory.id,
+        };
         if (status === "IN STOCK") {
           statusClass = "status-in";
         } else {
@@ -59,11 +66,12 @@ export default function InventoryItem(props) {
               </div>
 
               <div className="table__item__icons">
-                <img
+                <ModalWindow info={info}></ModalWindow>
+                {/* <img
                   className="table__item__icons--delete"
                   src={deleteIcon}
                   alt="delete"
-                />
+                /> */}
                 <Link
                   className="table__item__icons--link"
                   to={`/Inventories/${inventory.id}/edit`}

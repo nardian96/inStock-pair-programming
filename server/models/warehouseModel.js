@@ -89,9 +89,9 @@ function removeWarehouse(id) {
   const warehouseIndex = warehouseArr.findIndex(
     (warehouse) => warehouse.id === id
   );
-  warehousesArr.splice(warehouseIndex, 1);
-  fs.writeFileSync(warehousesFile, JSON.stringify(warehousesArr));
-  return warehousesArr;
+  warehouseArr.splice(warehouseIndex, 1);
+  fs.writeFileSync(warehouseFile, JSON.stringify(warehouseArr));
+  return warehouseArr;
 }
 
 //export multiple functions

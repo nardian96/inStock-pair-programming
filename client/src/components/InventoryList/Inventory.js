@@ -32,7 +32,7 @@ export default class Inventory extends Component {
         filterList.push(inv);
       }
     });
-    console.log(reg, filterList);
+    console.log(filterList);
     this.setState({
       inventories: filterList,
     });
@@ -51,10 +51,11 @@ export default class Inventory extends Component {
           <InventoryTableColumns />
           <InventoryItem
             inventories={
-              this.state.inventories.length === 0
+              this.state.searchValue === ""
                 ? this.props.inventories
                 : this.state.inventories
             }
+            action={this.props.action}
           />
         </div>
       </div>
