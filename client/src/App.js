@@ -7,7 +7,7 @@ import axios from "axios";
 import "./Sass/App.css";
 import WarehouseDetails from "./components/warehouseDetail/";
 import InventoryDetails from "./components/InventoryDetail/";
-import Inventory from "./components/Inventory";
+import Inventory from "./components/InventoryList/Inventory";
 import AddInventory from "./components/AddInventory";
 // import WarehouseInfo from "./components/WarehouseInfo/";
 
@@ -50,9 +50,8 @@ export default class App extends Component {
   };
 
   editSearchTerm = (input) => {
-    this.setState({searchTerm: input.target.value})
-  }
-
+    this.setState({ searchTerm: input.target.value });
+  };
 
   postInventory = (event) => {
     event.preventDefault();
@@ -161,7 +160,6 @@ export default class App extends Component {
                   warehouseItems={this.state.inventory}
                   warehouseInfo={this.state.warehouse}
                   action={this.deleteInventory}
-
                   {...props}
                 />
               </>
@@ -184,7 +182,9 @@ export default class App extends Component {
           <Route
             path="/Inventories"
             exact
-            render={(props) => <Inventory {...props} />}
+            render={(props) => (
+              <Inventory inventories={this.state.inventory} {...props} />
+            )}
           ></Route>
 
           <Route
