@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export default function InventoryItem(props) {
   return (
-    <>
+    <ul className="inventory__list--table">
       {props.inventories.map((inventory, index) => {
         let status = inventory.status.toUpperCase();
         let statusClass = "";
@@ -26,52 +26,41 @@ export default function InventoryItem(props) {
         return (
           <React.Fragment key={index}>
             <div className="table__item">
-              <div className="table__item__container">
-                <div className="table__item-label">INVENTORY ITEM</div>
+              <div className="table__item__name">
+                <h4 className="table__item-label">INVENTORY ITEM</h4>
                 <Link
                   className="table__item-link"
-                  to={`/inventoryDetails/${inventory.warehouseId}/${inventory.id}`}
+                  to={`/inventoryDetails/${inventory.warehouseID}/${inventory.id}`}
                 >
-                  <span className="table__item-text">{inventory.itemName}</span>
-                  <img
-                    className="table__item-right"
-                    src={rightIcon}
-                    alt="right icon"
-                  />
+                  <p className="table__item-name">
+                    {inventory.itemName}
+                    <img src={rightIcon} alt="right icon" />
+                  </p>
                 </Link>
               </div>
 
-              <div className="table__item__container">
-                <div className="table__item-label">STATUS</div>
-                <span className={`table__item-text status ${statusClass}`}>
-                  {status}
-                </span>
+              <div className="table__item__status">
+                <h4 className="table__item-label">STATUS</h4>
+                <p className={` status ${statusClass}`}>{status}</p>
               </div>
 
-              <div className="table__item__container">
-                <div className="table__item-label">CATEGORY</div>
-                <span className="table__item-text">{inventory.category}</span>
+              <div className="table__item__category">
+                <h4 className="table__item-label">CATEGORY</h4>
+                <p className="table__item-text">{inventory.category}</p>
               </div>
 
-              <div className="table__item__container">
-                <div className="table__item-label">QTY</div>
-                <span className="table__item-text">{inventory.quantity}</span>
+              <div className="table__item__quantity">
+                <h4 className="table__item-label">QTY</h4>
+                <p className="table__item-text">{inventory.quantity}</p>
               </div>
 
-              <div className="table__item__container">
-                <div className="table__item-label">WAREHOUSE</div>
-                <span className="table__item-text">
-                  {inventory.warehouseName}
-                </span>
+              <div className="table__item__warehouse">
+                <h4 className="table__item-label">WAREHOUSE</h4>
+                <p className="table__item-text">{inventory.warehouseName}</p>
               </div>
 
               <div className="table__item__icons">
                 <ModalWindow info={info}></ModalWindow>
-                {/* <img
-                  className="table__item__icons--delete"
-                  src={deleteIcon}
-                  alt="delete"
-                /> */}
                 <Link
                   className="table__item__icons--link"
                   to={`/Inventories/${inventory.id}/edit`}
@@ -84,10 +73,9 @@ export default function InventoryItem(props) {
                 </Link>
               </div>
             </div>
-            <hr className="inventory--break" />
           </React.Fragment>
         );
       })}
-    </>
+    </ul>
   );
 }
