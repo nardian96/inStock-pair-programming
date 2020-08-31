@@ -8,7 +8,7 @@ import axios from "axios";
 import "./Sass/App.css";
 import WarehouseDetails from "./components/warehouseDetail/";
 import InventoryDetails from "./components/InventoryDetail/";
-import Inventory from "./components/Inventory";
+import Inventory from "./components/InventoryList/Inventory";
 import AddInventory from "./components/AddInventory";
 // import WarehouseInfo from "./components/WarehouseInfo/";
 
@@ -211,7 +211,11 @@ export default class App extends Component {
             render={(props) => (
               <>
                 <HeaderInventory />
-                <Inventory action={this.deleteInventory} {...props} />{" "}
+                <Inventory
+                  inventories={this.state.inventory}
+                  action={this.deleteInventory}
+                  {...props}
+                />
               </>
             )}
           ></Route>

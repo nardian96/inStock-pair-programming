@@ -4,7 +4,7 @@ import deleteIcon from "../assets/Icons/delete_outline-24px.svg";
 
 function ModalWindow(props) {
   const info = props.info;
-  console.log(info);
+  //console.log(info);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
