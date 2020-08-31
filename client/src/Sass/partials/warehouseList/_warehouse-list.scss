@@ -188,17 +188,21 @@
   .warehouse {
     &__list {
       min-width: 44rem;
-      height: 93px;
+      height: 109px;
     }
     &__list-header {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       padding: 2rem 1.5rem;
+      margin: 0 2rem;
     }
     &__list-subheader {
       display: flex;
       flex-direction: row;
+    }
+    &__list-container {
+        margin: 0 2rem;
     }
   }
   .header {
@@ -249,7 +253,7 @@
       }
       &--one {
         width: 25.85%;
-        padding-left: 2rem;
+        padding-left: 3rem;
       }
       &--two {
         width: 17.18%;
@@ -262,8 +266,8 @@
       }
       &--five {
         width: 19%;
-        padding-left: 3.4rem;
-        padding-right: 0.75rem;
+        padding-left: 2.5rem;
+        padding-right: 1rem;
       }
     }
     &__subcontainer-wrapper {
@@ -370,11 +374,14 @@
 //Desktop Design
 @include desktop {
   .warehouse {
+    &__list {
+        height: 109px;
+    }
     &__list-container {
-      margin: 0 8.12rem;
+    margin: 0 8.12rem;
     }
     &__list-header {
-      margin: 0 8.12rem;
+    margin: 0 8.12rem;
     }
   }
   .list {
