@@ -566,31 +566,21 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.list__warehouse-link {
+.list__warehouse-wrapper a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
 }
 
-.list__warehouse-link h3 {
-
+.list__warehouse-wrapper h3 {
   font-size: 1rem;
   line-height: 1.54rem;
   font-family: "titilliumWeb";
@@ -599,13 +589,13 @@ p {
   margin: 0;
 }
 
-.list__warehouse-link img {
+.list__warehouse-wrapper img {
   width: 1.5rem;
   height: 100%;
   padding-left: 0.5rem;
 }
 
-.list__warehouse-link img:hover {
+.list__warehouse-wrapper img:hover {
   -webkit-transform: translateX(5px);
   -webkit-transition: transform 0.4s ease-in-out;
   -moz-transform: translateX(5px);
@@ -695,7 +685,7 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
   .warehouse__list-subheader {
     display: -webkit-box;
@@ -796,14 +786,72 @@ p {
   .list__subcontainer--two {
     width: 52.6%;
   }
-  .list__warehouse--wrapper {
-    width: 54%;
-  }
-  .list__warehouse--wrapper h3 {
-    font-size: 82px;
-  }
   .list__warehouse {
-    width: 54%;
+    width: 100%;
+  }
+  .list__warehouse-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .list__warehouse-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .list__warehouse-link h3 {
+    font-size: 1rem;
+    line-height: 1.54rem;
+    font-family: "titilliumWeb";
+    font-size: 0.81rem;
+    color: #2e66e6;
+    margin: 0;
+  }
+  .list__warehouse-link img {
+    width: 1.5rem;
+    height: 100%;
+    padding-left: 0.5rem;
+  }
+  .list__warehouse-link img:hover {
+    -webkit-transform: translateX(5px);
+    -webkit-transition: transform 0.4s ease-in-out;
+    -moz-transform: translateX(5px);
+    -moz-transition: transform 0.4s ease-in-out;
+    -ms-transform: translateX(5px);
+    -ms-transition: transform 0.4s ease-in-out;
+    -o-transform: translateX(5px);
+    -o-transition: transform 0.4s ease-in-out;
+    transform: translateX(5px);
+    -webkit-transition: -webkit-transform 0.4s ease-in-out;
+    transition: -webkit-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  }
+  .list__contact-name {
+    width: 100%;
+  }
+  .list__contact-name p {
+    font-size: 13px;
+    line-height: 1.54rem;
+    font-family: "titilliumWeb";
+    font-size: 0.75rem;
+    color: #13182c;
+    margin: 0;
   }
   .list__address {
     width: 35%;
@@ -1749,7 +1797,7 @@ p {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
-    width: 15%;
+    width: 17.5%;
   }
 }
 
@@ -1783,12 +1831,6 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-@media screen and (min-width: 767px) {
-  .table__item__icons--link {
-    margin-left: 24px;
-  }
 }
 
 .table__item-name {

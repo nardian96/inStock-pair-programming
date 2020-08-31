@@ -89,10 +89,19 @@ function deleteInventory(id) {
   return inventoryArray;
 }
 
+function deleteInventoryByWarehouse(id) {
+  const inventoryArray = inventoriesList();
+
+  const newArray = inventoryArray.filter((item) => item.warehouseID !== id);
+  fs.writeFileSync(inventoriesFile, JSON.stringify(newArray));
+  return newArray;
+}
+
 module.exports = {
   inventoriesList,
   getSingleInventory,
   deleteInventory,
   add,
   update,
+  deleteInventoryByWarehouse,
 };

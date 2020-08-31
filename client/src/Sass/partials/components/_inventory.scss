@@ -91,7 +91,7 @@
       width: 50%;
       @include tablet {
         order: 5;
-        width: 15%;
+        width: 17.5%;
       }
     }
     &__icons {
@@ -112,7 +112,7 @@
       &--link {
         display: flex;
         @include tablet {
-          margin-left: 24px;
+          // margin-left: 24px;
         }
       }
     }

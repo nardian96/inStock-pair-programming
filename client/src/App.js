@@ -23,16 +23,21 @@ export default class App extends Component {
   };
 
   deleteWarehouse = (id) => {
-    axios.delete(`${warehouseApi}/${id}`).then((response) => {
-      this.displayWarehouseList();
-    });
+    axios
+      .delete(`${warehouseApi}/${id}`)
+      .then((response) => {
+        this.displayWarehouseList();
+      })
+      .then((response) => {
+        this.deleteAllWarehouseInventory(id);
+      });
   };
-
-  deleteInventory = (id) => {
-    axios.delete(`${inventoryApi}/${id}`).then((response) => {
+  deleteAllWarehouseInventory = (id) => {
+    axios.delete(`${inventoryApi}/warehouse/${id}`).then((response) => {
       this.displayInventoryList();
     });
   };
+  deleteInventory = (id) => {};
 
   componentDidMount() {
     this.displayWarehouseList();
