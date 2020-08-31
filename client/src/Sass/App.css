@@ -792,8 +792,7 @@ p {
     width: 52.6%;
   }
   .list__warehouse {
-    width: 54%;
-  }
+
   .list__warehouse-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -823,7 +822,7 @@ p {
     font-size: 1rem;
     line-height: 1.54rem;
     font-family: "titilliumWeb";
-    font-size: 14px;
+
     color: #2e66e6;
     margin: 0;
   }
@@ -854,7 +853,7 @@ p {
     font-size: 13px;
     line-height: 1.54rem;
     font-family: "titilliumWeb";
-    font-size: 14px;
+
     color: #13182c;
     margin: 0;
   }
@@ -1833,7 +1832,7 @@ p {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
-    width: 15%;
+    width: 17.5%;
   }
 }
 
@@ -1867,12 +1866,6 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-@media screen and (min-width: 767px) {
-  .table__item__icons--link {
-    margin-left: 24px;
-  }
 }
 
 .table__item-name {

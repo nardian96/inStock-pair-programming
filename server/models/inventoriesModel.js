@@ -89,10 +89,48 @@ function deleteInventory(id) {
   return inventoryArray;
 }
 
+
+function deleteInventoryByWarehouse(id) {
+  const inventoryArray = inventoriesList();
+
+  const newArray = inventoryArray.filter((item) => item.warehouseID !== id);
+  fs.writeFileSync(inventoriesFile, JSON.stringify(newArray));
+  return newArray;
+}
+function sortInventories(property) {
+  const inventoryArray = inventoriesList();
+  const sortedArray = inventoryArray.sort((a, b) => {
+    let propA = "";
+    let propB = "";
+    if (property !== "quantity") {
+      propA = a[property].toUpperCase();
+      propB = b[property].toUpperCase();
+    } else {
+      propA = a[property];
+      propB = b[property];
+    }
+    let comparison = 0;
+    if (propA > propB) {
+      comparison = 1;
+    } else if (propA < propB) {
+      comparison = -1;
+    }
+    return comparison;
+  });
+
+  return sortedArray;
+
+}
+
 module.exports = {
   inventoriesList,
   getSingleInventory,
   deleteInventory,
   add,
   update,
+
+  deleteInventoryByWarehouse,
+
+  sortInventories,
+
 };
