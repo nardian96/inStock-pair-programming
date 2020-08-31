@@ -265,6 +265,7 @@ p {
 }
 
 .header-container {
+  min-width: 20rem;
   height: 136px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,6 +559,22 @@ p {
   width: 1.5rem;
   height: 100%;
   padding-left: 0.5rem;
+}
+
+.list__warehouse-wrapper img:hover {
+  -webkit-transform: translateX(5px);
+  -webkit-transition: transform 0.4s ease-in-out;
+  -moz-transform: translateX(5px);
+  -moz-transition: transform 0.4s ease-in-out;
+  -ms-transform: translateX(5px);
+  -ms-transition: transform 0.4s ease-in-out;
+  -o-transform: translateX(5px);
+  -o-transition: transform 0.4s ease-in-out;
+  transform: translateX(5px);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 
 .list__contact-name {
@@ -1607,6 +1624,27 @@ p {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+.table__item-right {
+  width: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.table__item-right:hover {
+  -webkit-transform: translateX(5px);
+  -webkit-transition: transform 0.4s ease-in-out;
+  -moz-transform: translateX(5px);
+  -moz-transition: transform 0.4s ease-in-out;
+  -ms-transform: translateX(5px);
+  -ms-transition: transform 0.4s ease-in-out;
+  -o-transform: translateX(5px);
+  -o-transition: transform 0.4s ease-in-out;
+  transform: translateX(5px);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 
 .table__item {

@@ -5,8 +5,6 @@
         flex-direction: column;
         min-width: 91%;
         height: 64px;
-        // justify-content: normal;
-        // align-items: center;
         background-color: $color-background__graphite;
         box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     }
@@ -122,6 +120,19 @@
             width: 1.5rem;
             height: 100%;
             padding-left: 0.5rem;
+
+            &:hover {       
+                -webkit-transform: translateX(5px);
+                -webkit-transition: transform 0.4s ease-in-out;
+                -moz-transform: translateX(5px);
+                -moz-transition: transform 0.4s ease-in-out;
+                -ms-transform: translateX(5px);
+                -ms-transition: transform 0.4s ease-in-out;
+                -o-transform: translateX(5px);
+                -o-transition: transform 0.4s ease-in-out;
+                transform: translateX(5px);
+                transition: transform 0.4s ease-in-out;
+            }
         }
     }
     &__contact-name {
