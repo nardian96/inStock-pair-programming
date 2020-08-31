@@ -18,10 +18,7 @@ const inventoryApi = "http://localhost:8080/inventories";
 export default class App extends Component {
   state = {
     inventory: [],
-    warehouses: [],
-    show: false,
-    item: "",
-    warehouse: "",
+    warehouse: [],
   };
 
   deleteInfo = {
@@ -60,7 +57,7 @@ export default class App extends Component {
     return axios.get(warehouseApi).then((response) => {
       console.log(response.data);
       this.setState({
-        warehouses: response.data,
+        warehouse: response.data,
       });
     });
   };
@@ -167,14 +164,14 @@ export default class App extends Component {
           <Route
             path="/warehouse"
             exact
-            render={() => <Warehouse warehouses={this.state.warehouses} />}
+            render={() => <Warehouse warehouses={this.state.warehouse} />}
           />
           <Route path="/warehouse/add" exact render={() => <AddWarehouse />} />
           <Route
             path="/warehouse/:warehouseId/edit"
             exact
             render={(props) => (
-              <EditWarehouse warehouses={this.state.warehouses} {...props} />
+              <EditWarehouse warehouses={this.state.warehouse} {...props} />
             )}
           />
           <Route
@@ -184,7 +181,7 @@ export default class App extends Component {
               <>
                 <WarehouseDetails
                   warehouseItems={this.state.inventory}
-                  warehouseInfo={this.state.warehouses}
+                  warehouseInfo={this.state.warehouse}
                   info={this.deleteInfo}
                   {...props}
                 />
@@ -198,7 +195,7 @@ export default class App extends Component {
           ></Route>
           <Route
             path="/warehouse"
-            render={() => <Warehouse warehouses={this.state.warehouses} />}
+            render={() => <Warehouse warehouses={this.state.warehouse} />}
           />
           <Route
             path="/inventoryDetails/:warehouseId/:inventoryId"
