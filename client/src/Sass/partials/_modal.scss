@@ -1,15 +1,38 @@
 .modal {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(black, 0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
+  &-open {
+    overflow: hidden !important;
+  }
   &-button {
     background-color: $color-primary__white;
     border: none;
+  }
+  &__button {
+    width: 163px;
+    border-radius: 20px;
+    height: 36px;
+    background-color: $color-primary__white;
+    border: 1px solid $color-secondary__cloud;
+    &-delete {
+      background-color: $color-supporting__red;
+      color: $color-primary__white;
+      margin-left: 17px;
+      @include tablet {
+        margin-left: $padding__base * 2;
+        margin-right: $padding__base * 8;
+      }
+    }
+    @include tablet {
+      width: 71px;
+      height: 38px;
+    }
   }
   &-content {
     width: 100%;
@@ -20,8 +43,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     background-color: $color-primary__white;
+    overflow: scroll !important;
+    @include tablet {
+      width: 672px;
+    }
   }
   &-dailog {
     background-color: $color-primary__white;
@@ -30,17 +57,20 @@
   &-header {
     display: flex;
     flex-direction: column;
-
+    @include tablet {
+      width: 608px;
+      margin-left: 64px;
+    }
     .close {
       &:nth-child(2) {
         order: 1;
         align-self: flex-end;
         width: 24px;
         height: 24px;
-        margin-right: 21px;
         background-color: $color-primary__white;
         border: none;
-        @include font__p1;
+        @include font__h1;
+        margin-right: 24px;
       }
     }
   }
@@ -50,9 +80,18 @@
     }
   }
   &-body {
-    // width: 50%;
+    @include tablet {
+      width: 608px;
+      margin-left: 64px;
+    }
   }
   &-footer {
-    // width: 50%;
+    margin-top: 381px;
+    margin-bottom: $padding__base * 3;
+    @include tablet {
+      margin-top: $padding__base * 4;
+      margin-bottom: $padding__base * 5;
+      align-self: flex-end;
+    }
   }
 }

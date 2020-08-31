@@ -24,7 +24,10 @@ function InventoryDetails(props) {
     <div className="inventory-detail">
       <div className="inventory-detail__container">
         <InventoryHeader inventoryName={inventoryDetails[0]} />
-        <InventoryInfo inventoryInfo={inventoryDetails[0]} />
+        <InventoryInfo
+          inventoryInfo={inventoryDetails[0]}
+          action={props.action}
+        />
       </div>
       <p className="inventory-detail__copyright">
         &#169; InStock Inc. All Rights Reserved
