@@ -20,11 +20,16 @@ export default class App extends Component {
     warehouse: [],
   };
 
-  deleteWarehouse = (id) =>
-    axios.delete(`${warehouseApi}/${id}`).then(this.displayWarehouseList());
+  deleteWarehouse = (id) => {
+    axios.delete(`${warehouseApi}/${id}`);
+    this.displayWarehouseList();
+  };
 
-  deleteInventory = (id) =>
-    axios.delete(`${inventoryApi}/${id}`).then(this.displayInventoryList());
+  deleteInventory = (id) => {
+    axios.delete(`${inventoryApi}/${id}`);
+    this.displayInventoryList();
+    console.log(this.state.inventory);
+  };
 
   componentDidMount() {
     this.displayWarehouseList();
