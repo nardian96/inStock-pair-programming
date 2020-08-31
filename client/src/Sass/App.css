@@ -792,7 +792,8 @@ p {
     width: 52.6%;
   }
   .list__warehouse {
-
+    width: 54%;
+  }
   .list__warehouse-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -822,7 +823,7 @@ p {
     font-size: 1rem;
     line-height: 1.54rem;
     font-family: "titilliumWeb";
-
+    font-size: 14px;
     color: #2e66e6;
     margin: 0;
   }
@@ -846,42 +847,42 @@ p {
     transition: transform 0.4s ease-in-out;
     transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   }
-  .list__contact-name {
+  __contact-name {
     width: 100%;
   }
-  .list__contact-name p {
+  __contact-name p {
     font-size: 13px;
     line-height: 1.54rem;
     font-family: "titilliumWeb";
-
+    font-size: 14px;
     color: #13182c;
     margin: 0;
   }
-  .list__address {
+  __address {
     width: 35%;
   }
-  .list__address h4 {
+  __address h4 {
     padding: 0;
   }
-  .list__address p {
+  __address p {
     font-size: 14px;
   }
-  .list__contact-name {
+  __contact-name {
     width: 61.27%;
   }
-  .list__contact-name p {
+  __contact-name p {
     font-size: 14px;
   }
-  .list__contact-info {
+  __contact-info {
     width: 59.01%;
   }
-  .list__contact-info h4 {
+  __contact-info h4 {
     padding: 0;
   }
-  .list__contact-info p {
+  __contact-info p {
     font-size: 14px;
   }
-  .list__icons {
+  __icons {
     width: 20%;
     height: 48px;
     -webkit-box-pack: end;
@@ -889,7 +890,7 @@ p {
             justify-content: flex-end;
     padding-top: 1rem;
   }
-  .list__icons a {
+  __icons a {
     height: 24px;
     padding-top: 3.5px;
   }
