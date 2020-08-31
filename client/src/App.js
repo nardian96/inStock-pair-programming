@@ -183,7 +183,7 @@ export default class App extends Component {
               <>
                 <InventoryDetails
                   items={this.state.inventory}
-                  info={this.deleteInfo}
+                  action={this.deleteInventory}
                   {...props}
                 />
               </>
@@ -191,13 +191,15 @@ export default class App extends Component {
           />
 
           <Route
-            path="/Inventories"
+            path="/inventories"
             exact
-            render={(props) => <Inventory {...props} />}
+            render={(props) => (
+              <Inventory action={this.deleteInventory} {...props} />
+            )}
           ></Route>
 
           <Route
-            path="/Inventories/add"
+            path="/inventories/add"
             exact
             render={(props) => (
               <AddInventory
@@ -210,7 +212,7 @@ export default class App extends Component {
           ></Route>
 
           <Route
-            path="/Inventories/:inventoryId/edit"
+            path="/inventories/:inventoryId/edit"
             exact
             render={(props) => (
               <AddInventory
