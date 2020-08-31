@@ -11,7 +11,9 @@ body {
 *::after {
   box-sizing: inherit;
 }
-
+a {
+  text-decoration: none;
+}
 //global body
 body {
   font-family: "titilliumWeb";

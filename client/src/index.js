@@ -19,7 +19,7 @@ ReactDOM.render(
       {/* <Redirect from="/" to="/Warehouse" /> */}
       <Switch>
         <Route
-          path="/inventoryDetails/:warehouseId/:inventoryId"
+          path="/inventoryDetails/:warehouseId/:inventoryId/:location"
           exact
           component={App}
         />
@@ -27,7 +27,10 @@ ReactDOM.render(
         <Route path="/warehouse/:warehouseId" exact component={App} />
         <Route path="/warehouse/add" exact component={App} />
         {/* <Route path="/warehouse" component={App} exact /> */}
-        <Route path="/warehouse" render={(routerProps) => <App {...routerProps} />} />
+        <Route
+          path="/warehouse"
+          render={(routerProps) => <App {...routerProps} />}
+        />
         <Route path="/Inventory" component={App} exact />
         <Route path="/Inventory/:inventoryId" component={App} exact />
         <Route path="/Inventories" component={App} exact />

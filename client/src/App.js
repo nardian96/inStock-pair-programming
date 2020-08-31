@@ -191,7 +191,7 @@ export default class App extends Component {
             )}
           />
           <Route
-            path="/inventoryDetails/:warehouseId/:inventoryId"
+            path="/inventoryDetails/:warehouseId/:inventoryId/:location"
             exact
             render={(props) => (
               <>
