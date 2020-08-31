@@ -1,4 +1,49 @@
 .table {
+  background-color: $color-primary__white;
+  &__header {
+    display: none;
+    padding-left: 24px;
+    //padding-right: 24px;
+    @include tablet {
+      display: flex;
+      background-color: rgba(247, 248, 249, 0.7);
+      margin-bottom: 20px;
+      padding-left: 32px;
+      //padding-right: 32px;
+    }
+    @include desktop {
+      padding-left: 40px;
+      //padding-right: 40px;
+    }
+
+    &-text {
+      @include font__p3;
+      font-weight: bold;
+      color: $color-secondary__slate;
+    }
+
+    &--container {
+      flex: 1;
+    }
+  }
+
+  &__item-right {
+    width: 1.5rem;
+    padding-left: 0.5rem;
+    &:hover {
+      -webkit-transform: translateX(5px);
+      -webkit-transition: transform 0.4s ease-in-out;
+      -moz-transform: translateX(5px);
+      -moz-transition: transform 0.4s ease-in-out;
+      -ms-transform: translateX(5px);
+      -ms-transition: transform 0.4s ease-in-out;
+      -o-transform: translateX(5px);
+      -o-transition: transform 0.4s ease-in-out;
+      transform: translateX(5px);
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+
   &__item {
     display: flex;
     flex-wrap: wrap;

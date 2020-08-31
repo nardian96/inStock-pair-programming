@@ -25,7 +25,7 @@ function WarehouseItem(props) {
       <div className="warehouse-item__left">
         <h4 className="warehouse-item__label">INVENORY ITEM</h4>
         <Link
-          to={`/inventoryDetails/${warehouseId}/${itemId}`}
+          to={`/inventoryDetails/${warehouseId}/${itemId}/1`}
           className="warehouse-item__link"
         >
           <p className="warehouse-item__name">

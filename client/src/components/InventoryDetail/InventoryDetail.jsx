@@ -3,7 +3,7 @@ import InventoryHeader from "./InventoryHeader.jsx";
 import InventoryInfo from "./InventoryInfo.jsx";
 
 function InventoryDetails(props) {
-  if (!props.items && !props.match.params) {
+  if (!props.items || !props.match.params) {
     return <p>loading here</p>;
   }
   const items = props.items;
@@ -23,7 +23,7 @@ function InventoryDetails(props) {
   return (
     <div className="inventory-detail">
       <div className="inventory-detail__container">
-        <InventoryHeader inventoryName={inventoryDetails[0]} />
+        <InventoryHeader inventoryName={inventoryDetails[0]} {...props} />
         <InventoryInfo
           inventoryInfo={inventoryDetails[0]}
           action={props.action}

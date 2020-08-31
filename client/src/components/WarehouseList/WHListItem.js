@@ -21,8 +21,10 @@ function WHListItem(props) {
             <div className="list__warehouse">
               <h4>WAREHOUSE</h4>
               <div className="list__warehouse-wrapper">
-                <h3>{props.warehouseItem.name}</h3>
-                <img src={detailIcon} />
+                <Link to={`/warehouse/${props.warehouseItem.id}`}>
+                  <h3>{props.warehouseItem.name}</h3>
+                  <img src={detailIcon} />{" "}
+                </Link>
               </div>
             </div>
             <div className="list__address">

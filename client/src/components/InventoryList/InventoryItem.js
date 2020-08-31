@@ -30,7 +30,7 @@ export default function InventoryItem(props) {
                 <h4 className="table__item-label">INVENTORY ITEM</h4>
                 <Link
                   className="table__item-link"
-                  to={`/inventoryDetails/${inventory.warehouseID}/${inventory.id}`}
+                  to={`/inventoryDetails/${inventory.warehouseID}/${inventory.id}/0`}
                 >
                   <p className="table__item-name">
                     {inventory.itemName}

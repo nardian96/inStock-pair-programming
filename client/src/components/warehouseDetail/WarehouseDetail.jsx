@@ -23,7 +23,10 @@ function WarehouseDetail(props) {
   return (
     <div className="warehouse-detail">
       <div className="warehouse-detail__container">
-        <WarehouseHeader warehouseName={warehouseDetails[0].name} />
+        <WarehouseHeader
+          warehouseName={warehouseDetails[0].name}
+          id={warehouseDetails[0].id}
+        />
         <WarehouseInfo warehouseInfo={warehouseDetails[0]} />
         <div className="warehouse-detail__label">
           <h4 className="warehouse-detail__label-item">
