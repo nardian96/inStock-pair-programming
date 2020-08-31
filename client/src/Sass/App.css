@@ -197,7 +197,8 @@ p {
           order: 2;
 }
 
-.header {
+.header-container {
+  height: 136px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -205,17 +206,59 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  text-align: center;
-  height: 195px;
   background-color: #232940;
+  padding: 0 1rem;
+}
+
+.logo {
+  padding: 1.89rem 0 1.5rem;
+}
+
+.button__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.button__warehouses {
+  width: 10.25rem;
+  padding-top: 0.70rem;
+  border: none;
   font-size: 13px;
-  line-height: 1.54rem;
+  background-color: #232940;
+  color: #bdc5d5;
+}
+
+.button__warehouses--active {
+  height: 36px;
+  border-radius: 20px;
+  padding-top: 0;
+  background-color: #13182c;
+  color: #ffffff;
+}
+
+.button__inventory {
+  width: 10.18rem;
+  padding-top: 0.70rem;
+  border: none;
+  background-color: #232940;
+  color: #bdc5d5;
+}
+
+.button__inventory--active {
+  height: 36px;
+  border-radius: 20px;
+  padding-top: 0;
+  background-color: #13182c;
+  color: #ffffff;
 }
 
 @media screen and (min-width: 767px) {
-  .header {
+  .header-container {
+    height: 92px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
@@ -224,38 +267,24 @@ p {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .button__container {
+    width: 11.81rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .button__warehouses {
+    width: 10rem;
+  }
 }
 
-.header__container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  text-align: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
-}
-
-.header__warehouses {
-  width: 164px;
-  height: 36px;
-  background-color: #13182c;
-  color: white;
-  border-radius: 20px;
-  width: 10.25rem;
-  height: 1.25rem;
-}
-
-.header__inventory {
-  background-color: #13182c;
-  color: #bdc5d5;
+@media screen and (min-width: 1280px) {
+  .header-container {
+    padding: 0 8.12rem;
+  }
 }
 
 .warehouse__list {
