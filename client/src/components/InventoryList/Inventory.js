@@ -40,14 +40,15 @@ export default class Inventory extends Component {
 
   render() {
     return (
-      <div className="inventory">
-        <InventoryHeader
-          searchValue={this.state.searchValue}
-          searchChange={this.searchChange}
-          {...this.props}
-        />
-        <hr className="inventory--break" />
-        <div className="table">
+      <div className="inventory__list">
+        <div className="inventory__list--container">
+          <InventoryHeader
+            searchValue={this.state.searchValue}
+            searchChange={this.searchChange}
+            {...this.props}
+          />
+          {/* <hr className="inventory--break" /> */}
+          {/* <div className="table"> */}
           <InventoryTableColumns />
           <InventoryItem
             inventories={
@@ -57,6 +58,7 @@ export default class Inventory extends Component {
             }
             action={this.props.action}
           />
+          {/* </div> */}
         </div>
       </div>
     );

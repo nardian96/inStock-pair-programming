@@ -73,6 +73,9 @@ export default class App extends Component {
     } else {
       newItem.quantity = 0;
     }
+    if (newItem.quantity === 0) {
+      newItem.status = "Out of Stock";
+    }
     let warehouse = event.target.warehouse.value; // Can be updated once get by warehouse id is done
     newItem.warehouseId = warehouse.split(",")[0];
     newItem.warehouseName = warehouse.split(",").splice(1).join(",");
@@ -111,6 +114,9 @@ export default class App extends Component {
       inventory.quantity = parseInt(event.target.quantity.value);
     } else {
       inventory.quantity = 0;
+    }
+    if (inventory.quantity === 0) {
+      inventory.status = "Out of Stock";
     }
     let warehouse = event.target.warehouse.value; // Can be updated once get by warehouse id is done
     inventory.warehouseId = warehouse.split(",")[0];
