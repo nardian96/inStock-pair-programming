@@ -108,7 +108,14 @@
     }
     &__warehouse-wrapper {
         display: flex;
+        flex-direction: row;
         align-items: center;
+    }
+    &__warehouse-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
         h3 {
             @include font-mobile__h3;
             font-family: "titilliumWeb";
@@ -135,6 +142,7 @@
             }
         }
     }
+
     &__contact-name {
         width: 100%;
         p {

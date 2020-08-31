@@ -545,12 +545,30 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.list__warehouse-wrapper h3 {
+.list__warehouse-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.list__warehouse-link h3 {
   font-size: 1rem;
   line-height: 1.54rem;
   font-family: "titilliumWeb";
@@ -559,13 +577,13 @@ p {
   margin: 0;
 }
 
-.list__warehouse-wrapper img {
+.list__warehouse-link img {
   width: 1.5rem;
   height: 100%;
   padding-left: 0.5rem;
 }
 
-.list__warehouse-wrapper img:hover {
+.list__warehouse-link img:hover {
   -webkit-transform: translateX(5px);
   -webkit-transition: transform 0.4s ease-in-out;
   -moz-transform: translateX(5px);
