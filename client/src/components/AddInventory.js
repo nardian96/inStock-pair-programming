@@ -95,11 +95,11 @@ class AddInventory extends Component {
             {this.state.pathAdd ? "Add New" : "Edit"} Inventory Item
           </h1>
         </div>
-        <hr className="add-inventory--break" />
+        {/* <hr className="add-inventory--break" /> */}
 
         <div className="add-inventory--container">
           <form
-            className="add-inventory__form"
+            className="add-inventory__form form-border"
             id="addInventoryForm"
             onSubmit={
               this.state.pathAdd
@@ -161,7 +161,7 @@ class AddInventory extends Component {
             </select>
           </form>
 
-          <hr className="add-inventory--break-item" />
+          {/* <hr className="add-inventory--break-item" /> */}
 
           <div className="add-inventory__form">
             <h2 className="add-inventory__h2">Item Availability</h2>

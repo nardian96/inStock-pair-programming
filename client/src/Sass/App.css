@@ -1834,7 +1834,7 @@ p {
 @media screen and (min-width: 767px) {
   .inventory__list {
     min-width: 44rem;
-    height: 93px;
+    height: 109px;
   }
 }
 
@@ -2318,31 +2318,47 @@ p {
 }
 
 .add-inventory {
-  margin-right: 16px;
-  margin-left: 16px;
-  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 91%;
+  height: 63px;
+  background-color: #232940;
+  -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+          box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 }
 
 @media screen and (min-width: 767px) {
   .add-inventory {
-    margin-right: 32;
-    margin-left: 32px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .add-inventory {
-    margin-right: 130px;
-    margin-left: 130px;
+    height: 91px;
   }
 }
 
 .add-inventory-header {
-  padding-left: 24px;
-  padding-right: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background-color: #ffffff;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #bdc5d5;
+  margin: 0 1rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .add-inventory-header {
+    margin: 0 8.12rem;
+  }
+}
+
+.add-inventory-header__h1 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  margin: 0.87rem 0 0.5rem;
+  font-weight: bold;
 }
 
 .add-inventory-header--button {
@@ -2356,20 +2372,6 @@ p {
 }
 
 @media screen and (min-width: 767px) {
-  .add-inventory-header {
-    padding-left: 32px;
-    padding-right: 32px;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  .add-inventory-header {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
-}
-
-@media screen and (min-width: 767px) {
   .add-inventory__h2 {
     margin-bottom: 32px;
     margin-top: 0;
@@ -2378,6 +2380,7 @@ p {
 
 @media screen and (min-width: 767px) {
   .add-inventory__form {
+    padding: 0 2rem 1.5rem;
     width: 50%;
   }
 }
@@ -2456,6 +2459,8 @@ p {
 .add-inventory--container {
   padding-left: 24px;
   padding-right: 24px;
+  background-color: #ffffff;
+  margin: 0 1rem;
 }
 
 @media screen and (min-width: 767px) {
@@ -2472,12 +2477,14 @@ p {
 
 @media screen and (min-width: 1280px) {
   .add-inventory--container {
+    margin: 0 8.12rem;
     padding-left: 40px;
     padding-right: 40px;
   }
 }
 
 .add-inventory__controller {
+  margin: 0 1rem;
   padding-left: 24px;
   padding-right: 24px;
   padding-top: 16px;
@@ -2485,10 +2492,12 @@ p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: rgba(247, 248, 249, 0.7);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: #f7f8f9;
+  -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
+          box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
 }
 
 @media screen and (min-width: 767px) {
@@ -2503,6 +2512,7 @@ p {
 
 @media screen and (min-width: 1280px) {
   .add-inventory__controller {
+    margin: 0 8.12rem;
     padding-left: 40px;
     padding-right: 40px;
   }
@@ -2582,6 +2592,18 @@ p {
   .radio-label {
     font-size: 1rem;
     line-height: 1.57rem;
+  }
+}
+
+.form-border {
+  border-bottom: 1px solid #bdc5d5;
+}
+
+@media screen and (min-width: 767px) {
+  .form-border {
+    border: none;
+    border-right: 1px solid #bdc5d5;
+    padding-left: 0;
   }
 }
 /*# sourceMappingURL=App.css.map */

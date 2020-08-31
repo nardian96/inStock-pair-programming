@@ -9,11 +9,9 @@
       background-color: rgba(247, 248, 249, 0.7);
       margin-bottom: 20px;
       padding-left: 32px;
-      //padding-right: 32px;
     }
     @include desktop {
       padding-left: 40px;
-      //padding-right: 40px;
     }
 
     &-text {
@@ -183,7 +181,7 @@
 
     @include tablet {
       min-width: 44rem;
-      height: 93px;
+      height: 109px;
     }
 
     &--container {
@@ -196,7 +194,6 @@
       }
       @include desktop {
         margin: 0 8.12rem;
-        //width: $width__desktop-min - $padding__base * 32.5;
       }
     }
   }

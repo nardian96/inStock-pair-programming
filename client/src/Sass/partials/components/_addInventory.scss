@@ -1,35 +1,34 @@
 .add-inventory {
-  margin-right: 16px;
-  margin-left: 16px;
-
+  display: flex;
+  flex-direction: column;
+  min-width: 91%;
+  height: 63px;
+  background-color: $color-background__graphite;
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
   @include tablet {
-    margin-right: 32;
-    margin-left: 32px;
+    height: 91px;
   }
-  @include desktop {
-    margin-right: 130px;
-    margin-left: 130px;
-  }
-  background-color: $color-primary__white;
   &-header {
-    padding-left: 24px;
-    padding-right: 24px;
     display: flex;
+    background-color: $color-primary__white;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid $color-secondary__cloud;
+    margin: 0 1rem;
+    @include desktop {
+      margin: 0 8.12rem;
+    }
+    &__h1 {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+      margin: 0.87rem 0 0.5rem;
+      font-weight: bold;
+    }
     &--button {
       height: 50%;
       align-self: center;
       background-color: $color-primary__white;
       border: none;
       margin-right: 12px;
-    }
-
-    @include tablet {
-      padding-left: 32px;
-      padding-right: 32px;
-    }
-    @include desktop {
-      padding-left: 40px;
-      padding-right: 40px;
     }
   }
 
@@ -42,6 +41,7 @@
 
   &__form {
     @include tablet {
+      padding: 0 2rem 1.5rem;
       width: 50%;
     }
     &--label {
@@ -97,6 +97,8 @@
   &--container {
     padding-left: 24px;
     padding-right: 24px;
+    background-color: $color-primary__white;
+    margin: 0 1rem;
     @include tablet {
       display: flex;
       padding-left: 32px;
@@ -106,19 +108,22 @@
     }
 
     @include desktop {
+      margin: 0 8.12rem;
       padding-left: 40px;
       padding-right: 40px;
     }
   }
 
   &__controller {
+    margin: 0 1rem;
     padding-left: 24px;
     padding-right: 24px;
     padding-top: 16px;
     padding-bottom: 16px;
     display: flex;
-    background: rgba(247, 248, 249, 0.7);
     justify-content: space-between;
+    background-color: $color-background__light-grey;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
     @include tablet {
       justify-content: flex-end;
       padding-left: 32px;
@@ -126,6 +131,7 @@
     }
 
     @include desktop {
+      margin: 0 8.12rem;
       padding-left: 40px;
       padding-right: 40px;
     }
@@ -180,16 +186,6 @@
         margin-right: 40px;
       }
     }
-    // border-color: $color-secondary__cloud;
-    // background-color: $color-secondary__cloud;
-    // border: 1px;
-    // height: 1px;
-    // width: 100%;
-
-    // @include tablet {
-    //   width: 1px;
-    //   height: 100%;
-    // }
   }
 }
 
@@ -197,5 +193,14 @@
   @include font-mobile__h3;
   @include tablet {
     @include font__h3;
+  }
+}
+
+.form-border {
+  border-bottom: 1px solid $color-secondary__cloud;
+  @include tablet {
+    border: none;
+    border-right: 1px solid $color-secondary__cloud;
+    padding-left: 0;
   }
 }
