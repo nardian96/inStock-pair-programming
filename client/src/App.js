@@ -40,7 +40,7 @@ export default class App extends Component {
     return axios.get(warehouseApi).then((response) => {
       console.log(response.data);
       this.setState({
-        warehouses: response.data,
+        warehouse: response.data,
       });
     });
   };
@@ -55,9 +55,8 @@ export default class App extends Component {
   };
 
   editSearchTerm = (input) => {
-    this.setState({searchTerm: input.target.value})
-  }
-
+    this.setState({ searchTerm: input.target.value });
+  };
 
   postInventory = (event) => {
     event.preventDefault();
@@ -166,7 +165,6 @@ export default class App extends Component {
                   warehouseItems={this.state.inventory}
                   warehouseInfo={this.state.warehouse}
                   action={this.deleteInventory}
-
                   {...props}
                 />
               </>
