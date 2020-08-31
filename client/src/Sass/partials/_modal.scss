@@ -1,7 +1,6 @@
 .modal {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(black, 0.5);
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,19 +34,20 @@
     }
   }
   &-content {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     opacity: 1;
     z-index: 99;
     right: $padding__base * 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: left;
+    justify-content: space-between;
     background-color: $color-primary__white;
     overflow: scroll !important;
     @include tablet {
       width: 672px;
+      height: 262px;
     }
   }
   &-dailog {
@@ -70,11 +70,16 @@
         background-color: $color-primary__white;
         border: none;
         @include font__h1;
-        margin-right: 24px;
+        margin-bottom: $padding__base * 2;
+        @include tablet {
+          margin-right: 24px;
+          margin-bottom: 0;
+        }
       }
     }
   }
   &-title {
+    margin-top: 0;
     &:nth-child(1) {
       order: 2;
     }
@@ -86,12 +91,20 @@
     }
   }
   &-footer {
-    margin-top: 381px;
     margin-bottom: $padding__base * 3;
+    justify-self: end !important;
     @include tablet {
       margin-top: $padding__base * 4;
       margin-bottom: $padding__base * 5;
       align-self: flex-end;
     }
   }
+}
+
+.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(black, 0.5);
 }

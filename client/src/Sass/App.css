@@ -48,6 +48,7 @@ body {
 
 a {
   text-decoration: none;
+  font-family: "titilliumWeb";
 }
 
 body {
@@ -120,9 +121,8 @@ p {
 }
 
 .modal {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,8 +176,8 @@ p {
 }
 
 .modal-content {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   opacity: 1;
   z-index: 99;
   right: 16px;
@@ -191,9 +191,9 @@ p {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: left;
-      -ms-flex-pack: left;
-          justify-content: left;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #ffffff;
   overflow: scroll !important;
 }
@@ -201,6 +201,7 @@ p {
 @media screen and (min-width: 767px) {
   .modal-content {
     width: 672px;
+    height: 262px;
   }
 }
 
@@ -238,7 +239,18 @@ p {
   border: none;
   font-size: 2.29rem;
   line-height: 2.86rem;
-  margin-right: 24px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 767px) {
+  .modal-header .close:nth-child(2) {
+    margin-right: 24px;
+    margin-bottom: 0;
+  }
+}
+
+.modal-title {
+  margin-top: 0;
 }
 
 .modal-title:nth-child(1) {
@@ -255,8 +267,9 @@ p {
 }
 
 .modal-footer {
-  margin-top: 381px;
   margin-bottom: 24px;
+  -ms-grid-column-align: end !important;
+      justify-self: end !important;
 }
 
 @media screen and (min-width: 767px) {
@@ -266,6 +279,14 @@ p {
     -ms-flex-item-align: end;
         align-self: flex-end;
   }
+}
+
+.show {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .header-container {
@@ -467,7 +488,7 @@ p {
 .header__search {
   width: 18.43rem;
   height: 36px;
-  border: 1px solid #BDC5D5;
+  border: 1px solid #bdc5d5;
   border-radius: 1.25rem;
   font-size: 13px;
   line-height: 20px;
@@ -569,6 +590,7 @@ p {
 }
 
 .list__warehouse-link h3 {
+
   font-size: 1rem;
   line-height: 1.54rem;
   font-family: "titilliumWeb";
@@ -809,7 +831,6 @@ p {
   .list__icons a {
     height: 24px;
     padding-top: 3.5px;
-    padding-left: 24px;
   }
 }
 
@@ -1558,7 +1579,7 @@ p {
   }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 767px) {
   .warehouse-item__delete-button {
     margin-right: 24px;
   }

@@ -48,7 +48,7 @@ function WHListItem(props) {
           </div>
         </div>
         <div className="list__icons">
-          <ModalWindow info={info} action={props.action}></ModalWindow>
+          <ModalWindow info={info}></ModalWindow>
 
           <Link to={`/warehouse/${props.id}/edit`}>
             <img src={editIcon} />
