@@ -1,41 +1,72 @@
-.header {
+//Mobile Design
+
+.header-container {
+  height: 136px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  text-align: center;
-  height: 195px;
-  background-color: #232940;
+  background-color: $color-background__graphite;
+  padding: 0 1rem;
+}
 
-  @include tablet {
-    flex-direction: row;
+.logo {
+  padding: 1.89rem 0 1.5rem;
+}
+
+.button {
+  &__container {
+    display: flex;
     justify-content: space-between;
   }
 
-  @include font-selector(
-    $font-mobile__p2-font-size,
-    $font-mobile__p2-line-height
-  );
-
-  &__container {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: center;
-    align-items: baseline;
-  }
-
   &__warehouses {
-    width: 164px;
-    height: 36px;
-    background-color: #13182c;
-    color: white;
-    border-radius: 20px;
     width: 10.25rem;
-    height: 1.25rem;
+    padding-top: 0.70rem;
+    border: none;
+    font-size: 13px;
+    background-color: $color-background__graphite;
+    color: $color-secondary__cloud;
+    &--active {
+      @include active-button
+    }
   }
 
   &__inventory {
-    background-color: #13182c;
-    color: #bdc5d5;
+    width: 10.18rem;
+    padding-top: 0.70rem;
+    border: none;
+    background-color: $color-background__graphite;
+    color: $color-secondary__cloud;
+    &--active {
+      @include active-button
+    }
+  }
+}
+
+
+
+//Tablet Design
+@include tablet {
+  .header-container {
+    height: 92px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .button {
+    &__container {
+      width: 11.81rem;
+      justify-content: center;
+      align-items: center;
+    }
+    &__warehouses {
+      width: 10rem;
+
+    }
+  }
+}
+
+//Desktop Design
+@include desktop {
+  .header-container {
+    padding: 0 8.12rem;
   }
 }

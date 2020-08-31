@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import NotFound from "./components/NotFound";
 import App from "./App";
 import {
@@ -15,7 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       {/* <Header /> ###HEADER TO BE ADDED### */}
-      <Header />
+      {/* <Header /> */}
       {/* <Redirect from="/" to="/Warehouse" /> */}
       <Switch>
         <Route

@@ -117,3 +117,11 @@
   justify-content: $justification;
   align-items: $alignment;
 }
+
+@mixin active-button {
+  height: 36px;
+  border-radius: 20px;
+  padding-top: 0;
+  background-color: $color-primary__instock-black;
+  color: $color-primary__white;
+}
