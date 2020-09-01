@@ -86,6 +86,9 @@ export default class Inventory extends Component {
           />
           <InventoryItem inventories={list} action={this.props.action} />
         </div>
+        <p className="warehouse-detail__copyright">
+          &#169; InStock Inc. All Rights Reserved
+        </p>
       </div>
     );
   }

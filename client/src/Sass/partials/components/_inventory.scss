@@ -54,10 +54,16 @@
 
     &__name {
       padding-left: 1.5rem;
+
       width: 50%;
       @include tablet {
+        padding-left: 2rem;
+
         width: 20.3%;
         order: 0;
+      }
+      @include desktop {
+        padding-left: 2.5rem;
       }
     }
     &__category {
@@ -201,7 +207,9 @@
       min-width: 44rem;
       height: 93px;
     }
-
+    @include desktop {
+      align-items: center;
+    }
     &--container {
       background-color: $color-primary__white;
       border-radius: 3px;
@@ -211,6 +219,7 @@
         margin: 0 $grid-tablet__margin;
       }
       @include desktop {
+        width: 1020px;
         margin: 0 8.12rem;
       }
     }
@@ -226,7 +235,12 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem;
+      padding: 1.5rem 2rem;
+
+      border: none;
+    }
+    @include desktop {
+      padding-left: 2.5rem;
     }
   }
   &__list-container {
@@ -272,6 +286,12 @@
       margin: 0;
       padding-left: 1.5rem;
       width: 22.3%;
+      @include tablet {
+        padding-left: 2rem;
+      }
+      @include desktop {
+        padding-left: 2.5rem;
+      }
       // flex-grow: 1;
     }
     &-category {

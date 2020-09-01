@@ -78,6 +78,10 @@ class AddInventory extends Component {
       category = this.state.currInventory.category;
       warehouseName = this.state.currInventory.warehouseName;
     }
+    const editClass = this.state.pathAdd
+      ? "add-inventory__controller-button"
+      : "add-inventory__controller-edit";
+
     return (
       <div className="add-inventory">
         <div className="add-inventory-header">
@@ -228,14 +232,19 @@ class AddInventory extends Component {
           >
             Cancel
           </button>
+
           <button
-            className="add-inventory__controller-button"
+            // className={"add-inventory__controller-button "}
+            className={editClass}
             type="submit"
             form="addInventoryForm"
           >
             {this.state.pathAdd ? "+ Add Item" : "Save"}
           </button>
         </div>
+        <p className="warehouse-detail__copyright">
+          &#169; InStock Inc. All Rights Reserved
+        </p>
       </div>
     );
   }

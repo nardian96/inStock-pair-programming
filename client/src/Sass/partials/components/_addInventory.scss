@@ -121,7 +121,7 @@
     padding-top: 16px;
     padding-bottom: 16px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     background-color: $color-background__light-grey;
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
     @include tablet {
@@ -129,7 +129,27 @@
       padding-left: 32px;
       padding-right: 32px;
     }
-
+    &-edit {
+      width: 139px;
+      height: 36px;
+      border: 1px solid #bdc5d5;
+      box-sizing: border-box;
+      border-radius: 20px;
+      background-color: $color-primary__instock-indigo;
+      padding-top: 4px;
+      margin-right: 17px;
+      text-align: center;
+      text-decoration: none;
+      color: $color-primary__white;
+      @include font-mobile__h3;
+      font-weight: bold;
+      @include tablet {
+        width: 72px;
+        height: 38px;
+        margin-right: 16px;
+        @include font__h3;
+      }
+    }
     @include desktop {
       margin: 0 8.12rem;
       padding-left: 40px;
@@ -143,6 +163,7 @@
       border-radius: 20px;
       background-color: $color-primary__white;
       padding-top: 4px;
+      margin-right: 17px;
       text-align: center;
       text-decoration: none;
       color: $color-secondary__slate;

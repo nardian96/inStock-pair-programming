@@ -85,7 +85,7 @@ class WHList extends Component {
     }
 
     return (
-      <>
+      <div className="warehouse__list-big-container">
         <div className="warehouse__list-header">
           <h1 className="header__title">Warehouses</h1>
           <div className="warehouse__list-subheader">
@@ -117,7 +117,7 @@ class WHList extends Component {
           sortContactEmail={this.state.sort.contactEmail}
           sort={this.sort}
         />
-      </>
+      </div>
     );
   }
 }
