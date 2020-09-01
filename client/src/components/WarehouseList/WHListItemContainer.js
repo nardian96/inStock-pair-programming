@@ -17,6 +17,7 @@ function WHListItemContainer(props) {
           <h4>WAREHOUSE</h4>
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() =>
               callSort(props.sortName, "name", sortConditions, props.sort)
             }
@@ -26,6 +27,7 @@ function WHListItemContainer(props) {
           <h4>ADDRESS</h4>
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() =>
               callSort(props.sortAddress, "address", sortConditions, props.sort)
             }
@@ -35,6 +37,7 @@ function WHListItemContainer(props) {
           <h4>CONTACT NAME</h4>
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() =>
               callSort(
                 props.sortContactName,
@@ -49,6 +52,7 @@ function WHListItemContainer(props) {
           <h4>CONTACT INFORMATION</h4>
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() =>
               callSort(
                 props.sortContactEmail,

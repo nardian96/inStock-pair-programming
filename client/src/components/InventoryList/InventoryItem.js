@@ -1,5 +1,4 @@
 import React from "react";
-import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import rightIcon from "../../assets/Icons/chevron_right-24px.svg";
 import ModalWindow from "../ModalWindow.jsx";

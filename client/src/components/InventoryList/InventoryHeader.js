@@ -1,6 +1,5 @@
 import React from "react";
 import searchIcon from "../../assets/Icons/search-24px.svg";
-import { Link } from "react-router-dom";
 
 export default function InventoryHeader(props) {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import detailIcon from "../../assets/Icons/chevron_right-24px.svg";
 import { Link } from "react-router-dom";
@@ -21,9 +20,12 @@ function WHListItem(props) {
             <div className="list__warehouse">
               <h4>WAREHOUSE</h4>
               <div className="list__warehouse-wrapper">
-                <Link className="list__warehouse-link" to={`/warehouse/${props.warehouseItem.id}`}>
+                <Link
+                  className="list__warehouse-link"
+                  to={`/warehouse/${props.warehouseItem.id}`}
+                >
                   <h3>{props.warehouseItem.name}</h3>
-                  <img src={detailIcon} />{" "}
+                  <img src={detailIcon} alt="detail" />{" "}
                 </Link>
               </div>
             </div>
@@ -51,7 +53,7 @@ function WHListItem(props) {
           <ModalWindow info={info}></ModalWindow>
 
           <Link to={`/warehouse/${props.id}/edit`}>
-            <img src={editIcon} />
+            <img src={editIcon} alt="edit" />
           </Link>
         </div>
       </li>

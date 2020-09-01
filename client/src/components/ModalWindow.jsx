@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button, ModalDialog, ModalTitle } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import deleteIcon from "../assets/Icons/delete_outline-24px.svg";
 
 function ModalWindow(props) {
@@ -24,7 +24,7 @@ function ModalWindow(props) {
         <Modal
           show={show}
           onHide={handleClose}
-          backdrop="static"
+          //backdrop="static"
           keyboard={false}
           size="sm"
           centered={true}

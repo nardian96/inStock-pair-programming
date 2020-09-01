@@ -51,7 +51,10 @@ export default class AddWarehouse extends Component {
           email: contactEmail.value,
         },
       }).then((response) => {
+<<<<<<< HEAD
         console.log(response);
+=======
+>>>>>>> 40bc42744ccbd13682ffdf9f0804c7e2e7944618
         this.form.reset();
         this.props.action();
         this.props.history.goBack();
@@ -62,6 +65,7 @@ export default class AddWarehouse extends Component {
   render() {
     return (
       <div className="warehouse__list">
+<<<<<<< HEAD
         <div className="warehouse__list-big-container">
           <div className="warehouse__form-header">
             <div>
@@ -167,6 +171,108 @@ export default class AddWarehouse extends Component {
         <p className="warehouse-detail__copyright">
           &#169; InStock Inc. All Rights Reserved
         </p>
+=======
+        <div className="warehouse__form-header">
+          <div>
+            <h1 className="warehouse__header-title">
+              <Link to="/warehouse">
+                <img
+                  src={backArrow}
+                  className="warehouse-header__backArrow"
+                  alt="back arrow"
+                />
+              </Link>
+              Add New Warehouse
+            </h1>
+          </div>
+        </div>
+        <form
+          ref={(form) => (this.form = form)}
+          className="warehouse__list-container"
+          onSubmit={this.addNewWarehouse}
+        >
+          <div className="warehouse__form-container">
+            <section className="warehouse__subsection warehouse__subsection--border">
+              <h2>Warehouse Details</h2>
+              <div className="warehouse__input-container">
+                <h3>Warehouse Name</h3>
+                <textarea
+                  name="name"
+                  className="warehouse__input-box"
+                  placeholder="Warehouse Name"
+                ></textarea>
+              </div>
+              <div className="warehouse__input-container">
+                <h3>Street Address</h3>
+                <textarea
+                  name="address"
+                  className="warehouse__input-box"
+                  placeholder="Street Address"
+                ></textarea>
+              </div>
+              <div className="warehouse__input-container">
+                <h3>City</h3>
+                <textarea
+                  name="city"
+                  className="warehouse__input-box"
+                  placeholder="City"
+                ></textarea>
+              </div>
+              <div className="warehouse__input-container">
+                <h3>Country</h3>
+                <textarea
+                  name="country"
+                  className="warehouse__input-box"
+                  placeholder="Country"
+                ></textarea>
+              </div>
+            </section>
+            <section className="warehouse__subsection">
+              <h2>Contact Details</h2>
+              <div className="warehouse__input-container">
+                <h3>Contact Name</h3>
+                <textarea
+                  name="contactName"
+                  className="warehouse__input-box"
+                  placeholder="Contact Name"
+                ></textarea>
+              </div>
+              <div className="warehouse__input-container">
+                <h3>Position</h3>
+                <textarea
+                  name="contactPosition"
+                  className="warehouse__input-box"
+                  placeholder="Position"
+                ></textarea>
+              </div>
+              <div className="warehouse__input-container">
+                <h3>Phone Number</h3>
+                <textarea
+                  name="contactPhone"
+                  className="warehouse__input-box"
+                  placeholder="Phone"
+                ></textarea>
+              </div>
+              <div className="warehouse__input-container">
+                <h3>Email</h3>
+                <textarea
+                  name="contactEmail"
+                  className="warehouse__input-box"
+                  placeholder="Email"
+                ></textarea>
+              </div>
+            </section>
+          </div>
+          <div className="warehouse__button-container">
+            <Link to="/warehouse">
+              <button className="warehouse__small-button">Cancel</button>
+            </Link>
+            <button className="warehouse__small-button warehouse__small-button--blue warehouse__small-button--add">
+              + Add Warehouse
+            </button>
+          </div>
+        </form>
+>>>>>>> 40bc42744ccbd13682ffdf9f0804c7e2e7944618
       </div>
     );
   }

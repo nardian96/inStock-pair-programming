@@ -56,8 +56,8 @@ class WHList extends Component {
       } else if (reg.test(warehouse.contact.email)) {
         filterList.push(warehouse);
       }
+      return null;
     });
-    console.log("filer", filterList);
     this.setState({
       warehouseList: filterList,
     });
@@ -70,14 +70,7 @@ class WHList extends Component {
   };
 
   render() {
-    console.log(
-      this.props.warehouses.filter((wh) =>
-        wh.name.toLowerCase().includes(this.state.searchVal.toLowerCase())
-      )
-    );
-
     let list = [];
-    console.log(this.state.warehouseList);
     if (this.state.searchVal === "" && this.state.warehouseList.length === 0) {
       list = this.props.warehouses;
     } else {
