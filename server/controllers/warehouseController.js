@@ -60,6 +60,15 @@ function getWarehouseInventory(req, res) {
     .filter((item) => item.warehouseId === warehouseId);
 }
 
+function sortWarehouse(req, res) {
+  const propList = ["name", "address", "contactName", "contactEmail"];
+  if (!propList.includes(req.params.property)) {
+    res.status(404).json({ message: "No property associated with that field" });
+  } else {
+    res.json(warehouse.sortWarehouse(req.params.property));
+  }
+}
+
 // export functions
 
 module.exports = {
@@ -69,4 +78,5 @@ module.exports = {
   editWarehouse,
   getWarehouseByID,
   getWarehouseInventory,
+  sortWarehouse,
 };

@@ -90,6 +90,37 @@ function removeWarehouse(id) {
   return warehouseArr;
 }
 
+function sortWarehouse(property) {
+  const warehouseArray = warehouseList();
+  const sortedArray = warehouseArray.sort((a, b) => {
+    let propA = "";
+    let propB = "";
+    if (property === "address") {
+      propA = `${a.country} ${a.city} ${a.address}`.toUpperCase();
+      propB = `${b.country} ${b.city} ${b.address}`.toUpperCase();
+    } else if (property === "contactName") {
+      propA = a.contact.name;
+      propB = b.contact.name;
+    } else if (property === "contactEmail") {
+      propA = a.contact.email;
+      propB = b.contact.email;
+    } else {
+      propA = a[property];
+      propB = b[property];
+    }
+
+    let comparison = 0;
+    if (propA > propB) {
+      comparison = 1;
+    } else if (propA < propB) {
+      comparison = -1;
+    }
+    return comparison;
+  });
+
+  return sortedArray;
+}
+
 //export multiple functions
 module.exports = {
   addWarehouse,
@@ -97,4 +128,5 @@ module.exports = {
   removeWarehouse,
   updateWarehouse,
   getByID,
+  sortWarehouse,
 };
