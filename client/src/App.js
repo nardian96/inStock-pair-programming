@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Header, { HeaderInventory } from "./components/Header";
 import Warehouse from "./components/WarehouseList/Warehouse";
 import AddWarehouse from "./components/AddEditWarehouse/AddWarehouse";

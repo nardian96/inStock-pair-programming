@@ -53,8 +53,8 @@ export default class Inventory extends Component {
       } else if (reg.test(inv.warehouseName)) {
         filterList.push(inv);
       }
+      return null;
     });
-    //console.log(filterList);
     this.setState({
       inventories: filterList,
     });
@@ -67,7 +67,7 @@ export default class Inventory extends Component {
     } else {
       list = this.state.inventories;
     }
-    console.log("list", list);
+
     return (
       <div className="inventory__list">
         <div className="inventory__list--container">

@@ -97,7 +97,7 @@ function WarehouseDetail(props) {
 function sortInventories(property, list, status) {
   const inventoryArray = list;
   let sortedArray = [];
-  if (property != "" && inventoryArray.length !== 0) {
+  if (property !== "" && inventoryArray.length !== 0) {
     sortedArray = inventoryArray.sort((a, b) => {
       let propA = "";
       let propB = "";
@@ -127,8 +127,8 @@ function sortInventories(property, list, status) {
   return sortedArray;
 }
 
+// Function to update state
 function useForceUpdate(prop) {
-  //property = prop;
   let [value, setState] = useState(true);
   return () => setState(!value);
 }
