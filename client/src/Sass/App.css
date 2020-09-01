@@ -613,37 +613,32 @@ p {
 }
 
 .list__contact-name {
-  width: 100%;
+  width: 55%;
 }
 
 .list__contact-name p {
   font-size: 13px;
   line-height: 1.25rem;
   font-family: "titilliumWeb";
-  font-size: 13px;
+  font-size: 14px;
   color: #13182c;
   margin: 0;
 }
 
 .list__address {
-  width: 100%;
+  width: 40%;
 }
 
 .list__address h4 {
-  padding-top: 0.8rem;
+  padding: 0;
 }
 
 .list__address p {
-  font-size: 13px;
-  line-height: 1.25rem;
-  font-family: "titilliumWeb";
-  font-size: 13px;
-  color: #13182c;
-  margin: 0;
+  font-size: 14px;
 }
 
 .list__contact-info {
-  width: 100%;
+  width: 45%;
 }
 
 .list__contact-info h4 {
