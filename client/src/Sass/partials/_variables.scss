@@ -1,61 +1,61 @@
 // *****FONTS
 // ****MOBILE FONTS
 // Mobile H1- Page Header
-$font-mobile__h1-font-size: 2.15rem; // 28px;
-$font-mobile__h1-line-height: 2.77rem; // 36px;
+$font-mobile__h1-font-size: 1.75rem; // 28px;
+$font-mobile__h1-line-height: 2.25rem; // 36px;
 
 // Mobile H2 - subheader
-$font-mobile__h2-font-size: 1.54rem; // 20px;
-$font-mobile__h2-line-height: 2.15rem; // 28px;
+$font-mobile__h2-font-size: 1.25rem; // 20px;
+$font-mobile__h2-line-height: 1.75rem; // 28px;
 
 // Mobile H3 - labels, Links, & Buttons
-$font-mobile__h3-font-size: 1rem; // 13px;
-$font-mobile__h3-line-height: 1.54rem; // 20px;
+$font-mobile__h3-font-size: 0.81rem; // 13px;
+$font-mobile__h3-line-height: 1.25rem; // 20px;
 
 // Mobile H4 - Table Headers
-$font-mobile__h4-font-size: 0.85rem; // 11px;
-$font-mobile__h4-line-height: 1.23rem; // 16px;
+$font-mobile__h4-font-size: 0.68rem; // 11px;
+$font-mobile__h4-line-height: 1rem; // 16px;
 
 // Mobile P1 - Body Large
-$font-mobile__p1-font-size: 1.15rem; // 15px;
-$font-mobile__p1-line-height: 2rem; // 26px;
+$font-mobile__p1-font-size: 0.93rem; // 15px;
+$font-mobile__p1-line-height: 1.62rem; // 26px;
 
 //Mobile p2 - Body Medium -- base
 $font-mobile__p2-font-size: 13px; // base mobile font size
-$font-mobile__p2-line-height: 1.54rem; // 20px;
+$font-mobile__p2-line-height: 1.25rem; // 20px;
 
 // Mobile p3 - Body Small
-$font-mobile__p3-font-size: 0.85rem; // 11px;
-$font-mobile__p3-line-height: 1.26rem; // 16px;
+$font-mobile__p3-font-size: 0.68rem; // 11px;
+$font-mobile__p3-line-height: 1rem; // 16px;
 
 //**** Desktop and Tablet fonts
 // H1 - Page Header
-$font__h1-font-size: 2.29rem; // 32px;
-$font__h1-line-height: 2.86rem; // 40px;
+$font__h1-font-size: 2rem; // 32px;
+$font__h1-line-height: 2.5rem; // 40px;
 
 // H2 - Subheader
-$font__h2-font-size: 1.71rem; // 24px;
-$font__h2-line-height: 2.29rem; // 32px;
+$font__h2-font-size: 1.5rem; // 24px;
+$font__h2-line-height: 2rem; // 32px;
 
 // H3 - Labels, Links & Buttons
-$font__h3-font-size: 1rem; // 14px;
-$font__h3-line-height: 1.57rem; // 22px;
+$font__h3-font-size: 0.87rem; // 14px;
+$font__h3-line-height: 1.37rem; // 22px;
 
 // H4 - Table Header
-$font__h4-font-size: 0.86rem; // 12px;
-$font__h4-line-height: 1.29rem; // 18px;
+$font__h4-font-size: 0.75rem; // 12px;
+$font__h4-line-height: 1.12rem; // 18px;
 
 // P1 - Body Large
-$font__p1-font-size: 1.14rem; // 16px;
-$font__p1-line-height: 2rem; // 28px;
+$font__p1-font-size: 1rem; // 16px;
+$font__p1-line-height: 1.75rem; // 28px;
 
 // P2 - Body Medium -- base
 $font__p2-font-size: 14px; // base desktop and tablet size
-$font__p2-line-height: 1.57rem; // 22px;
+$font__p2-line-height: 1.37rem; // 22px;
 
 // P3 - Body Small
-$font__p3-font-size: 0.86rem; // 12px;
-$font__p3-line-height: 1.29rem; // 18px;
+$font__p3-font-size: 0.75rem; // 12px;
+$font__p3-line-height: 1.12rem; // 18px;
 
 //***** colors
 // Primary Colors
@@ -77,16 +77,16 @@ $color-supporting__red: #c94515; //  "Out of stock" label, error states & delete
 
 // ***** Layout Grid
 // Desktop
-$grid-desktop__column: 4.5rem; // 63px
-$grid-desktop__gutter: 1.71rem; // 24px
+$grid-desktop__column: 3.9rem; // 63px
+$grid-desktop__gutter: 1.5rem; // 24px
 
 // Tablet
-$grid-tablet__margin: 2.29rem; // 32px
-$grid-tablet__gutter: 1.71rem; // 24px
+$grid-tablet__margin: 2rem; // 32px
+$grid-tablet__gutter: 1.5rem; // 24px
 
 // Mobile
-$grid-mobile__margin: 1.23rem; // 16px
-$grid-mobile__gutter: 1.23rem; // 16px
+$grid-mobile__margin: 1.5rem; // 16px
+$grid-mobile__gutter: 1.5rem; // 16px
 
 // *** Padding
 $padding__base: 8px; // padding

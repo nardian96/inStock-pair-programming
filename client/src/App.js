@@ -180,7 +180,7 @@ export default class App extends Component {
             render={() => (
               <>
                 <Header />
-                <AddWarehouse />
+                <AddWarehouse warehouses={this.state.warehouse} action={this.displayWarehouseList}/>
               </>
             )}
           />
@@ -190,7 +190,7 @@ export default class App extends Component {
             render={(props) => (
               <>
                 <Header />
-                <EditWarehouse warehouses={this.state.warehouse} {...props} />
+                <EditWarehouse warehouses={this.state.warehouse} action={this.displayWarehouseList} {...props} />
               </>
             )}
           />
