@@ -145,6 +145,7 @@ p {
 .modal-button {
   background-color: #ffffff;
   border: none;
+  width: 50px;
 }
 
 .modal__button {
@@ -847,7 +848,8 @@ p {
     transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   }
   .list__contact-name {
-
+    width: 55%;
+  }
   .list__contact-name p {
     font-size: 13px;
     line-height: 1.25rem;
@@ -857,21 +859,30 @@ p {
     margin: 0;
   }
   .list__address {
-
+    width: 40%;
   }
   .list__address h4 {
     padding: 0;
   }
   .list__address p {
-
+    font-size: 14px;
+  }
+  .list__contact-info {
+    width: 45%;
   }
   .list__contact-info h4 {
     padding: 0;
   }
-  .list__contact-info p {
+  .list__contact-info__contact-info {
+    width: 59.01%;
+  }
+  .list__contact-info__contact-info h4 {
+    padding: 0;
+  }
+  .list__contact-info__contact-info p {
     font-size: 14px;
   }
-  .list__icons {
+  .list__contact-info__icons {
     width: 20%;
     height: 48px;
     -webkit-box-pack: end;
@@ -879,7 +890,7 @@ p {
             justify-content: flex-end;
     padding-top: 1rem;
   }
-  .list__icons a {
+  .list__contact-info__icons a {
     height: 24px;
     padding-top: 3.5px;
   }
@@ -1753,6 +1764,8 @@ p {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    -ms-flex-wrap: none;
+        flex-wrap: none;
   }
 }
 
@@ -1822,7 +1835,7 @@ p {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
-    width: 17.5%;
+    width: 17%;
   }
 }
 
@@ -1840,12 +1853,11 @@ p {
 
 @media screen and (min-width: 767px) {
   .table__item__icons {
-    width: 19%;
+    width: 5%;
     -webkit-box-ordinal-group: 7;
         -ms-flex-order: 6;
             order: 6;
     padding: 0;
-    width: auto;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
