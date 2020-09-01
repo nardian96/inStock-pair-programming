@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 export default function InventoryTableColumns({
@@ -23,6 +23,7 @@ export default function InventoryTableColumns({
           INVENTORY ITEM{" "}
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() => callSort(sortItem, "itemName", sortConditions, sort)}
           />
         </h4>
@@ -32,6 +33,7 @@ export default function InventoryTableColumns({
           CATEGORY{" "}
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() =>
               callSort(sortCategory, "category", sortConditions, sort)
             }
@@ -43,6 +45,7 @@ export default function InventoryTableColumns({
           STATUS{" "}
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() => callSort(sortStatus, "status", sortConditions, sort)}
           />
         </h4>
@@ -52,6 +55,7 @@ export default function InventoryTableColumns({
           QTY{" "}
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() => callSort(sortQty, "quantity", sortConditions, sort)}
           />
         </h4>
@@ -61,6 +65,7 @@ export default function InventoryTableColumns({
           WAREHOUSE{" "}
           <img
             src={sortIcon}
+            alt="sort"
             onClick={() =>
               callSort(sortWarehouse, "warehouseName", sortConditions, sort)
             }

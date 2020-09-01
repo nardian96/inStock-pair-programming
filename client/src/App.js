@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Header, { HeaderInventory } from "./components/Header";
 import Warehouse from "./components/WarehouseList/Warehouse";
 import AddWarehouse from "./components/AddEditWarehouse/AddWarehouse";
@@ -10,7 +10,6 @@ import WarehouseDetails from "./components/warehouseDetail/";
 import InventoryDetails from "./components/InventoryDetail/";
 import Inventory from "./components/InventoryList/Inventory";
 import AddInventory from "./components/AddInventory";
-// import WarehouseInfo from "./components/WarehouseInfo/";
 
 const warehouseApi = "http://localhost:8080/warehouse";
 const inventoryApi = "http://localhost:8080/inventories";
@@ -19,7 +18,6 @@ export default class App extends Component {
   state = {
     inventory: [],
     warehouse: [],
-    searchTerm: "",
   };
 
   deleteWarehouse = (id) => {
@@ -50,7 +48,6 @@ export default class App extends Component {
 
   displayWarehouseList = () => {
     return axios.get(warehouseApi).then((response) => {
-      console.log(response.data);
       this.setState({
         warehouse: response.data,
       });
@@ -59,7 +56,6 @@ export default class App extends Component {
 
   displayInventoryList = () => {
     return axios.get(inventoryApi).then((response) => {
-      console.log(response.data);
       this.setState({
         inventory: response.data,
       });
@@ -82,7 +78,7 @@ export default class App extends Component {
     if (newItem.quantity === 0) {
       newItem.status = "Out of Stock";
     }
-    let warehouse = event.target.warehouse.value; // Can be updated once get by warehouse id is done
+    let warehouse = event.target.warehouse.value;
     newItem.warehouseId = warehouse.split(",")[0];
     newItem.warehouseName = warehouse.split(",").splice(1).join(",");
     // Don't post if fields are empty
@@ -101,7 +97,6 @@ export default class App extends Component {
     if (newItem.warehouseName === "") {
       newItem.warehouseName = undefined;
     }
-    console.log(newItem);
     axios.post(inventoryApi, newItem).then(() => {
       this.displayInventoryList();
       this.props.history.push("/Inventories");
@@ -124,7 +119,7 @@ export default class App extends Component {
     if (inventory.quantity === 0) {
       inventory.status = "Out of Stock";
     }
-    let warehouse = event.target.warehouse.value; // Can be updated once get by warehouse id is done
+    let warehouse = event.target.warehouse.value;
     inventory.warehouseId = warehouse.split(",")[0];
     inventory.warehouseName = warehouse.split(",").splice(1).join(",");
     // Don't post if fields are empty
@@ -143,7 +138,6 @@ export default class App extends Component {
     if (inventory.warehouseName === "") {
       inventory.warehouseName = undefined;
     }
-    console.log("updating to ", inventory);
     let url =
       "http://localhost:8080/inventories/" +
       this.props.match.params.inventoryId;
@@ -176,7 +170,10 @@ export default class App extends Component {
             render={() => (
               <>
                 <Header />
-                <AddWarehouse warehouses={this.state.warehouse} action={this.displayWarehouseList}/>
+                <AddWarehouse
+                  warehouses={this.state.warehouse}
+                  action={this.displayWarehouseList}
+                />
               </>
             )}
           />
@@ -186,7 +183,11 @@ export default class App extends Component {
             render={(props) => (
               <>
                 <Header />
-                <EditWarehouse warehouses={this.state.warehouse} action={this.displayWarehouseList} {...props} />
+                <EditWarehouse
+                  warehouses={this.state.warehouse}
+                  action={this.displayWarehouseList}
+                  {...props}
+                />
               </>
             )}
           />

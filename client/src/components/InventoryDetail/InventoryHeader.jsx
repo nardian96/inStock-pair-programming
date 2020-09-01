@@ -11,12 +11,12 @@ export default class InventoryHeader extends Component {
     if (!id) {
       return <p>loading</p>;
     }
-    let location;
-    if (this.props.match.params.location === "1") {
-      location = `/warehouse/${this.props.inventoryName.warehouseID}`;
-    } else {
-      location = "/Inventories";
-    }
+    // let location;
+    // if (this.props.match.params.location === "1") {
+    //   location = `/warehouse/${this.props.inventoryName.warehouseID}`;
+    // } else {
+    //   location = "/Inventories";
+    // }
     return (
       <div className="inventory-header">
         <div className="inventory-header__header-left">
@@ -34,9 +34,6 @@ export default class InventoryHeader extends Component {
           <Link
             className="inventory-header__edit-button"
             to={() => `/Inventories/${this.props.inventoryName.id}/edit`}
-            // onClick={this.history.push(
-            //   `/Inventories/${this.props.inventoryName.id}/edit`
-            // )}
           >
             <img
               src={editIconWhite}
