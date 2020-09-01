@@ -847,8 +847,7 @@ p {
     transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   }
   .list__contact-name {
-    width: 55%;
-  }
+
   .list__contact-name p {
     font-size: 13px;
     line-height: 1.25rem;
@@ -858,16 +857,13 @@ p {
     margin: 0;
   }
   .list__address {
-    width: 40%;
+
   }
   .list__address h4 {
     padding: 0;
   }
   .list__address p {
-    font-size: 14px;
-  }
-  .list__contact-info {
-    width: 45%;
+
   }
   .list__contact-info h4 {
     padding: 0;

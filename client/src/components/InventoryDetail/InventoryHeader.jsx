@@ -20,14 +20,12 @@ export default class InventoryHeader extends Component {
       <div className="inventory-header">
         <div className="inventory-header__header-left">
           <h1 className="inventory-header__inventory-name">
-            <Link to={location}>
-              <img
-                src={backArrow}
-                className="inventory-header__backArrow"
-                alt="back arrow"
-                // onClick={navigation.goBack()}
-              />
-            </Link>
+            <img
+              src={backArrow}
+              className="inventory-header__backArrow"
+              alt="back arrow"
+              onClick={this.props.history.goBack}
+            />
             {this.props.inventoryName.itemName}
           </h1>
         </div>
