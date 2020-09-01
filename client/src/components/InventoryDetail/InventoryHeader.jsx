@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 
 export default class InventoryHeader extends Component {
   render() {
-    console.log("detal", this.props.history);
-    console.log(`/Inventories/${this.props.inventoryName.id}/edit`);
     const id = this.props.inventoryName.warehouseID;
     if (!id) {
       return <p>loading</p>;
