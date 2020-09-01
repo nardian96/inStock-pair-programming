@@ -1,10 +1,5 @@
 import React, { Component } from "react";
-import deleteIcon from "../assets/Icons/delete_outline-24px.svg";
-import editIcon from "../assets/Icons/edit-24px.svg";
-import rightIcon from "../assets/Icons/chevron_right-24px.svg";
-import sortIcon from "../assets/Icons/sort-24px.svg";
 import backIcon from "../assets/Icons/arrow_back-24px.svg";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 class AddInventory extends Component {
