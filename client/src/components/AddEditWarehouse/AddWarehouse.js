@@ -38,6 +38,8 @@ export default class AddWarehouse extends Component {
             .then((response) => {
                 console.log(response)
                 this.form.reset();
+                this.props.action();
+                this.props.history.goBack();
             }) 
         }
     }

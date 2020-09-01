@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Axios from 'axios'
+import Axios from 'axios';
 import backArrow from '../../assets/Icons/arrow_back-24px.svg'
 import { Link } from 'react-router-dom';
 
@@ -17,8 +17,6 @@ export default class EditWarehouse extends Component {
             email: ""
         } 
     } 
-
-    
 
     editWarehouse = (event) => {
         event.preventDefault()
@@ -41,8 +39,9 @@ export default class EditWarehouse extends Component {
                     }  
                 })
                 .then((response) => {
-                    // console.log(response)
                     this.form.reset();
+                    this.props.action();
+                    this.props.history.goBack();
                 })
             }
         }

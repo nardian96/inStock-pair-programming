@@ -61,62 +61,62 @@ body {
 }
 
 h1 {
-  font-size: 2.15rem;
-  line-height: 2.77rem;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
 }
 
 @media screen and (min-width: 767px) {
   h1 {
-    font-size: 2.29rem;
-    line-height: 2.86rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
   }
 }
 
 h2 {
-  font-size: 1.54rem;
-  line-height: 2.15rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 @media screen and (min-width: 767px) {
   h2 {
-    font-size: 1.71rem;
-    line-height: 2.29rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
 h3 {
-  font-size: 1rem;
-  line-height: 1.54rem;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
 }
 
 @media screen and (min-width: 767px) {
   h3 {
-    font-size: 1rem;
-    line-height: 1.57rem;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
   }
 }
 
 h4 {
-  font-size: 0.85rem;
-  line-height: 1.23rem;
+  font-size: 0.68rem;
+  line-height: 1rem;
 }
 
 @media screen and (min-width: 767px) {
   h4 {
-    font-size: 0.86rem;
-    line-height: 1.29rem;
+    font-size: 0.75rem;
+    line-height: 1.12rem;
   }
 }
 
 p {
   font-size: 13px;
-  line-height: 1.54rem;
+  line-height: 1.25rem;
 }
 
 @media screen and (min-width: 767px) {
   p {
     font-size: 14px;
-    line-height: 1.57rem;
+    line-height: 1.37rem;
   }
 }
 
@@ -145,6 +145,7 @@ p {
 .modal-button {
   background-color: #ffffff;
   border: none;
+  width: 50px;
 }
 
 .modal__button {
@@ -237,8 +238,8 @@ p {
   height: 24px;
   background-color: #ffffff;
   border: none;
-  font-size: 2.29rem;
-  line-height: 2.86rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
   margin-bottom: 16px;
 }
 
@@ -432,7 +433,6 @@ p {
 }
 
 .warehouse__list-header {
-  min-width: 21.43rem;
   background-color: #ffffff;
   padding: 1rem 1.5rem;
   display: -webkit-box;
@@ -522,8 +522,8 @@ p {
 }
 
 .list h4 {
-  font-size: 0.85rem;
-  line-height: 1.23rem;
+  font-size: 0.68rem;
+  line-height: 1rem;
   font-family: "titilliumWeb";
   font-size: 0.68rem;
   color: #5c667e;
@@ -582,8 +582,8 @@ p {
 }
 
 .list__warehouse-wrapper h3 {
-  font-size: 1rem;
-  line-height: 1.54rem;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
   font-family: "titilliumWeb";
   font-size: 13px;
   color: #2e66e6;
@@ -618,7 +618,7 @@ p {
 
 .list__contact-name p {
   font-size: 13px;
-  line-height: 1.54rem;
+  line-height: 1.25rem;
   font-family: "titilliumWeb";
   font-size: 13px;
   color: #13182c;
@@ -635,7 +635,7 @@ p {
 
 .list__address p {
   font-size: 13px;
-  line-height: 1.54rem;
+  line-height: 1.25rem;
   font-family: "titilliumWeb";
   font-size: 13px;
   color: #13182c;
@@ -652,7 +652,7 @@ p {
 
 .list__contact-info p {
   font-size: 13px;
-  line-height: 1.54rem;
+  line-height: 1.25rem;
   font-family: "titilliumWeb";
   font-size: 13px;
   color: #13182c;
@@ -702,8 +702,8 @@ p {
     margin: 0 2rem;
   }
   .header__title {
-    font-size: 2.29rem;
-    line-height: 2.86rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
     margin: 0;
   }
   .header__search-container {
@@ -786,7 +786,7 @@ p {
             justify-content: left;
   }
   .list__subcontainer--one {
-    width: 47.4%;
+    width: 46.5%;
   }
   .list__subcontainer--two {
     width: 52.6%;
@@ -820,8 +820,8 @@ p {
     width: 100%;
   }
   .list__warehouse-link h3 {
-    font-size: 1rem;
-    line-height: 1.54rem;
+    font-size: 0.81rem;
+    line-height: 1.25rem;
     font-family: "titilliumWeb";
     font-size: 14px;
     color: #2e66e6;
@@ -848,18 +848,18 @@ p {
     transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   }
   .list__contact-name {
-    width: 100%;
+    width: 55%;
   }
   .list__contact-name p {
     font-size: 13px;
-    line-height: 1.54rem;
+    line-height: 1.25rem;
     font-family: "titilliumWeb";
     font-size: 14px;
     color: #13182c;
     margin: 0;
   }
   .list__address {
-    width: 35%;
+    width: 40%;
   }
   .list__address h4 {
     padding: 0;
@@ -867,14 +867,8 @@ p {
   .list__address p {
     font-size: 14px;
   }
-  .list__contact-name {
-    width: 61.27%;
-  }
-  .list__contact-name p {
-    font-size: 14px;
-  }
   .list__contact-info {
-    width: 59.01%;
+    width: 45%;
   }
   .list__contact-info h4 {
     padding: 0;
@@ -1149,12 +1143,12 @@ p {
   border-radius: 3px;
   -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
           box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-  margin: 0 1.23rem;
+  margin: 0 1.5rem;
 }
 
 @media screen and (min-width: 767px) {
   .warehouse-detail__container {
-    margin: 0 2.29rem;
+    margin: 0 2rem;
   }
 }
 
@@ -1324,7 +1318,7 @@ p {
     display: inline;
     color: #ffffff;
     font-size: 14px;
-    line-height: 1.57rem;
+    line-height: 1.37rem;
   }
 }
 
@@ -1714,8 +1708,8 @@ p {
 }
 
 .table__header-text {
-  font-size: 0.86rem;
-  line-height: 1.29rem;
+  font-size: 0.75rem;
+  line-height: 1.12rem;
   font-weight: bold;
   color: #5c667e;
 }
@@ -1764,6 +1758,8 @@ p {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    -ms-flex-wrap: none;
+        flex-wrap: none;
   }
 }
 
@@ -1833,14 +1829,13 @@ p {
     -webkit-box-ordinal-group: 6;
         -ms-flex-order: 5;
             order: 5;
-    width: 15%;
+    width: 17%;
   }
 }
 
 .table__item__icons {
   margin: 0;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
+  padding: 1rem 1.5rem 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1852,11 +1847,11 @@ p {
 
 @media screen and (min-width: 767px) {
   .table__item__icons {
+    width: 5%;
     -webkit-box-ordinal-group: 7;
         -ms-flex-order: 6;
             order: 6;
     padding: 0;
-    width: auto;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
@@ -1869,19 +1864,32 @@ p {
   display: flex;
 }
 
-@media screen and (min-width: 767px) {
-  .table__item__icons--link {
-    margin-left: 24px;
-  }
-}
-
 .table__item-name {
   position: relative;
 }
 
 .table__item-name img {
   position: absolute;
-  top: 2px;
+  top: 1px;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.table__item-name img:hover {
+  -webkit-transform: translateX(5px);
+  -webkit-transition: transform 0.4s ease-in-out;
+  -moz-transform: translateX(5px);
+  -moz-transition: transform 0.4s ease-in-out;
+  -ms-transform: translateX(5px);
+  -ms-transition: transform 0.4s ease-in-out;
+  -o-transform: translateX(5px);
+  -o-transition: transform 0.4s ease-in-out;
+  transform: translateX(5px);
+  -webkit-transition: -webkit-transform 0.4s ease-in-out;
+  transition: -webkit-transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
 }
 
 .table__item-label {
@@ -1908,15 +1916,18 @@ p {
 }
 
 .table__item-text {
-  font-size: 1rem;
-  line-height: 1.54rem;
-  margin-bottom: 20px;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
+  font-size: 13px;
+  margin: 0;
 }
 
 @media screen and (min-width: 767px) {
   .table__item-text {
-    font-size: 1rem;
-    line-height: 1.57rem;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
+    font-size: 14px;
+    margin: 1rem 0;
   }
 }
 
@@ -1964,12 +1975,12 @@ p {
   border-radius: 3px;
   -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
           box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-  margin: 0 1.23rem;
+  margin: 0 1rem;
 }
 
 @media screen and (min-width: 767px) {
   .inventory__list--container {
-    margin: 0 2.29rem;
+    margin: 0 2rem;
   }
 }
 
@@ -1980,7 +1991,6 @@ p {
 }
 
 .inventory__list-header {
-  min-width: 21.43rem;
   background-color: #ffffff;
   padding: 1rem 1.5rem;
   display: -webkit-box;
@@ -2133,12 +2143,12 @@ p {
   border-radius: 3px;
   -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
           box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-  margin: 0 1.23rem;
+  margin: 0 1.5rem;
 }
 
 @media screen and (min-width: 767px) {
   .inventory-detail__container {
-    margin: 0 2.29rem;
+    margin: 0 2rem;
   }
 }
 
@@ -2247,7 +2257,7 @@ p {
     display: inline;
     color: #ffffff;
     font-size: 14px;
-    line-height: 1.57rem;
+    line-height: 1.37rem;
   }
 }
 
@@ -2507,16 +2517,16 @@ p {
 }
 
 .add-inventory__form--label {
-  font-size: 1rem;
-  line-height: 1.54rem;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
   font-weight: bold;
   margin-bottom: 4px;
 }
 
 @media screen and (min-width: 767px) {
   .add-inventory__form--label {
-    font-size: 1rem;
-    line-height: 1.57rem;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
   }
 }
 
@@ -2532,15 +2542,15 @@ p {
   padding-left: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
-  font-size: 1rem;
-  line-height: 1.54rem;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
   margin-bottom: 16px;
 }
 
 @media screen and (min-width: 767px) {
   .add-inventory__form--input {
-    font-size: 1rem;
-    line-height: 1.57rem;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
   }
 }
 
@@ -2566,14 +2576,14 @@ p {
   padding-top: 8px;
   padding-bottom: 8px;
   font-family: titilliumWeb;
-  font-size: 1rem;
-  line-height: 1.54rem;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
 }
 
 @media screen and (min-width: 767px) {
   .add-inventory__form--text {
-    font-size: 1rem;
-    line-height: 1.57rem;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
   }
 }
 
@@ -2651,8 +2661,8 @@ p {
   text-align: center;
   text-decoration: none;
   color: #5c667e;
-  font-size: 1rem;
-  line-height: 1.54rem;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
   font-weight: bold;
 }
 
@@ -2661,8 +2671,8 @@ p {
     width: 72px;
     height: 38px;
     margin-right: 16px;
-    font-size: 1rem;
-    line-height: 1.57rem;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
   }
 }
 
@@ -2673,16 +2683,16 @@ p {
   background-color: #2e66e6;
   color: #ffffff;
   border: none;
-  font-size: 1rem;
-  line-height: 1.54rem;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
   font-weight: bold;
 }
 
 @media screen and (min-width: 767px) {
   .add-inventory__controller-button {
     height: 38px;
-    font-size: 1rem;
-    line-height: 1.57rem;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
   }
 }
 
@@ -2705,14 +2715,14 @@ p {
 }
 
 .radio-label {
-  font-size: 1rem;
-  line-height: 1.54rem;
+  font-size: 0.81rem;
+  line-height: 1.25rem;
 }
 
 @media screen and (min-width: 767px) {
   .radio-label {
-    font-size: 1rem;
-    line-height: 1.57rem;
+    font-size: 0.87rem;
+    line-height: 1.37rem;
   }
 }
 

@@ -54,12 +54,13 @@ function WarehouseItem(props) {
       </div>
       <div className="warehouse-item__actions">
         <ModalWindow info={info}></ModalWindow>
-
-        <img
-          src={editIcon}
-          alt="edit icon"
-          className="warehouse-item__edit-button"
-        />
+        <Link to={`/Inventories/${itemId}/edit`}>
+          <img
+            src={editIcon}
+            alt="edit icon"
+            className="warehouse-item__edit-button"
+          />
+        </Link>
       </div>
     </div>
   );
