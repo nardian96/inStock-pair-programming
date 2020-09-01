@@ -112,6 +112,9 @@
     align-items: center;
     a {
       display: flex;
+      flex-direction: column;
+      min-width: 91%;
+      height: 65px;
       align-items: center;
     }
     h3 {
@@ -189,6 +192,20 @@
       height: 109px;
     }
     &__list-header {
+      background-color: $color-primary__white;
+      padding: 33px 1.5rem;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid $color-secondary__cloud;
+      margin: 0 1rem;
+    //   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
+    }
+    &__list-container {
+      background-color: $color-primary__white;
+      list-style-type: none;
+      padding: 0;
+      margin: 0 1rem;
+      box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
@@ -234,6 +251,10 @@
     margin-right: 0;
     h4 {
       display: none;
+    }
+    &:last-child {
+        border-bottom: 0;
+        margin-bottom: 0;
     }
     &__main-header {
       display: flex;
@@ -362,7 +383,6 @@
       }
     }
   }
-}
 
 //Desktop Design
 @include desktop {
