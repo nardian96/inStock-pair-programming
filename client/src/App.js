@@ -62,10 +62,6 @@ export default class App extends Component {
     });
   };
 
-  editSearchTerm = (input) => {
-    this.setState({ searchTerm: input.target.value });
-  };
-
   postInventory = (event) => {
     event.preventDefault();
     let newItem = {};
