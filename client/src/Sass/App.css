@@ -426,15 +426,13 @@ p {
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: 91%;
-  height: 64px;
+  height: 65px;
   background-color: #232940;
-  -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
-          box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 }
 
 .warehouse__list-header {
   background-color: #ffffff;
-  padding: 1rem 1.5rem;
+  padding: 33px 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,6 +449,8 @@ p {
   list-style-type: none;
   padding: 0;
   margin: 0 1rem;
+  -webkit-box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
+          box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
 }
 
 .header {
@@ -532,6 +532,11 @@ p {
 
 .list:first-child {
   margin-top: 1rem;
+}
+
+.list:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
 }
 
 .list__main-header {
@@ -686,8 +691,9 @@ p {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    padding: 2rem 1.5rem;
+    padding: 33px 1.5rem;
     margin: 0 2rem;
+    border: none;
   }
   .warehouse__list-subheader {
     display: -webkit-box;
@@ -873,16 +879,10 @@ p {
   .list__contact-info h4 {
     padding: 0;
   }
-  .list__contact-info__contact-info {
-    width: 59.01%;
-  }
-  .list__contact-info__contact-info h4 {
-    padding: 0;
-  }
-  .list__contact-info__contact-info p {
+  .list__contact-info p {
     font-size: 14px;
   }
-  .list__contact-info__icons {
+  .list__icons {
     width: 20%;
     height: 48px;
     -webkit-box-pack: end;
@@ -890,7 +890,7 @@ p {
             justify-content: flex-end;
     padding-top: 1rem;
   }
-  .list__contact-info__icons a {
+  .list__icons a {
     height: 24px;
     padding-top: 3.5px;
   }
