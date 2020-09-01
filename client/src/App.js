@@ -99,7 +99,7 @@ export default class App extends Component {
     }
     axios.post(inventoryApi, newItem).then(() => {
       this.displayInventoryList();
-      this.props.history.push("/Inventories");
+      this.props.history.goBack();
     });
   };
 
@@ -143,7 +143,7 @@ export default class App extends Component {
       this.props.match.params.inventoryId;
     axios.put(url, inventory).then(() => {
       this.displayInventoryList();
-      this.props.history.push("/Inventories");
+      this.props.history.goBack();
     });
   };
 
