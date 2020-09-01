@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 export default class InventoryHeader extends Component {
   render() {
-    console.log(this.props);
+    console.log("detal", this.props.history);
+    console.log(`/Inventories/${this.props.inventoryName.id}/edit`);
     const id = this.props.inventoryName.warehouseID;
     if (!id) {
       return <p>loading</p>;
@@ -30,14 +31,20 @@ export default class InventoryHeader extends Component {
           </h1>
         </div>
         <div className="inventory-header__header-right">
-          <button className="inventory-header__edit-button">
+          <Link
+            className="inventory-header__edit-button"
+            to={() => `/Inventories/${this.props.inventoryName.id}/edit`}
+            // onClick={this.history.push(
+            //   `/Inventories/${this.props.inventoryName.id}/edit`
+            // )}
+          >
             <img
               src={editIconWhite}
               alt="edit icon"
               className="inventory-header__edit-icon"
             />
             <span>Edit</span>
-          </button>
+          </Link>
         </div>
       </div>
     );

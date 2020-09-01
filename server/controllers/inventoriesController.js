@@ -87,7 +87,7 @@ function sortInventories(req, res) {
   if (!propList.includes(req.params.property)) {
     res.status(404).json({ message: "No property associated with that field" });
   } else {
-    res.json(inventories.sortInventories(req.params.property, true));
+    res.json(inventories.sortInventories(req.params.property));
   }
 }
 
@@ -102,5 +102,4 @@ module.exports = {
   removeInventoryByWarehouse,
 
   sortInventories,
-
 };

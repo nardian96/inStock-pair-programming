@@ -1,15 +1,196 @@
-  
 //Mobile Design
 .warehouse {
-    &__list {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    min-width: 91%;
+    height: 64px;
+    background-color: $color-background__graphite;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+  }
+
+  &__list-header {
+    // width: 21.43rem;
+    background-color: $color-primary__white;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid $color-secondary__cloud;
+    margin: 0 1rem;
+  }
+  &__list-container {
+    background-color: $color-primary__white;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 1rem;
+  }
+}
+
+.header {
+  padding: 0 1.5rem;
+  &__title {
+    font-family: "titilliumWeb";
+    font-style: normal;
+    font-weight: bold;
+    width: 9.3rem;
+    height: 2.25rem;
+    margin: 1rem 0;
+  }
+  &__search-container {
+    position: relative;
+    width: 100%;
+    height: 2rem;
+  }
+  &__search-icon {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    left: 16rem;
+    top: 0.5rem;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__search {
+    width: 18.43rem;
+    height: 36px;
+    border: 1px solid #bdc5d5;
+    border-radius: 1.25rem;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 0 1rem;
+  }
+  &__button {
+    width: 18.43rem;
+    height: 36px;
+    margin-top: 1rem;
+    border-radius: 20px;
+    padding: 0 3rem;
+    font-size: 0.68rem;
+    border: none;
+    background-color: $color-primary__instock-indigo;
+    color: $color-primary__white;
+  }
+}
+
+.list {
+  min-width: 21.43rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.75rem 1.25rem;
+  border-bottom: 1px solid $color-secondary__cloud;
+  margin-bottom: 1rem;
+  h4 {
+    @include font-mobile__h4;
+    font-family: "titilliumWeb";
+    font-size: 0.68rem;
+    color: $color-secondary__slate;
+    margin: 0;
+  }
+  &:first-child {
+    margin-top: 1rem;
+  }
+  &__main-header {
+    display: none;
+  }
+  &__subcontainer-wrapper {
+    display: flex;
+  }
+  &__subcontainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__warehouse {
+    width: 100%;
+    font-size: 13px;
+  }
+  &__warehouse-wrapper {
+    display: flex;
+    align-items: center;
+    a {
       display: flex;
       flex-direction: column;
       min-width: 91%;
       height: 65px;
-      background-color: $color-background__graphite;
-    //   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+      align-items: center;
     }
-  
+    h3 {
+      @include font-mobile__h3;
+      font-family: "titilliumWeb";
+      font-size: 13px;
+      color: $color-primary__instock-indigo;
+      margin: 0;
+    }
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+      padding-left: 0.5rem;
+      &:hover {
+        -webkit-transform: translateX(5px);
+        -webkit-transition: transform 0.4s ease-in-out;
+        -moz-transform: translateX(5px);
+        -moz-transition: transform 0.4s ease-in-out;
+        -ms-transform: translateX(5px);
+        -ms-transition: transform 0.4s ease-in-out;
+        -o-transform: translateX(5px);
+        -o-transition: transform 0.4s ease-in-out;
+        transform: translateX(5px);
+        transition: transform 0.4s ease-in-out;
+      }
+    }
+  }
+
+  &__contact-name {
+    width: 55%;
+    p {
+      @include font-mobile__p2;
+      font-family: "titilliumWeb";
+      font-size: 14px;
+      color: $color-primary__instock-black;
+      margin: 0;
+    }
+  }
+  &__address {
+    width: 40%;
+    h4 {
+      padding: 0;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  &__contact-info {
+    width: 45%;
+    h4 {
+      padding-top: 0.8rem;
+    }
+    p {
+      @include font-mobile__p2;
+      font-family: "titilliumWeb";
+      font-size: 13px;
+      color: $color-primary__instock-black;
+      margin: 0;
+    }
+  }
+  &__icons {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+}
+
+// Tablet design
+@include tablet {
+  .warehouse {
+    &__list {
+      min-width: 44rem;
+      height: 109px;
+    }
     &__list-header {
       background-color: $color-primary__white;
       padding: 33px 1.5rem;
@@ -25,111 +206,125 @@
       padding: 0;
       margin: 0 1rem;
       box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.2);
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      margin: 0 2rem;
+    }
+    &__list-subheader {
+      display: flex;
+      flex-direction: row;
+    }
+    &__list-container {
+      margin: 0 2rem;
     }
   }
-  
   .header {
-    padding: 0 1.5rem;
     &__title {
-      font-family: "titilliumWeb";
-      font-style: normal;
-      font-weight: bold;
-      width: 9.3rem;
-      height: 2.25rem;
-      margin: 1rem 0;
-    }
-    &__search-container {
-      position: relative;
-      width: 100%;
-      height: 2rem;
-    }
-    &__search-icon {
-      position: absolute;
-      width: 1.25rem;
-      height: 1.25rem;
-      left: 16rem;
-      top: 0.5rem;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    &__search {
-      width: 18.43rem;
-      height: 36px;
-      border: 1px solid #bdc5d5;
-      border-radius: 1.25rem;
-      font-size: 13px;
-      line-height: 20px;
-      padding: 0 1rem;
-    }
-    &__button {
-      width: 18.43rem;
-      height: 36px;
-      margin-top: 1rem;
-      border-radius: 20px;
-      padding: 0 3rem;
-      font-size: 0.68rem;
-      border: none;
-      background-color: $color-primary__instock-indigo;
-      color: $color-primary__white;
-    }
-  }
-  
-  .list {
-    min-width: 21.43rem;
-    display: flex;
-    flex-direction: column;
-    padding: 0 1.75rem 1.25rem;
-    border-bottom: 1px solid $color-secondary__cloud;
-    margin-bottom: 1rem;
-    h4 {
-      @include font-mobile__h4;
-      font-family: "titilliumWeb";
-      font-size: 0.68rem;
-      color: $color-secondary__slate;
+      @include font__h1;
       margin: 0;
     }
-    &:first-child {
-      margin-top: 1rem;
+    &__search-container {
+      width: 10rem;
+    }
+    &__search {
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin-top: 0.5rem;
+    }
+    &__search-icon {
+      left: 8rem;
+      top: 0.85rem;
+    }
+    &__button {
+      width: 10rem;
+      padding: 0.5rem 1rem;
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+    }
+  }
+  .list {
+    min-width: 44rem;
+    flex-direction: row;
+    padding: 0 2rem 1.25rem;
+    margin-right: 0;
+    h4 {
+      display: none;
     }
     &:last-child {
         border-bottom: 0;
         margin-bottom: 0;
     }
     &__main-header {
-      display: none;
+      display: flex;
+      padding: 0 1rem;
+      h4 {
+        font-size: 0.75rem;
+        color: $color-secondary__slate;
+      }
+    }
+    &__main-subheader {
+      display: flex;
+      h4 {
+        font-size: 0.75rem;
+        color: $color-secondary__slate;
+      }
+      &--one {
+        width: 25.85%;
+        padding-left: 3rem;
+      }
+      &--two {
+        width: 17.18%;
+      }
+      &--three {
+        width: 23.28%;
+      }
+      &--four {
+        width: 22.42%;
+      }
+      &--five {
+        width: 19%;
+        padding-left: 2.5rem;
+        padding-right: 1rem;
+      }
     }
     &__subcontainer-wrapper {
-      display: flex;
+      width: 100%;
     }
     &__subcontainer {
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      flex-direction: row;
+      justify-content: left;
+      &--one {
+        width: 46.5%;
+      }
+      &--two {
+        width: 52.6%;
+      }
     }
     &__warehouse {
-      width: 100%;
-      font-size: 13px;
+      width: 54%;
     }
     &__warehouse-wrapper {
       display: flex;
+      flex-direction: row;
       align-items: center;
-      a {
-        display: flex;
-        align-items: center;
-      }
+    }
+    &__warehouse-link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 100%;
       h3 {
         @include font-mobile__h3;
         font-family: "titilliumWeb";
-        font-size: 13px;
+        font-size: 14px;
         color: $color-primary__instock-indigo;
         margin: 0;
       }
       img {
         width: 1.5rem;
-        height: 1.5rem;
+        height: 100%;
         padding-left: 0.5rem;
         &:hover {
           -webkit-transform: translateX(5px);
@@ -145,194 +340,9 @@
         }
       }
     }
+
     &__contact-name {
-      width: 100%;
-      p {
-        @include font-mobile__p2;
-        font-family: "titilliumWeb";
-        font-size: 13px;
-        color: $color-primary__instock-black;
-        margin: 0;
-      }
-    }
-    &__address {
-      width: 100%;
-      h4 {
-        padding-top: 0.8rem;
-      }
-      p {
-        @include font-mobile__p2;
-        font-family: "titilliumWeb";
-        font-size: 13px;
-        color: $color-primary__instock-black;
-        margin: 0;
-      }
-    }
-    &__contact-info {
-      width: 100%;
-      h4 {
-        padding-top: 0.8rem;
-      }
-      p {
-        @include font-mobile__p2;
-        font-family: "titilliumWeb";
-        font-size: 13px;
-        color: $color-primary__instock-black;
-        margin: 0;
-      }
-    }
-    &__icons {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
-      padding-top: 1rem;
-    }
-  }
-  
-  // Tablet design
-  @include tablet {
-    .warehouse {
-      &__list {
-        min-width: 44rem;
-        height: 109px;
-      }
-      &__list-header {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 33px 1.5rem;
-        margin: 0 2rem;
-        border: none;
-      }
-      &__list-subheader {
-        display: flex;
-        flex-direction: row;
-      }
-      &__list-container {
-        margin: 0 2rem;
-      }
-    }
-    .header {
-      &__title {
-        @include font__h1;
-        margin: 0;
-      }
-      &__search-container {
-        width: 10rem;
-      }
-      &__search {
-        width: 100%;
-        padding: 0.5rem 1rem;
-        margin-top: 0.5rem;
-      }
-      &__search-icon {
-        left: 8rem;
-        top: 0.85rem;
-      }
-      &__button {
-        width: 10rem;
-        padding: 0.5rem 1rem;
-        margin-left: 1rem;
-        margin-top: 0.5rem;
-      }
-    }
-    .list {
-      min-width: 44rem;
-      flex-direction: row;
-      padding: 0 2rem 1.25rem;
-      margin-right: 0;
-      h4 {
-        display: none;
-      }
-      &__main-header {
-        display: flex;
-        padding: 0 1rem;
-        h4 {
-          font-size: 0.75rem;
-          color: $color-secondary__slate;
-        }
-      }
-      &__main-subheader {
-        display: flex;
-        h4 {
-          font-size: 0.75rem;
-          color: $color-secondary__slate;
-        }
-        &--one {
-          width: 25.85%;
-          padding-left: 3rem;
-        }
-        &--two {
-          width: 17.18%;
-        }
-        &--three {
-          width: 23.28%;
-        }
-        &--four {
-          width: 22.42%;
-        }
-        &--five {
-          width: 19%;
-          padding-left: 2.5rem;
-          padding-right: 1rem;
-        }
-      }
-      &__subcontainer-wrapper {
-        width: 100%;
-      }
-      &__subcontainer {
-        flex-direction: row;
-        justify-content: left;
-        &--one {
-          width: 46.5%;
-        }
-        &--two {
-          width: 52.6%;
-        }
-      }
-      &__warehouse {
-        width: 54%;
-      }
-      &__warehouse-wrapper {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-      }
-      &__warehouse-link {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 100%;
-        h3 {
-          @include font-mobile__h3;
-          font-family: "titilliumWeb";
-          font-size: 14px;
-          color: $color-primary__instock-indigo;
-          margin: 0;
-        }
-        img {
-          width: 1.5rem;
-          height: 100%;
-          padding-left: 0.5rem;
-          &:hover {
-            -webkit-transform: translateX(5px);
-            -webkit-transition: transform 0.4s ease-in-out;
-            -moz-transform: translateX(5px);
-            -moz-transition: transform 0.4s ease-in-out;
-            -ms-transform: translateX(5px);
-            -ms-transition: transform 0.4s ease-in-out;
-            -o-transform: translateX(5px);
-            -o-transition: transform 0.4s ease-in-out;
-            transform: translateX(5px);
-            transition: transform 0.4s ease-in-out;
-          }
-        }
-      }
-  
-  
-  
-    &__contact-name {
-        width: 55%;
+      width: 55%;
       p {
         @include font-mobile__p2;
         font-family: "titilliumWeb";
@@ -350,105 +360,103 @@
         font-size: 14px;
       }
     }
-  
+
     &__contact-info {
       width: 45%;
       h4 {
         padding: 0;
-      }  
-        p {
-            font-size: 14px;
-        }
+      }
+      p {
+        font-size: 14px;
+      }
     }
 
     &__icons {
-        width: 20%;
-        height: 48px;
-        justify-content: flex-end;
-        padding-top: 1rem;
-        a {
-          height: 24px;
-          padding-top: 3.5px;
-          // padding-left: 24px;
-        }
-      }
-    }
-}
-
-  
-  //Desktop Design
-  @include desktop {
-    .warehouse {
-      &__list {
-        height: 109px;
-      }
-      &__list-container {
-        margin: 0 8.12rem;
-      }
-      &__list-header {
-        margin: 0 8.12rem;
-      }
-    }
-    .list {
-      padding: 0 2.5rem 1.25rem;
-      &__main-header {
-        padding: 0;
-        margin: 0 8.12rem;
-      }
-      &__main-subheader {
-        &--one {
-          width: 25.58%;
-          padding-left: 2.5rem;
-        }
-        &--two {
-          width: 25.58%;
-        }
-        &--three {
-          width: 17.05%;
-        }
-        &--four {
-          width: 21.76%;
-        }
-        &--five {
-          width: 19%;
-          padding-left: 3.4rem;
-          padding-right: 0.75rem;
-        }
-      }
-      &__subcontainer {
-        &--one {
-          width: 56%;
-        }
-        &--two {
-          width: 44%;
-        }
-      }
-      &__warehouse--wrapper {
-        width: 47%;
-        h3 {
-          font-size: 82px;
-        }
-      }
-      &__warehouse {
-        width: 47%;
-      }
-      &__address {
-        width: 53%;
-        h4 {
-          padding: 0;
-        }
-      }
-      &__contact-name {
-        width: 50%;
-      }
-      &__contact-info {
-        width: 59.01%;
-        h4 {
-          padding: 0;
-        }
-      }
-      &__icons {
-        justify-content: center;
+      width: 20%;
+      height: 48px;
+      justify-content: flex-end;
+      padding-top: 1rem;
+      a {
+        height: 24px;
+        padding-top: 3.5px;
+        // padding-left: 24px;
       }
     }
   }
+
+//Desktop Design
+@include desktop {
+  .warehouse {
+    &__list {
+      height: 109px;
+    }
+    &__list-container {
+      margin: 0 8.12rem;
+    }
+    &__list-header {
+      margin: 0 8.12rem;
+    }
+  }
+  .list {
+    padding: 0 2.5rem 1.25rem;
+    &__main-header {
+      padding: 0;
+      margin: 0 8.12rem;
+    }
+    &__main-subheader {
+      &--one {
+        width: 25.58%;
+        padding-left: 2.5rem;
+      }
+      &--two {
+        width: 25.58%;
+      }
+      &--three {
+        width: 17.05%;
+      }
+      &--four {
+        width: 21.76%;
+      }
+      &--five {
+        width: 19%;
+        padding-left: 3.4rem;
+        padding-right: 0.75rem;
+      }
+    }
+    &__subcontainer {
+      &--one {
+        width: 56%;
+      }
+      &--two {
+        width: 44%;
+      }
+    }
+    &__warehouse--wrapper {
+      width: 47%;
+      h3 {
+        font-size: 82px;
+      }
+    }
+    &__warehouse {
+      width: 47%;
+    }
+    &__address {
+      width: 53%;
+      h4 {
+        padding: 0;
+      }
+    }
+    &__contact-name {
+      width: 50%;
+    }
+    &__contact-info {
+      width: 59.01%;
+      h4 {
+        padding: 0;
+      }
+    }
+    &__icons {
+      justify-content: center;
+    }
+  }
+}
