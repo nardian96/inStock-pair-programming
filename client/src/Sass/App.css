@@ -847,10 +847,10 @@ p {
     transition: transform 0.4s ease-in-out;
     transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   }
-  __contact-name {
+  .list__contact-name {
     width: 100%;
   }
-  __contact-name p {
+  .list__contact-name p {
     font-size: 13px;
     line-height: 1.54rem;
     font-family: "titilliumWeb";
@@ -858,31 +858,31 @@ p {
     color: #13182c;
     margin: 0;
   }
-  __address {
+  .list__address {
     width: 35%;
   }
-  __address h4 {
+  .list__address h4 {
     padding: 0;
   }
-  __address p {
+  .list__address p {
     font-size: 14px;
   }
-  __contact-name {
+  .list__contact-name {
     width: 61.27%;
   }
-  __contact-name p {
+  .list__contact-name p {
     font-size: 14px;
   }
-  __contact-info {
+  .list__contact-info {
     width: 59.01%;
   }
-  __contact-info h4 {
+  .list__contact-info h4 {
     padding: 0;
   }
-  __contact-info p {
+  .list__contact-info p {
     font-size: 14px;
   }
-  __icons {
+  .list__icons {
     width: 20%;
     height: 48px;
     -webkit-box-pack: end;
@@ -890,7 +890,7 @@ p {
             justify-content: flex-end;
     padding-top: 1rem;
   }
-  __icons a {
+  .list__icons a {
     height: 24px;
     padding-top: 3.5px;
   }

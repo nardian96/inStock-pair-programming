@@ -37,7 +37,11 @@ export default class App extends Component {
       this.displayInventoryList();
     });
   };
-  deleteInventory = (id) => {};
+  deleteInventory = (id) => {
+    axios.delete(`${inventoryApi}/${id}`).then((response) => {
+      this.displayInventoryList();
+    });
+  };
 
   componentDidMount() {
     this.displayWarehouseList();
