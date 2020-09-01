@@ -10,7 +10,7 @@
   }
 
   &__list-header {
-    min-width: 21.43rem;
+    // width: 21.43rem;
     background-color: $color-primary__white;
     padding: 1rem 1.5rem;
     display: flex;
@@ -278,7 +278,7 @@
       flex-direction: row;
       justify-content: left;
       &--one {
-        width: 47.4%;
+        width: 46.5%;
       }
       &--two {
         width: 52.6%;
@@ -322,10 +322,10 @@
         }
       }
     }
-  }
+
 
   &__contact-name {
-    width: 100%;
+      width: 55%;
     p {
       @include font-mobile__p2;
       font-family: "titilliumWeb";
@@ -335,7 +335,7 @@
     }
   }
   &__address {
-    width: 35%;
+    width: 40%;
     h4 {
       padding: 0;
     }
@@ -343,14 +343,9 @@
       font-size: 14px;
     }
   }
-  &__contact-name {
-    width: 61.27%;
-    p {
-      font-size: 14px;
-    }
-  }
+
   &__contact-info {
-    width: 59.01%;
+    width: 45%;
     h4 {
       padding: 0;
     }
@@ -369,6 +364,7 @@
       // padding-left: 24px;
     }
   }
+}
 }
 
 //Desktop Design
